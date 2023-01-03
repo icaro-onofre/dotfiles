@@ -6,24 +6,24 @@ let mapleader ="\<Tab>"
 set wrap
 colorscheme xoix
 set hlsearch
-set incsearch 
+set incsearch
 set encoding=utf-8
-set relativenumber 
-set number 
+set relativenumber
+set number
 set clipboard+=unnamedplus
-set noerrorbells 
+set noerrorbells
 set noswapfile
 set rnu
-set nowrap 
-set smartindent 
+set nowrap
+set smartindent
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set expandtab 
+set expandtab
 set ft=xxd
 set termguicolors
-highlight ColorColumn ctermbg=magenta 
+highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn','\%81v',100)
-" Default preferences 
+" Default preferences
 nnoremap n nzzzv
 nnoremap N Nzzzv
 " nnoremap <C-j> :cnext<CR>zzzv
@@ -45,7 +45,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'              "Tree view of files
     Plug 'tpope/vim-commentary'             "Vim automatic commentary
     Plug 'VundleVim/Vundle.vim'             "Vim plugin manager
-    Plug 'neoclide/coc.nvim',{'branch':'release'} 
+    Plug 'neoclide/coc.nvim',{'branch':'release'}
     Plug 'ackyshake/VimCompletesMe'
     Plug 'ackyshake/VimCompletesMe'
     Plug 'nvim-telescope/telescope.nvim'
@@ -236,11 +236,11 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 noremap <leader>h :%!xxd <CR><CR>
 noremap <leader>H :%!xxd -r <CR><CR>
 noremap <leader>bh :%!xxd -b <CR><CR>
-noremap <leader>ph :%!xxd -p <CR><CR>  
+noremap <leader>ph :%!xxd -p <CR><CR>
 noremap <leader><Tab> :tabedit <CR><CR>
 noremap <leader>vr :reg <CR>
 noremap <leader>vm :marks <CR>
-noremap <leader>C :colorscheme 
+noremap <leader>C :colorscheme
 noremap <leader>d :diffthis <CR>
 noremap <C-p>     :Files <CR>
 noremap <leader>vv :vert term<CR>
@@ -255,7 +255,7 @@ noremap <leader>Pc :PlugClean <CR>
 noremap <leader>Pl :PluginInstall <CR>
 noremap <leader>Plc :PluginClean <CR>
 " C/C++ keybings
-" noremap <leader>gcc :!gcc % -o 
+" noremap <leader>gcc :!gcc % -o
 " noremap <leader>gcc :!gcc % -o %:r <CR>
 " Python keybings
 nnoremap <leader>p : !python % <CR>
@@ -263,10 +263,10 @@ nnoremap <leader>p : !python % <CR>
 nnoremap <leader>gc : Git commit -m "
 nnoremap <leader>ga : Git add .
 nnoremap <leader>gs : Git status     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<CR>
-nnoremap <leader>gra : Git remote add 
+nnoremap <leader>gra : Git remote add
 nnoremap <leader>gb : Git branch <CR>
-" nnoremap <leader>gc : Git checkout 
-nnoremap <leader>gp : Git push 
+" nnoremap <leader>gc : Git checkout
+nnoremap <leader>gp : Git push
 "Latex/PDF keybings
 map <leader>\ :! pdflatex %<CR><CR>
 noremap <expr> <silent> <leader>z system("zathura " . substitute(expand("%"), '.tex$', '.pdf', ""). " &")
@@ -278,7 +278,7 @@ let NERDTreeQuitOnOpen=1
 " nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 " Coc keybindings
-nnoremap <leader>ci :CocInstall 
+nnoremap <leader>ci :CocInstall
 nnoremap <leader>cc :CocConfig <CR>
 nnoremap <leader>cl :CocList <CR>
 " Coc snippets
