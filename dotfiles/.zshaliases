@@ -25,3 +25,5 @@ alias yt='youtube-dl --audio-format mp3'
 alias lvim-install='bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)'
 alias get-ip="ip addr show enp3s0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/'"
 alias ta="t a -t"
+#du
+alias du1="du -ahx --max-depth=1 ./ | grep '[0-9\.]\+G'"
