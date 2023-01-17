@@ -1,47 +1,33 @@
 env:
   TERM: xterm-256color
-
 window:
-
-
   title: Alacritty
-
   class:
     instance: Alacritty
     general: Alacritty
-
-
 scrolling:
   history: 5000
-
 font:
   normal:
     family: inconsolata
     style: Regular
-
   bold:
     family: inconsolata
     style: Bold
-
   italic:
     family: inconsolata
     style: Italic
-
   bold_italic:
     family: Source Code Pro
     style: Bold Italic
-
   size: 10.0
-
   offset:
     x: 0
     y: 0
-
 draw_bold_text_with_bright_colors: true
 
 schemes:
-
-  OceanicNext: &OceanicNext
+  white: &white
     # Default colors
     primary:
       background: '#1b2b34'
@@ -71,7 +57,7 @@ schemes:
       cyan:    '#5fb3b3'
       white:   '#d8dee9'
 
-  TomorrowNight: &TomorrowNight
+  black: &black
     primary:
       background: '#1d1f21'
       foreground: '#c5c8c6'
@@ -93,7 +79,7 @@ schemes:
     bright:
       black:   '#666666'
       red:     '#ff3334'
-      green:   '#9ec400'
+      green:   '#99C794'
       yellow:  '#f0c674'
       blue:    '#81a2be'
       magenta: '#b77ee0'
@@ -101,7 +87,7 @@ schemes:
       white:   '#282a2e'
 
 
-colors: *TomorrowNight
+colors: *black
 
     ## background_opacity: 1.0
 
