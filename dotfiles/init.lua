@@ -8,6 +8,6 @@ require "configs.settings"
 
 vim.o.termiguicolors = true
 vim.o.errorbells = false
-vim.o.background='light'
-vim.wo.colorcolumn='80'
-vim.g.mapleader='TAB'
+vim.o.background = 'light'
+vim.wo.colorcolumn = '80'
+vim.g.mapleader = 'TAB'
