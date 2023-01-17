@@ -1,8 +1,0 @@
-(package! prettier-js)
-(package! rainbow-mode)
-(package! emmet-mode)
-(package! vterm)
-(package! mu4e)
-(package! rjsx-mode)
-(package! dap-mode)
-(package! yas-snippets)
