@@ -1,8 +1,11 @@
-vim.cmd('colorscheme torte')
+vim.cmd('colorscheme tokyonight-night')
+vim.cmd('set rnu')
 
 vim.g.mapleader=' '
 vim.opt.number = true
 vim.opt.swapfile = false
+
+vim.bo.tabstop = 4
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -16,7 +19,13 @@ vim.keymap.set('n','<leader>gs',':Gitsigns stage_hunk<CR>')
 vim.keymap.set('n','<leader>gb',':Gitsigns stage_buffer<CR>')
 vim.keymap.set('n','<leader>gj',':Gitsigns next_hunk<CR>')
 vim.keymap.set('n','<leader>gl',':Gitsigns prev_hunk<CR>')
+-- Vim fugitive
+vim.keymap.set('n','<leader>gg',':Git<CR>')
 
+
+-- Coc configuration 
+vim.api.nvim_set_keymap("i", "<TAB>", "pumvisible() ? '<C-n>' : '<TAB>'", {noremap = true, silent = true, expr = true, replace_keycodes = false})
+--vim.api.nvim_set_keymap("i", "<C-l>", "coc-snippets-expand")
 --Packages
 local ensure_packer = function()
   local fn = vim.fn
@@ -49,9 +58,21 @@ return require('packer').startup(function(use)
   end
   }
   use { 'uloco/bluloco.nvim', requires = { 'rktjmp/lush.nvim' } }
+  use 'folke/tokyonight.nvim'
   use { 'kartikp10/noctis.nvim', requires = { 'rktjmp/lush.nvim' } }
   use { 'chentoast/marks.nvim'}
-  use { 'jupyter-vim/jupyter-vim'}
+  use { 'bfredl/nvim-ipy'}
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {"preservim/nerdtree"}
+  use {"Xuyuanp/nerdtree-git-plugin"}
+  use {"ryanoasis/vim-devicons"}
+  use {"PhilRunninger/nerdtree-visual-selection"}
+  use "tpope/vim-surround"
+  use "ziontee113/color-picker.nvim"
+  use "tpope/vim-fugitive"
+  use "mattn/emmet-vim"
+  use "neovim/nvim-lspconfig"
+  use "kabouzeid/nvim-lspinstall"
 
 
   -- My plugins here
