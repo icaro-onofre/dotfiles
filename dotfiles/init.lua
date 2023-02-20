@@ -21,6 +21,8 @@ vim.keymap.set('n','<leader>gj',':Gitsigns next_hunk<CR>')
 vim.keymap.set('n','<leader>gl',':Gitsigns prev_hunk<CR>')
 -- Vim fugitive
 vim.keymap.set('n','<leader>gg',':Git<CR>')
+-- NERDTree
+vim.keymap.set('n','<leader>e',':NERDTree<CR>')
 
 
 -- Coc configuration 
