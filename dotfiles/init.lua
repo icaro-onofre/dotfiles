@@ -27,7 +27,8 @@ vim.keymap.set('n','<leader>e',':NERDTree<CR>')
 
 -- Coc configuration 
 vim.api.nvim_set_keymap("i", "<TAB>", "pumvisible() ? '<C-n>' : '<TAB>'", {noremap = true, silent = true, expr = true, replace_keycodes = false})
---vim.api.nvim_set_keymap("i", "<C-l>", "coc-snippets-expand")
+vim.api.nvim_set_keymap("i", "<C-l>", "coc_snippets_expand",{})
+
 --Packages
 local ensure_packer = function()
   local fn = vim.fn
@@ -48,6 +49,7 @@ return require('packer').startup(function(use)
   use 'honza/vim-snippets'
   use 'mfussenegger/nvim-dap'
   use {'neoclide/coc.nvim', branch = 'release'}
+  use 'L3MON4D3/LuaSnip'
   use 'rktjmp/lush.nvim' 
   use {
     'nvim-treesitter/nvim-treesitter',
