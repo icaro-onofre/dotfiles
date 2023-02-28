@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
   use 'honza/vim-snippets'
   use 'mfussenegger/nvim-dap'
   use {'neoclide/coc.nvim', branch = 'release'}
-  use 'L3MON4D3/LuaSnip'
   use 'rktjmp/lush.nvim' 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -77,7 +76,34 @@ return require('packer').startup(function(use)
   use "mattn/emmet-vim"
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
+  use 'rafamadriz/friendly-snippets'
+  use({
+  "L3MON4D3/LuaSnip",
+  tag = "v1.*",
+  config = function()
+    local ls = require("luasnip")
 
+    -- for "all" filetypes create snippet for "func"
+    ls.add_snippets( "all", {
+      ls.parser.parse_snippet(
+        'func',
+        'function ${1}(${2}) \n{\n\t${3}\n}'),
+    })
+
+    -- Map "Ctrl + p" (in insert mode)
+    -- to expand snippet and jump through fields.
+    vim.keymap.set(
+    'i',
+    '<c-p>',
+    function()
+      if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+      end
+    end
+    )
+	require("luasnip/loaders/from_vscode").load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets" } })
+  end
+})
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
