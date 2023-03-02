@@ -77,10 +77,18 @@ return require('packer').startup(function(use)
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
   use 'rafamadriz/friendly-snippets'
+
+  local snippets_folder = vim.fn.stdpath "config" .. "/lua/config/snip/snippets/"
+  require("luasnip.loaders.from_lua").lazy_load { paths = snippets_folder }
+  vim.cmd [[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]]
+
   use({
+
   "L3MON4D3/LuaSnip",
   tag = "v1.*",
   config = function()
+
+
     local ls = require("luasnip")
 
     -- for "all" filetypes create snippet for "func"
