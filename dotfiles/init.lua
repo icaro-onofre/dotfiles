@@ -23,6 +23,9 @@ vim.keymap.set('n','<leader>gl',':Gitsigns prev_hunk<CR>')
 vim.keymap.set('n','<leader>gg',':Git<CR>')
 -- NERDTree
 vim.keymap.set('n','<leader>e',':NERDTree<CR>')
+-- diffview
+vim.keymap.set('n','<leader>gd',':DiffviewOpen<CR>')
+vim.keymap.set('n','<leader>gc',':DiffviewClose<CR>')
 
 
 -- Coc configuration 
@@ -112,6 +115,7 @@ return require('packer').startup(function(use)
 	require("luasnip/loaders/from_vscode").load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets" } })
   end
 })
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
