@@ -4,6 +4,7 @@ vim.cmd('set rnu')
 vim.g.mapleader=' '
 vim.opt.number = true
 vim.opt.swapfile = false
+vim.o.termguicolors = true
 
 vim.bo.tabstop = 4
 
@@ -80,6 +81,7 @@ return require('packer').startup(function(use)
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
   use 'rafamadriz/friendly-snippets'
+  use 'ryanoasis/vim-devicons'
 
   local snippets_folder = vim.fn.stdpath "config" .. "/lua/config/snip/snippets/"
   require("luasnip.loaders.from_lua").lazy_load { paths = snippets_folder }
