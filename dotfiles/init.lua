@@ -1,19 +1,14 @@
-require("bluloco").setup({
-  style = "auto",               -- "auto" | "dark" | "light"
-  transparent = false,
-  italics = false,
-  terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
-  guicursor   = true,
-})
+vim.o.termguicolors = true
 
-vim.cmd('colorscheme bluloco')
+require 'colorizer'.setup()
+
+vim.cmd('colorscheme tokyonight-night')
 
 vim.cmd('set rnu')
 
 vim.g.mapleader=' '
 vim.opt.number = true
 vim.opt.swapfile = false
-vim.o.termguicolors = true
 
 vim.bo.tabstop = 4
 
@@ -31,7 +26,7 @@ vim.keymap.set('n','<leader>gj',':Gitsigns next_hunk<CR>')
 vim.keymap.set('n','<leader>gl',':Gitsigns prev_hunk<CR>')
 -- Vim fugitive
 vim.keymap.set('n','<leader>gg',':Git<CR>')
-vim.keymap.set('n','<leader>gc',':Git commit<CR>')
+vim.keymap.set('n','<leader>gc',':Git commit -m "')
 -- NERDTree
 vim.keymap.set('n','<leader>e','NvimTreeToggle<CR>')
 -- diffview
@@ -82,7 +77,6 @@ return require('packer').startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
   use  'nvim-tree/nvim-tree.lua' 
   use {"Xuyuanp/nerdtree-git-plugin"}
-  use {"ryanoasis/vim-devicons"}
   use {"PhilRunninger/nerdtree-visual-selection"}
   use "tpope/vim-surround"
   use "ziontee113/color-picker.nvim"
@@ -92,6 +86,15 @@ return require('packer').startup(function(use)
   use "kabouzeid/nvim-lspinstall"
   use 'rafamadriz/friendly-snippets'
   use 'ryanoasis/vim-devicons'
+  use 'norcalli/nvim-colorizer.lua'
+
+  use { 'mrshmllow/document-color.nvim', config = function()
+  require("document-color").setup {
+    -- Default options
+    mode = "background", -- "background" | "foreground" | "single"
+  }
+  end
+  }
 
   local snippets_folder = vim.fn.stdpath "config" .. "/lua/config/snip/snippets/"
   require("luasnip.loaders.from_lua").lazy_load { paths = snippets_folder }
@@ -139,7 +142,4 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
-
--- Gitsigns keybindings
 
