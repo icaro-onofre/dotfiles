@@ -1,4 +1,13 @@
-vim.cmd('colorscheme tokyonight-night')
+require("bluloco").setup({
+  style = "auto",               -- "auto" | "dark" | "light"
+  transparent = false,
+  italics = false,
+  terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
+  guicursor   = true,
+})
+
+vim.cmd('colorscheme bluloco')
+
 vim.cmd('set rnu')
 
 vim.g.mapleader=' '
@@ -22,11 +31,12 @@ vim.keymap.set('n','<leader>gj',':Gitsigns next_hunk<CR>')
 vim.keymap.set('n','<leader>gl',':Gitsigns prev_hunk<CR>')
 -- Vim fugitive
 vim.keymap.set('n','<leader>gg',':Git<CR>')
+vim.keymap.set('n','<leader>gc',':Git commit<CR>')
 -- NERDTree
-vim.keymap.set('n','<leader>e',':NERDTree<CR>')
+vim.keymap.set('n','<leader>e','NvimTreeToggle<CR>')
 -- diffview
 vim.keymap.set('n','<leader>gd',':DiffviewOpen<CR>')
-vim.keymap.set('n','<leader>gc',':DiffviewClose<CR>')
+vim.keymap.set('n','<leader>gq',':DiffviewClose<CR>')
 
 
 -- Coc configuration 
@@ -70,7 +80,7 @@ return require('packer').startup(function(use)
   use { 'chentoast/marks.nvim'}
   use { 'bfredl/nvim-ipy'}
   use { "catppuccin/nvim", as = "catppuccin" }
-  use {"preservim/nerdtree"}
+  use  'nvim-tree/nvim-tree.lua' 
   use {"Xuyuanp/nerdtree-git-plugin"}
   use {"ryanoasis/vim-devicons"}
   use {"PhilRunninger/nerdtree-visual-selection"}
