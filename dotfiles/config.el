@@ -1,5 +1,5 @@
 (setq display-line-numbers-type 'relative)
-(setq doom-theme 'doom-Iosvkem
+(setq doom-theme 'doom-tokyo-night
     doom-themes-enable-bold t
     doom-font (font-spec :family "Inconsolata" :size 15 )
     doom-themes-enable-italic t)

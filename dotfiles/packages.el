@@ -5,4 +5,4 @@
 (package! mu4e)
 (package! rjsx-mode)
 (package! dap-mode)
-(package! yas-snippets)
+(package! org-transclusion)
