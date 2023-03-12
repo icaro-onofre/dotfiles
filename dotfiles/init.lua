@@ -57,11 +57,29 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} } }
   use 'honza/vim-snippets'
   use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'rktjmp/lush.nvim' 
+  use('neovim/nvim-lspconfig')
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
   use {
     'nvim-treesitter/nvim-treesitter',
      run = ':TSUpdate'
+  }
+  require("nvim-treesitter.configs").setup {
+  highlight = {
+      -- ...
+  },
+  -- ...
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+   }
   }
   use {
   'lewis6991/gitsigns.nvim',
