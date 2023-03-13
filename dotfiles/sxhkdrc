@@ -1,0 +1,12 @@
+# Rofi 
+#super + p
+		#rofi -combi-modi window,drun -show combi -show-icons
+# Pass manager
+#super + shift + p 
+		#rofi-pass -combi-modi window,drun -show combi -show-icons
+
+# Terminal
+#super + t
+		#$TERMINAL
+super + c 
+		emacs
