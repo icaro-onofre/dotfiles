@@ -1,6 +1,4 @@
 eval "$(ssh-agent)"
-tmux
-neofetch
 alias tmux="TERM=screen-256color-bce tmux"
 autoload -U colors && colors
 

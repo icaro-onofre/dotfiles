@@ -19,23 +19,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec alacritty
-
-# start a Browser
-bindsym $mod+q exec qutebrowser
-
-# start emacs
-bindsym $mod+m exec emacsclient -c -a 'emacs'
-bindsym $mod+Shift+m exec emacs
 
 # start zathura
 bindsym $mod+z exec zathura
 
-# start nemo
-bindsym $mod+n exec nemo
 
 # start pavucontrol
-bindsym $mod+x exec pavucontrol
 
 # Take screenshot
 bindsym $mod+- exec scrot ~/Images/prints/ --select
@@ -176,8 +165,3 @@ bindsym $mod+r mode "resize"
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 0
 
-#Custom keybindins
-bindsym $mod+Shift+b exec --no-startup-id polybar-msg cmd toggle
-#Start Aim lab
-bindsym $mod+Shift+a exec steam steam://rungameid/714010
-bindsym $mod+Shift+s exec steam

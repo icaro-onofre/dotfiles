@@ -1,12 +1,40 @@
 # Rofi 
-#super + p
-		#rofi -combi-modi window,drun -show combi -show-icons
+super + p
+		rofi -combi-modi window,drun -show combi -show-icons
 # Pass manager
-#super + shift + p 
-		#rofi-pass -combi-modi window,drun -show combi -show-icons
+super + shift + p 
+		rofi-pass -combi-modi window,drun -show combi -show-icons
 
 # Terminal
-#super + t
-		#$TERMINAL
-super + c 
-		emacs
+super + t
+		alacritty
+# Emacs
+super + m 
+		emacsclient -c -a 'emacs'
+
+# Zathura
+super + z
+	zathura
+
+# Polybar toggle
+super + shift + b 
+	--no-startup-id polybar-msg cmd toggle
+
+# nemo
+super + n
+	nemo
+# Pavucontrol
+super + x 
+	pavucontrol
+# Aim 
+super + a 
+	steam steam://rungameid/714010
+	
+super + q 
+	qutebrowser
+
+# Maim select screen
+super + shift + s
+	maim --select | xclip -selection clipboard -target image/png
+super + alt + s
+	maim --select ~/imgs/prints/print_01.png
