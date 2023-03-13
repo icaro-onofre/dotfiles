@@ -8,9 +8,8 @@ setopt prompt_subst
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
-
-# PROMPT='%B%F{9}%n%F{reset}🐒 :%F{10}%C%F{reset}%b $(git_super_status) %# '
-PS1="%{ $fg[blue]%}%>>>%{$reset_color%}%{$fg[green]%}%>>>%{$reset_color%}%{$fg[red]%}%>>>%{$reset_color%} $(git_super_status) %"
+#PROMPT
+eval "$(starship init zsh)"
 
 # History in cache directory:
 HISTSIZE=10000
