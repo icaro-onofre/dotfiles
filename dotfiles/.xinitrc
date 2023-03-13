@@ -1,4 +1,5 @@
 setxkbmap -option caps:super
+eval `ssh-agent`
 sxhkd &
 xrandr -s 1440x900 --set audio on
 #/usr/bin/emacs --daemon
