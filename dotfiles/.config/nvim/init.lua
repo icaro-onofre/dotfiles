@@ -77,7 +77,7 @@ return require('packer').startup(function(use)
 	  sources = lSsources,
   })
   vim.cmd("autocmd BufWritePost * lua vim.lsp.buf.formatting_seq_sync()")
-
+  -- Null LS end configuration
   use('MunifTanjim/prettier.nvim')
   use {
     'nvim-treesitter/nvim-treesitter',
