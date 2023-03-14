@@ -89,6 +89,10 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 export PATH=$PATH:~/.local/bin
+#Lua
+export LUA_PATH="lua;;"
+export LUA_CPATH="./?.so;/usr/local/lib/lua/5.3/?.so;
+                /usr/local/share/lua/5.3/?.so;<path-to-add>"
 
 source ~/.zshaliases
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

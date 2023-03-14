@@ -61,7 +61,23 @@ return require('packer').startup(function(use)
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'rktjmp/lush.nvim' 
   use('neovim/nvim-lspconfig')
-  use('jose-elias-alvarez/null-ls.nvim')
+
+  use('jose-elias-alvarez/null-ls.nvim') 
+  -- Formatting configuration
+  local null_ls = require("null-ls")
+  local lSsources = {
+	  null_ls.builtins.formatting.prettier.with({
+		filetypes = {
+			  "javascript","typescript","css","scss","html","json","yaml","markdown","graphql","md","txt",
+		  },
+	  }),
+	  null_ls.builtins.formatting.stylua,
+  }
+  null_ls.setup({
+	  sources = lSsources,
+  })
+  vim.cmd("autocmd BufWritePost * lua vim.lsp.buf.formatting_seq_sync()")
+
   use('MunifTanjim/prettier.nvim')
   use {
     'nvim-treesitter/nvim-treesitter',
