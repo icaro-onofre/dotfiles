@@ -10,8 +10,6 @@ vim.g.mapleader=' '
 vim.opt.number = true
 vim.opt.swapfile = false
 
-vim.bo.tabstop = 4
-
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})

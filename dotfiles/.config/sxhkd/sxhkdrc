@@ -27,7 +27,7 @@ super + n
 super + x 
 	pavucontrol
 # Aim 
-super + a 
+super + shift + a 
 	steam steam://rungameid/714010
 	
 super + q 
