@@ -19,14 +19,15 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n','<leader>rp',':!python %<CR>')
 -- Gitsigns keybindings
 vim.keymap.set('n','<leader>gs',':Gitsigns stage_hunk<CR>')
+vim.keymap.set('n','<leader>gu',':Gitsigns undo_stage_hunk<CR>')
 vim.keymap.set('n','<leader>gb',':Gitsigns stage_buffer<CR>')
 vim.keymap.set('n','<leader>gj',':Gitsigns next_hunk<CR>')
-vim.keymap.set('n','<leader>gl',':Gitsigns prev_hunk<CR>')
+vim.keymap.set('n','<leader>gk',':Gitsigns prev_hunk<CR>')
 -- Vim fugitive
 vim.keymap.set('n','<leader>gg',':Git<CR>')
 vim.keymap.set('n','<leader>gc',':Git commit -m "')
 -- NERDTree
-vim.keymap.set('n','<leader>e','NvimTreeToggle<CR>')
+vim.keymap.set('n','<leader>t','NvimTreeToggle <CR>')
 -- diffview
 vim.keymap.set('n','<leader>gd',':DiffviewOpen<CR>')
 vim.keymap.set('n','<leader>gq',':DiffviewClose<CR>')
@@ -108,7 +109,29 @@ return require('packer').startup(function(use)
   use { 'bfredl/nvim-ipy'}
   use { "catppuccin/nvim", as = "catppuccin" }
   use  'nvim-tree/nvim-tree.lua' 
-  use {"Xuyuanp/nerdtree-git-plugin"}
+  -- examples for your init.lua
+
+  -- disable netrw at the very start of your init.lua (strongly advised)
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
+  
+  -- set termguicolors to enable highlight groups
+  vim.opt.termguicolors = true
+  
+  -- empty setup using defaults
+  require("nvim-tree").setup()
+  
+  -- OR setup with some options
+  require("nvim-tree").setup({
+    sort_by = "case_sensitive",
+    renderer = {
+      group_empty = true,
+    },
+    filters = {
+      dotfiles = true,
+    },
+  })
+  use 'nvim-tree/nvim-web-devicons'
   use {"PhilRunninger/nerdtree-visual-selection"}
   use "tpope/vim-surround"
   use "ziontee113/color-picker.nvim"

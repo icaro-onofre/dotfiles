@@ -28,3 +28,4 @@ docs-inkscape https://inkscape-manuals.readthedocs.io/en/latest/why-use-inkscape
 stanford-internet observatory https://cyber.fsi.stanford.edu/io
 open ai-chatGPT API https://openai.com/blog/introducing-chatgpt-and-whisper-apis
 docs-openai https://platform.openai.com/docs/models/gpt-3
+docs-python-flask-internationalized application URLS https://flask.palletsprojects.com/en/2.2.x/patterns/urlprocessors/
