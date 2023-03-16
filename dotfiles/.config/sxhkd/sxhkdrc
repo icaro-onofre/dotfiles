@@ -38,3 +38,11 @@ super + shift + s
 	maim --select | xclip -selection clipboard -target image/png
 super + alt + s
 	maim --select ~/imgs/prints/print_01.png
+
+#Generate random id
+super + shift + u 
+	uuidgen | cut -c 1-4 | xclip -selection clipboard 
+
+#Reload configs
+super + shift + w
+    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
