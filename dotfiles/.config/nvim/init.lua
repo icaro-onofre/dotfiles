@@ -27,7 +27,7 @@ vim.keymap.set('n','<leader>gk',':Gitsigns prev_hunk<CR>')
 vim.keymap.set('n','<leader>gg',':Git<CR>')
 vim.keymap.set('n','<leader>gc',':Git commit -m "')
 -- NERDTree
-vim.keymap.set('n','<leader>t','NvimTreeToggle <CR>')
+vim.keymap.set('n','<leader>e',':NvimTreeToggle<CR>')
 -- diffview
 vim.keymap.set('n','<leader>gd',':DiffviewOpen<CR>')
 vim.keymap.set('n','<leader>gq',':DiffviewClose<CR>')
