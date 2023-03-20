@@ -27,8 +27,11 @@ super + n
 super + x 
 	pavucontrol
 # Aim 
-super + shift + a 
+super + alt + a 
 	steam steam://rungameid/714010
+
+super + alt + f 
+	steam steam://rungameid/88199
 	
 super + q 
 	qutebrowser
