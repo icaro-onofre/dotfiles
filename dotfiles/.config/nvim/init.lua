@@ -11,6 +11,10 @@ vim.opt.number = true
 vim.opt.swapfile = false
 
 local builtin = require('telescope.builtin')
+--General purpose keybindings
+vim.keymap.set('n', '<leader>rr', ":checktime <CR>")
+vim.keymap.set('n', '<leader>rb', ":source % <CR>")
+--Telescope keybindings
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
