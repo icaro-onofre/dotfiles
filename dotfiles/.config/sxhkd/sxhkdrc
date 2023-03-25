@@ -4,14 +4,12 @@ super + p
 # Pass manager
 super + shift + p 
 		rofi-pass -combi-modi window,drun -show combi -show-icons
-
 # Terminal
 super + t
 		alacritty
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
-
 # Zathura
 super + z
 	zathura
@@ -19,7 +17,6 @@ super + z
 # Polybar toggle
 super + shift + b 
 	--no-startup-id polybar-msg cmd toggle
-
 # nemo
 super + n
 	nemo
@@ -45,6 +42,12 @@ super + alt + s
 #Generate random id
 super + shift + u 
 	uuidgen | cut -c 1-4 | xclip -selection clipboard 
+#Rotate screen
+super + shift + n
+	xrandr -o normal
+super + shift + r
+	xrandr -o right
+	
 
 #Reload configs
 super + shift + w
