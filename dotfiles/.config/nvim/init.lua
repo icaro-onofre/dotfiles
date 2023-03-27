@@ -180,6 +180,14 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use 'ryanoasis/vim-devicons'
   use 'norcalli/nvim-colorizer.lua'
+  use {
+    "SmiteshP/nvim-navbuddy",
+    requires = {
+        "neovim/nvim-lspconfig",
+        "SmiteshP/nvim-navic",
+        "MunifTanjim/nui.nvim"
+    }
+  }
 
   use { 'mrshmllow/document-color.nvim', config = function()
   require("document-color").setup {
@@ -235,3 +243,4 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
