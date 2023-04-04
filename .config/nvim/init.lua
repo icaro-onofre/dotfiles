@@ -58,7 +58,6 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   use 'p00f/nvim-ts-rainbow'
-  use 'VonHeikemen/lsp-zero.nvim'
   require("nvim-treesitter.configs").setup {
   highlight = {
       -- ...
