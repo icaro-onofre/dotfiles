@@ -1,1 +1,3 @@
-dotfiles/.gitconfig
+[user]
+	email = icaro.onofre.s@gmail.com
+	name = Icaro
