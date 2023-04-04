@@ -1,0 +1,54 @@
+# Rofi 
+super + p
+		rofi -combi-modi window,drun -show combi -show-icons
+# Pass manager
+super + shift + p 
+		rofi-pass -combi-modi window,drun -show combi -show-icons
+# Terminal
+super + t
+		alacritty
+# Emacs
+super + m 
+		emacsclient -c -a 'emacs'
+# Zathura
+super + z
+	zathura
+
+# Polybar toggle
+super + shift + b 
+	--no-startup-id polybar-msg cmd toggle
+# nemo
+super + n
+	nemo
+# Pavucontrol
+super + x 
+	pavucontrol
+# Aim 
+super + alt + a 
+	steam steam://rungameid/714010
+
+super + alt + f 
+	steam steam://rungameid/88199
+	
+super + q 
+	qutebrowser
+
+# Maim select screen
+super + shift + s
+	maim --select | xclip -selection clipboard -target image/png
+super + alt + s
+	maim --select ~/imgs/prints/print_01.png
+
+#Generate random id
+super + shift + u 
+	uuidgen | cut -c 1-4 | xclip -selection clipboard 
+#Rotate screen
+super + shift + n
+	xrandr -o normal
+super + shift + r
+	xrandr -o right
+	
+
+#Reload configs
+super + shift + w
+    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
