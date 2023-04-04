@@ -36,11 +36,6 @@ vim.keymap.set('n','<leader>e',':NvimTreeToggle<CR>')
 vim.keymap.set('n','<leader>gd',':DiffviewOpen<CR>')
 vim.keymap.set('n','<leader>gq',':DiffviewClose<CR>')
 
-
--- Coc configuration 
-vim.api.nvim_set_keymap("i", "<TAB>", "pumvisible() ? '<C-n>' : '<TAB>'", {noremap = true, silent = true, expr = true, replace_keycodes = false})
-vim.api.nvim_set_keymap("i", "<C-l>", "coc_snippets_expand",{})
-
 --Packages
 local ensure_packer = function()
   local fn = vim.fn
@@ -56,12 +51,14 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+
   use 'wbthomason/packer.nvim'
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} } }
   use 'honza/vim-snippets'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   use 'p00f/nvim-ts-rainbow'
+  use 'VonHeikemen/lsp-zero.nvim'
   require("nvim-treesitter.configs").setup {
   highlight = {
       -- ...
@@ -76,9 +73,7 @@ return require('packer').startup(function(use)
     -- termcolors = {} -- table of colour name strings
   }
 }
-  use {'neoclide/coc.nvim', branch = 'release'}
   use 'rktjmp/lush.nvim' 
-  use('neovim/nvim-lspconfig')
 
   use('jose-elias-alvarez/null-ls.nvim') 
   -- Formatting configuration
@@ -190,19 +185,38 @@ return require('packer').startup(function(use)
   use "ziontee113/color-picker.nvim"
   use "tpope/vim-fugitive"
   use "mattn/emmet-vim"
-  use "neovim/nvim-lspconfig"
-  use "kabouzeid/nvim-lspinstall"
   use 'rafamadriz/friendly-snippets'
   use 'ryanoasis/vim-devicons'
   use 'norcalli/nvim-colorizer.lua'
   use {
-    "SmiteshP/nvim-navbuddy",
-    requires = {
-        "neovim/nvim-lspconfig",
-        "SmiteshP/nvim-navic",
-        "MunifTanjim/nui.nvim"
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v2.x',
+  requires = {
+    -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {                                      -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
     }
   }
+
+  local lsp = require('lsp-zero')
+
+  lsp.ensure_installed({
+	  'tsserver'
+  })
+
+  lsp.preset('recommended')
+  lsp.setup()
 
   use { 'mrshmllow/document-color.nvim', config = function()
   require("document-color").setup {
