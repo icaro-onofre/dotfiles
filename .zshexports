@@ -1,0 +1,13 @@
+export PATH=$PATH:~/scripts
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#libs
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
+export PATH=$PATH:~/.local/bin
+#Lua
+export LUA_PATH="lua;;"
+export LUA_CPATH=LUA_CPATH:~/.config/nvim/lua
+#Ssh
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

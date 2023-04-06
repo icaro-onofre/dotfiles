@@ -18,6 +18,7 @@ alias gl="git log --oneline"
 alias xn='xrandr -o normal'
 alias xr='xrandr -o right'
 #Pacman
+alias sum="awk '{sum+=$4} END {print sum}' <(pacman -Qi | grep Size)"
 alias p="pacman"
 alias pss="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pqr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
