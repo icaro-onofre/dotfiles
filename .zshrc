@@ -91,8 +91,7 @@ export PATH=$PATH:$ANDROID_HOME/build-tools
 export PATH=$PATH:~/.local/bin
 #Lua
 export LUA_PATH="lua;;"
-export LUA_CPATH="./?.so;/usr/local/lib/lua/5.3/?.so;
-                /usr/local/share/lua/5.3/?.so;<path-to-add>"
+export LUA_CPATH=LUA_CPATH:~/.config/nvim/lua
 
 source ~/.zshaliases
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
