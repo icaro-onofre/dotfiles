@@ -6,6 +6,10 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+--Treesitter
+vim.keymap.set('n', '<leader>t', ':TSEnable hightlight <CR>')
+--Prettier
+vim.keymap.set('n', '<leader>ap', ':Prettier<CR>')
 --General purpose keybindings
 
 vim.keymap.set('n', '<leader>rr', ":checktime <CR>")

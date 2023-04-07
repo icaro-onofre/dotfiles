@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
 	use 'honza/vim-snippets'
 	use 'mfussenegger/nvim-dap'
 	use 'rcarriga/nvim-dap-ui'
+	use "Pocco81/DAPInstall.nvim"
+
 	use 'p00f/nvim-ts-rainbow'
 	require("nvim-treesitter.configs").setup {
 		highlight = {
@@ -36,21 +38,6 @@ return require('packer').startup(function(use)
 	use 'rktjmp/lush.nvim'
 
 	use('jose-elias-alvarez/null-ls.nvim')
-	-- Formatting configuration
-	local null_ls = require("null-ls")
-	local lSsources = {
-		null_ls.builtins.formatting.prettier.with({
-			filetypes = {
-				"javascript", "typescript", "css", "scss", "html", "json", "yaml", "markdown", "graphql", "md", "txt",
-			},
-		}),
-		null_ls.builtins.formatting.stylua,
-	}
-	null_ls.setup({
-		sources = lSsources,
-	})
-	vim.cmd("autocmd BufWritePost * lua vim.lsp.buf.formatting_seq_sync()")
-	-- Null LS end configuration
 	use('MunifTanjim/prettier.nvim')
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -132,15 +119,6 @@ return require('packer').startup(function(use)
 			{ 'L3MON4D3/LuaSnip' }, -- Required
 		}
 	}
-
-	local lsp = require('lsp-zero')
-
-	lsp.ensure_installed({
-		'tsserver'
-	})
-
-	lsp.preset('recommended')
-	lsp.setup()
 
 	use { 'mrshmllow/document-color.nvim', config = function()
 		require("document-color").setup {
