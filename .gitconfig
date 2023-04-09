@@ -1,3 +1,5 @@
 [user]
 	email = icaro.onofre.s@gmail.com
 	name = Icaro
+[diff]
+	tool = neovim
