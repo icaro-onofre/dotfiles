@@ -16,8 +16,13 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { { 'nvim-lua/plenary.nvim' } } }
 	use 'honza/vim-snippets'
-	use 'mfussenegger/nvim-dap'
-	use 'rcarriga/nvim-dap-ui'
+
+	use'mfussenegger/nvim-dap'
+	use'rcarriga/nvim-dap-ui'
+	use'theHamsta/nvim-dap-virtual-text'
+	use'Pocco81/DAPInstall.nvim'
+	use'nvim-telescope/telescope-dap.nvim'
+
 	use "Pocco81/DAPInstall.nvim"
 
 	use 'p00f/nvim-ts-rainbow'
