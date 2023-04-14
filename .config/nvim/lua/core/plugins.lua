@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
 
 	use "Pocco81/DAPInstall.nvim"
 
+	use 'nvim-neotest/neotest'
+
 	use 'p00f/nvim-ts-rainbow'
 	require("nvim-treesitter.configs").setup {
 		highlight = {

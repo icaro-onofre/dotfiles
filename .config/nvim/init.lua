@@ -1,3 +1,4 @@
+require "core.cmp"
 require "core.lsp"
 require "core.marks"
 require "core.plugins"
