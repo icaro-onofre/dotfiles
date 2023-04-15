@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: transclusion
+# uuid: c27714bf-e7ff-4eb4-b09d-c18095f752e7
+# key: tt
+# condition: t
+# --
+#+transclude: $0
