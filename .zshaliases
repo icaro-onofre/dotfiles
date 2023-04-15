@@ -37,6 +37,9 @@ alias ta="t a -t"
 #du
 alias du1="du -ahx --max-depth=1 ./ | grep '[0-9\.]\+G'"
 alias duahx="du -ahx . | sort -rh | head -5"
+#dust
+alias dust="sudo dust / -X data -P p"
+alias d="dust"
 #Find
 alias find1="sudo find . -xdev -type f -size +1G"
 #Mongo
