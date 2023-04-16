@@ -36,6 +36,7 @@ alias get-ip="ip addr show enp3s0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d
 alias ta="t a -t"
 #du
 alias du1="du -ahx --max-depth=1 ./ | grep '[0-9\.]\+G'"
+alias dux1="sudo du -d 1 -chx | sort -h"
 alias duahx="du -ahx . | sort -rh | head -5"
 #dust
 alias dust="sudo dust / -X data -P p"

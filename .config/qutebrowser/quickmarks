@@ -141,3 +141,5 @@ emacs-org transclude https://nobiot.github.io/org-transclusion/#Getting-Started
 list.orgmode https://list.orgmode.org/
 outlook-fatec https://outlook.office365.com/mail/sentitems
 gource https://gource.io/
+github-repos-tmuxifier https://github.com/jimeh/tmuxifier
+medium-article-emacs in fifty keystrokes (and why some of should just use Vim) https://enzuru.medium.com/emacs-in-a-few-dozen-keystrokes-and-why-some-of-you-should-just-use-vim-14b9af30be70
