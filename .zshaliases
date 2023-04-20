@@ -49,3 +49,4 @@ alias mongo="mongosh"
 alias svenv="source .venv/bin/activate"
 #xclip
 alias xcc="xclip -selection clipboard"
+alias z='zathura'
