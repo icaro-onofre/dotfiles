@@ -79,12 +79,6 @@ _G.packer_plugins = {
     path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
     url = "https://github.com/Pocco81/DAPInstall.nvim"
   },
-  LuaSnip = {
-    config = { "\27LJ\2\nO\0\0\2\1\2\0\t-\0\0\0009\0\0\0B\0\1\2\15\0\0\0X\1\3€-\0\0\0009\0\1\0B\0\1\1K\0\1\0\0À\19expand_or_jump\23expand_or_jumpableë\2\1\0\t\0\19\1\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0'\3\3\0004\4\3\0009\5\4\0009\5\5\5'\a\6\0'\b\a\0B\5\3\0?\5\0\0B\1\3\0016\1\b\0009\1\t\0019\1\n\1'\3\v\0'\4\f\0003\5\r\0B\1\4\0016\1\0\0'\3\14\0B\1\2\0029\1\15\0015\3\17\0005\4\16\0=\4\18\3B\1\2\0012\0\0€K\0\1\0\npaths\1\0\0\1\2\0\0J~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets\tload luasnip/loaders/from_vscode\0\n<c-p>\6i\bset\vkeymap\bvim#function ${1}(${2}) \n{\n\t${3}\n}\tfunc\18parse_snippet\vparser\ball\17add_snippets\fluasnip\frequire\3€€À™\4\0" },
-    loaded = true,
-    path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["bluloco.nvim"] = {
     loaded = true,
     path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/bluloco.nvim",
@@ -157,6 +151,11 @@ _G.packer_plugins = {
     path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neotest = {
+    loaded = true,
+    path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/neotest",
+    url = "https://github.com/nvim-neotest/neotest"
+  },
   ["nerdtree-visual-selection"] = {
     loaded = true,
     path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/nerdtree-visual-selection",
@@ -206,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-snippy"] = {
+    loaded = true,
+    path = "/home/fforelle/.local/share/nvim/site/pack/packer/start/nvim-snippy",
+    url = "https://github.com/dcampos/nvim-snippy"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -280,18 +284,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-try_loadstring("\27LJ\2\nO\0\0\2\1\2\0\t-\0\0\0009\0\0\0B\0\1\2\15\0\0\0X\1\3€-\0\0\0009\0\1\0B\0\1\1K\0\1\0\0À\19expand_or_jump\23expand_or_jumpableë\2\1\0\t\0\19\1\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0'\3\3\0004\4\3\0009\5\4\0009\5\5\5'\a\6\0'\b\a\0B\5\3\0?\5\0\0B\1\3\0016\1\b\0009\1\t\0019\1\n\1'\3\v\0'\4\f\0003\5\r\0B\1\4\0016\1\0\0'\3\14\0B\1\2\0029\1\15\0015\3\17\0005\4\16\0=\4\18\3B\1\2\0012\0\0€K\0\1\0\npaths\1\0\0\1\2\0\0J~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets\tload luasnip/loaders/from_vscode\0\n<c-p>\6i\bset\vkeymap\bvim#function ${1}(${2}) \n{\n\t${3}\n}\tfunc\18parse_snippet\vparser\ball\17add_snippets\fluasnip\frequire\3€€À™\4\0", "config", "LuaSnip")
-time([[Config for LuaSnip]], false)
--- Config for: document-color.nvim
-time([[Config for document-color.nvim]], true)
-try_loadstring("\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tmode\15background\nsetup\19document-color\frequire\0", "config", "document-color.nvim")
-time([[Config for document-color.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: document-color.nvim
+time([[Config for document-color.nvim]], true)
+try_loadstring("\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tmode\15background\nsetup\19document-color\frequire\0", "config", "document-color.nvim")
+time([[Config for document-color.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

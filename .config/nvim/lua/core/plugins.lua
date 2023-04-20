@@ -82,10 +82,7 @@ return require('packer').startup(function(use)
 	-- disable netrw at the very start of your init.lua (strongly advised)
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
-
-	-- empty setup using defaults
-	require("nvim-tree").setup()
-
+	--
 	-- OR setup with some options
 	require("nvim-tree").setup({
 		sort_by = "case_sensitive",
@@ -123,7 +120,7 @@ return require('packer').startup(function(use)
 			-- Autocompletion
 			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{ 'L3MON4D3/LuaSnip' }, -- Required
+			{ 'dcampos/nvim-snippy' }, -- Required
 		}
 	}
 
@@ -136,40 +133,7 @@ return require('packer').startup(function(use)
 	}
 
 	local snippets_folder = vim.fn.stdpath "config" .. "/lua/config/snip/snippets/"
-	require("luasnip.loaders.from_lua").lazy_load { paths = snippets_folder }
 
-	vim.cmd [[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]]
-
-	use({
-
-		"L3MON4D3/LuaSnip",
-		tag = "v1.*",
-		config = function()
-
-
-			local ls = require("luasnip")
-
-			-- for "all" filetypes create snippet for "func"
-			ls.add_snippets("all", {
-				ls.parser.parse_snippet(
-					'func',
-					'function ${1}(${2}) \n{\n\t${3}\n}'),
-			})
-
-			-- Map "Ctrl + p" (in insert mode)
-			-- to expand snippet and jump through fields.
-			vim.keymap.set(
-				'i',
-				'<c-p>',
-				function()
-					if ls.expand_or_jumpable() then
-						ls.expand_or_jump()
-					end
-				end
-			)
-			require("luasnip/loaders/from_vscode").load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets" } })
-		end
-	})
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 	if packer_bootstrap then
