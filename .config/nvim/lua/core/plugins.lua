@@ -16,8 +16,23 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { { 'nvim-lua/plenary.nvim' } } }
 	use 'honza/vim-snippets'
-	use 'kylechui/nvim-surround'
-
+	use({
+	    "kylechui/nvim-surround",
+	    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+	    config = function()
+		require("nvim-surround").setup({
+		    -- Configuration here, or leave empty to use defaults
+		})
+	    end
+	})use({
+	    "kylechui/nvim-surround",
+	    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+	    config = function()
+		require("nvim-surround").setup({
+		    -- Configuration here, or leave empty to use defaults
+		})
+	    end
+	})
 	use'mfussenegger/nvim-dap'
 	use'rcarriga/nvim-dap-ui'
 	use'theHamsta/nvim-dap-virtual-text'
@@ -59,7 +74,6 @@ return require('packer').startup(function(use)
 	-- OR setup with some options
 	use 'nvim-tree/nvim-web-devicons'
 	use { "PhilRunninger/nerdtree-visual-selection" }
-	use "tpope/vim-surround"
 	use "ziontee113/color-picker.nvim"
 	use "tpope/vim-fugitive"
 	use "mattn/emmet-vim"
