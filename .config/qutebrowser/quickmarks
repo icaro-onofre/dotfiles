@@ -197,3 +197,6 @@ datascience-SSP-SP https://www.ssp.sp.gov.br/estatistica/pesquisa.aspx
 programming-routing engines-valhalla https://wiki.openstreetmap.org/wiki/Valhalla
 github-repos-valhalla&routing engine https://github.com/valhalla/valhalla
 jornalempoderado https://jornalempoderado.com.br/
+docs-plotly-plots https://plotly.com/javascript/
+dosc-plotly-plots-boxplot https://plotly.com/javascript/box-plots/
+docs-tmux-cheatsheet https://gist.github.com/henrik/1967800
