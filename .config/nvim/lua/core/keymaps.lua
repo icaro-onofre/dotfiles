@@ -7,7 +7,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 --Treesitter
-vim.keymap.set('n', '<leader>at', ':TSEnable hightlight <CR>')
+vim.keymap.set('n', '<leader>at', ':TSEnable highlight <CR>')
 --Prettier
 vim.keymap.set('n', '<leader>ap', ':Prettier<CR>')
 --General purpose keybindings
