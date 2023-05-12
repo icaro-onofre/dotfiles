@@ -39,8 +39,6 @@ return require('packer').startup(function(use)
 	use'Pocco81/DAPInstall.nvim'
 	use'nvim-telescope/telescope-dap.nvim'
 
-	use "Pocco81/DAPInstall.nvim"
-
 	use 'windwp/nvim-ts-autotag'
 	use 'nvim-neotest/neotest'
 

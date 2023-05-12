@@ -18,7 +18,6 @@ require("dap-ruby").setup()
 require("nvim-dap-virtual-text").setup() -- cannot see virtual text if Treesitter for a language is not installed
 
 -- DAP bindings or mappings
-
 vim.api.nvim_set_keymap('n', "<leader>dc", ":lua require'dap'.continue()<CR>", keymap_opts_with_silent)
 vim.api.nvim_set_keymap('n', "<leader>do", ":lua require'dap'.step_over()<CR>", keymap_opts_with_silent)
 vim.api.nvim_set_keymap('n', "<leader>di", ":lua require'dap'.step_into()<CR>", keymap_opts_with_silent)
