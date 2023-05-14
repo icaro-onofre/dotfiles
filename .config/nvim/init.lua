@@ -1,4 +1,5 @@
 --require "core.nvimsurround"
+require "core.dbg"
 require "core.nvimtree"
 require "core.treesitter"
 --require "core.cmp"
