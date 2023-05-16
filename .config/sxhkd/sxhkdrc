@@ -23,13 +23,10 @@ super + n
 # Pavucontrol
 super + x 
 	pavucontrol
-# Aim 
+# Aim lab
 super + alt + a 
 	steam steam://rungameid/714010
 
-super + alt + f 
-	steam steam://rungameid/88199
-	
 super + q 
 	qutebrowser
 
@@ -38,16 +35,18 @@ super + shift + s
 	maim --select | xclip -selection clipboard -target image/png
 super + alt + s
 	maim --select ~/imgs/prints/print_01.png
-
-#Generate random id
-super + shift + u 
-	uuidgen | cut -c 1-4 | xclip -selection clipboard 
+# Screen recording
+# ffmpeg -f x11grab -i :0.0 out.mkv
 #Rotate screen
 super + shift + n
 	xrandr -o normal
 super + shift + r
 	xrandr -o right
-	
+
+#Generate random id
+super + shift + u 
+	uuidgen | cut -c 1-4 | xclip -selection clipboard 
+
 
 #Reload configs
 super + shift + w

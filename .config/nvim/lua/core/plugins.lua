@@ -24,22 +24,18 @@ return require('packer').startup(function(use)
 		    -- Configuration here, or leave empty to use defaults
 		})
 	    end
-	})use({
-	    "kylechui/nvim-surround",
-	    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-	    config = function()
-		require("nvim-surround").setup({
-		    -- Configuration here, or leave empty to use defaults
-		})
-	    end
 	})
 	use'mfussenegger/nvim-dap'
-	use'rcarriga/nvim-dap-ui'
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use {'mfussenegger/nvim-dap-python'}
 	use'theHamsta/nvim-dap-virtual-text'
 	use'Pocco81/DAPInstall.nvim'
 	use'nvim-telescope/telescope-dap.nvim'
-	use 'mxsdev/nvim-dap-vscode-js'
+	use {
+	  "microsoft/vscode-js-debug",
+	  opt = true,
+	  run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" ,
+	}
 
 	use 'windwp/nvim-ts-autotag'
 	use 'nvim-neotest/neotest'
