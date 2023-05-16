@@ -32,7 +32,13 @@ return require('packer').startup(function(use)
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use {'mfussenegger/nvim-dap-python'}
 	use'theHamsta/nvim-dap-virtual-text'
-	use'Pocco81/DAPInstall.nvim'
+	use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+	use {
+	  "microsoft/vscode-js-debug",
+	  opt = true,
+	  run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+	}
+
 	use'nvim-telescope/telescope-dap.nvim'
 	use {
 	  "microsoft/vscode-js-debug",
@@ -69,6 +75,7 @@ return require('packer').startup(function(use)
 	use { "PhilRunninger/nerdtree-visual-selection" }
 	use "ziontee113/color-picker.nvim"
 	use "tpope/vim-fugitive"
+	use "kdheepak/lazygit.nvim"
 	use "mattn/emmet-vim"
 	use 'rafamadriz/friendly-snippets'
 	use 'honza/vim-snippets'
