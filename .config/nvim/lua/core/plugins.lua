@@ -14,8 +14,11 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 
 	use 'wbthomason/packer.nvim'
+	use {
+	    "williamboman/mason.nvim",
+	    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+	}
 	use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { { 'nvim-lua/plenary.nvim' } } }
-	use 'honza/vim-snippets'
 	use({
 	    "kylechui/nvim-surround",
 	    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -62,19 +65,13 @@ return require('packer').startup(function(use)
 	use { 'bfredl/nvim-ipy' }
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use 'nvim-tree/nvim-tree.lua'
-	-- examples for your init.lua
-
-	-- disable netrw at the very start of your init.lua (strongly advised)
-	vim.g.loaded_netrw = 1
-	vim.g.loaded_netrwPlugin = 1
-	--
-	-- OR setup with some options
 	use 'nvim-tree/nvim-web-devicons'
 	use { "PhilRunninger/nerdtree-visual-selection" }
 	use "ziontee113/color-picker.nvim"
 	use "tpope/vim-fugitive"
 	use "mattn/emmet-vim"
 	use 'rafamadriz/friendly-snippets'
+	use 'honza/vim-snippets'
 	use 'ryanoasis/vim-devicons'
 	use 'norcalli/nvim-colorizer.lua'
 	use {
@@ -106,7 +103,6 @@ return require('packer').startup(function(use)
 	end
 	}
 
-	local snippets_folder = vim.fn.stdpath "config" .. "/lua/config/snip/snippets/"
 
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 

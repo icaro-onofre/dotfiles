@@ -30,6 +30,7 @@ vim.keymap.set('n', '<leader>gc', ':Git commit -m "')
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 -- diffview
 vim.keymap.set('n', '<leader>gw', ':DiffviewFileHistory<CR>')
+vim.keymap.set('n', '<leader>gW', ':DiffviewFileHistory %<CR>')
 vim.keymap.set('n', '<leader>gd', ':DiffviewOpen<CR>')
 vim.keymap.set('n', '<leader>gq', ':DiffviewClose<CR>')
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
