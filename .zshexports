@@ -13,3 +13,4 @@ export LUA_CPATH=LUA_CPATH:~/.config/nvim/lua
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # Export NIX path var.
 export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
+export EDITOR=nvim
