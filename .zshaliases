@@ -51,4 +51,4 @@ alias svenv="source .venv/bin/activate"
 alias xcc="xclip -selection clipboard"
 alias z='zathura'
 alias hx='helix'
-alias n=nvim
+alias n='nvim'
