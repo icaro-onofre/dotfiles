@@ -80,6 +80,23 @@ setopt no_bare_glob_qual
 
 #One liners
 
+# Neovim config switcher
+alias ln="NVIM_APPNAME=Lunarvim nvim"
+alias n="NVIM_APPNAME=NvChad  nvim"
+
+function nvims(){
+	items=("default" "LunarVim" "NvChad")
+	config=$(printf "%s\n" "${items[@]}" | fzf --prompt"Neovim Config  >>" --height=~50% --layout=reverse --border --exit-0)
+	if[[ -z $config ]];then
+		echo "Nothing selected"
+		return 0
+	elif [[$config =="default" ]] ; then
+		config=""
+	fi NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^a "nvims\n"
+
 source ~/.zshaliases
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
