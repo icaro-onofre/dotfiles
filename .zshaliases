@@ -52,3 +52,4 @@ alias xcc="xclip -selection clipboard"
 alias z='zathura'
 alias hx='helix'
 alias n='nvim'
+alias mongosh_sgvg='mongosh mongodb+srv://cluster0.rs3gboy.mongodb.net --apiVersion 1 --username icaroonofres'
