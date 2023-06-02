@@ -238,7 +238,7 @@ wikipedia-philosophers-Henri Bergson https://pt.wikipedia.org/wiki/Henri_Bergson
 aws-login https://d-9467182ee8.awsapps.com/start#/
 ingressos-Sala São Paulo-Mahler3 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9484
 docs-aws-cli reference https://docs.aws.amazon.com/cli/latest/index.html
-compras-pwnage-custom mouse https://pwnage.com/products/ultra-custom-wireless-ambi?base=black&body-type=comb&buttons=pink&top-cover=white&dpi=black&sidebuttons-left=black&sidebuttons-right=black&button-type=comb&cover-type=comb
+compras-pwnage-custom mouse https://pwnage.com/products/ultra-custom-wireless-ambi?base=black&body-type=comb&buttons=pink&top-cover=white&dpi=black&sidebuttons-left=black&sidebuttons-right=black&button-type=solid&cover-type=comb
 github-repos-emacs-themes https://github.com/topics/emacs-themes
 docs-aws-cli-reference-iam https://docs.aws.amazon.com/cli/latest/reference/iam/index.html
 ingressos-Sala São Paulo-Idílio de Siegfried Concerto para violino em ré maior, op 77 BRAHMS http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9428
@@ -369,3 +369,7 @@ monkeytype https://monkeytype.com/
 economia-brasil-fundos  garantidores https://www.bndes.gov.br/wps/portal/site/home/instituicoes-financeiras-credenciadas/fundos-garantidores
 britannica https://www.britannica.com/
 sketchfab https://sketchfab.com/
+emacs-org mode-latex preview https://orgmode.org/manual/Previewing-LaTeX-fragments.html
+google docs-mudanças site studio https://docs.google.com/document/d/12GiR4vAAPv4IkhZk7WfII-Pm6pSf67YBWqOdNiZnjKY/edit
+youtube-playlists https://www.youtube.com/@icaroonofre6055/playlists
+youtube-playlists-util https://www.youtube.com/watch?v=qz-ywUM6hFk&list=PLukVBIiOn7eRGmL8GRbCnsi2Ms_9hhc2A
