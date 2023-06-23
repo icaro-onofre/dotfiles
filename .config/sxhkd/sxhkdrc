@@ -6,7 +6,7 @@ super + shift + p
 		rofi-pass -combi-modi window,drun -show combi -show-icons
 # Terminal
 super + t
-		alacritty
+		kitty
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
