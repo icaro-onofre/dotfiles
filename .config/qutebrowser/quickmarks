@@ -430,3 +430,6 @@ docs-flutter https://docs.flutter.dev/get-started/install/linux
 spring-initializr https://start.spring.io/
 heroku https://www.heroku.com/
 tutoriais-java-jsf https://www.youtube.com/watch?v=RD2mUPTjyog&list=PL62G310vn6nHSNpACkELWiPlM8J8z8t5J
+docs-jboss https://docs.jboss.org/author/display/AS71/
+jboss-downloads https://jbossas.jboss.org/downloads
+docs-jboss:wildfly:- jsf deploy https://docs.jboss.org/author/display/WFLY/JSF%20Configuration.html

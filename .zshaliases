@@ -1,6 +1,7 @@
 alias t='tmux'
 alias h='history'
 alias l='lsd -l'
+alias ls='ls --color'
 alias rr='ranger'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
