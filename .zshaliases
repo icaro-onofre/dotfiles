@@ -58,3 +58,4 @@ alias mongosh_sgvg='mongosh mongodb+srv://cluster0.rs3gboy.mongodb.net --apiVers
 alias aws-regions='aws ec2 describe-regions --output table'
 #Qemu aliases
 alias qx86='qemu-system-x86_64'
+alias txvzf='tar -xvzf OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz'
