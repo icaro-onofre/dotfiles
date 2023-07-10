@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.proxy:
-    global: none
+  content.geolocation:
+    https://www.nike.com.br: false

@@ -15,4 +15,4 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
 export EDITOR=nvim
 #Java
-export JAVA_HOME=/opt/jdk8u372-b07
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
