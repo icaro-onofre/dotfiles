@@ -397,3 +397,6 @@ jsf-missing jar https://jar-download.com/maven-repository-class-search.php?searc
 8443 weCliente http://localhost:8443/webCliente/cliente/home.jsf
 8443 unifrota admin http://localhost:8443/webAdmin/admin/home.jsf
 8080 unifrota webCliente http://localhost:8080/webCliente/cliente/home.jsf
+unifrota-trello https://trello.com/u/icaroonofre2/boards
+unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
+docs-java-refactoring guru-design patterns  https://refactoring.guru/design-patterns/java
