@@ -399,4 +399,9 @@ jsf-missing jar https://jar-download.com/maven-repository-class-search.php?searc
 8080 unifrota webCliente http://localhost:8080/webCliente/cliente/home.jsf
 unifrota-trello https://trello.com/u/icaroonofre2/boards
 unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
-docs-java-refactoring guru-design patterns  https://refactoring.guru/design-patterns/java
+docs-java-refactoring guru-design patterns https://refactoring.guru/design-patterns/java
+docs-java-manning-chapter 1 understanding object/relational persistence https://livebook.manning.com/book/java-persistence-with-hibernate-second-edition/chapter-1/1
+dosc-java JSF-oracle https://docs.oracle.com/cd/E19316-01/819-3669/6n5sg7bgi/index.html
+docs-java JSF ManagedBean-devmedia https://www.devmedia.com.br/introducao-ao-jsf-managed-bean/29390
+8080 unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
+unifrota webCliente novoHomolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
