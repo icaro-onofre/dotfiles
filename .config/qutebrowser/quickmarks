@@ -405,3 +405,5 @@ dosc-java JSF-oracle https://docs.oracle.com/cd/E19316-01/819-3669/6n5sg7bgi/ind
 docs-java JSF ManagedBean-devmedia https://www.devmedia.com.br/introducao-ao-jsf-managed-bean/29390
 8080 unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 unifrota webCliente novoHomolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
+8080 unifrota webFornecedor  https://localhost:8443/webFornecedor/fornecedor/home.jsf
+unifrota flutter web https://app.unifrota.com.br/pdv/
