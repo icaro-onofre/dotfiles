@@ -455,3 +455,4 @@ compras-slingbag-patagonia https://www.patagonia.com/product/atom-sling-bag-8-li
 8443 unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 unifrota webCliente homolog https://homolog.unifrota.com.br:8443/webCliente/cliente/home.jsf
 docs-archlinunx-news https://archlinux.org/news/
+articles-python-scrapy-mass scraping with scrapy and AWS https://ibug.io/blog/2019/12/mass-crawl-douban-with-aws/
