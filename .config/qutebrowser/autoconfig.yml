@@ -8,3 +8,4 @@ config_version: 2
 settings:
   content.geolocation:
     https://www.google.com: false
+    https://www.webmotors.com.br: false
