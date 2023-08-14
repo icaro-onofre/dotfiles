@@ -8,6 +8,8 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+#emacs  
+alias doom-install="git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs ~/.config/emacs/bin/doom install"
 alias es="emacsclient -nw -c -a 'emacs'"
 alias e="emacs -nw"
 alias xn='xrandr -o normal'

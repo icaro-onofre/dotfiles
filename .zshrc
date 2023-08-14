@@ -109,6 +109,7 @@ gpgconf --launch gpg-agent
 bindkey '^R' history-incremental-search-backward # Back incremental search
 bindkey -s '^f' 'ranger^M'
 bindkey -s '^h' 'htop^M'
+bindkey -s '^g' 'lazygit^M'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
