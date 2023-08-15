@@ -466,3 +466,4 @@ google-finance https://www.google.com/finance/?hl=en
 8443  unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 unifrota  webCliente novohomolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
 datascience-trading view-brazil nonfarm payrolls https://www.tradingview.com/symbols/ECONOMICS-BRNFP/
+python-tutorials-strawberry mutations with prisma https://medium.com/dooboolab/prisma-with-fastapi-and-graphql-1e55a27c4ac2
