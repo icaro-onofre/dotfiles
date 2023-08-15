@@ -1330,6 +1330,7 @@ pixman
 pkcs11-helper
 pkgconf
 plantuml
+plocate
 pnpm
 po4a
 polkit
