@@ -172,6 +172,8 @@ efibootmgr
 efivar
 egl-wayland
 eglexternalplatform
+electron
+electron25
 elfutils
 emacs
 embree
@@ -518,6 +520,7 @@ haskell-transformers-base
 haskell-transformers-compat
 haskell-type-equality
 haskell-typed-process
+haskell-typst-symbols
 haskell-unicode-collation
 haskell-unicode-data
 haskell-unicode-transforms
@@ -1173,6 +1176,7 @@ nvidia-utils
 nyxt
 oath-toolkit
 obs-studio
+obsidian
 ocl-icd
 onetbb
 oniguruma
@@ -1490,6 +1494,9 @@ python-pyproject-hooks
 python-pyqt5
 python-pyqt5-sip
 python-pyqt5-webengine
+python-pyqt6
+python-pyqt6-sip
+python-pyqt6-webengine
 python-pyrate-limiter
 python-pyrsistent
 python-pyscard
@@ -1655,8 +1662,12 @@ qt5-websockets
 qt5-x11extras
 qt5-xmlpatterns
 qt6-base
+qt6-declarative
+qt6-positioning
 qt6-svg
 qt6-translations
+qt6-webchannel
+qt6-webengine
 quazip-qt5
 qutebrowser
 r

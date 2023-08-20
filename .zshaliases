@@ -69,3 +69,5 @@ alias ssh_unifrota_servidor='ssh admin@novo.unifrota.com.br'
 alias ssh_unifrota_banco='ssh admin@novords.unifrota.com.br'
 #Bat
 alias b='bat'
+#Source
+alias so="source"
