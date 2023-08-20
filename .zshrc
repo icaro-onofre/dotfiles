@@ -81,20 +81,24 @@ setopt no_bare_glob_qual
 #One liners
 
 # Neovim config switcher
-# alias ln="NVIM_APPNAME=Lunarvim nvim"
-# alias n="NVIM_APPNAME=NvChad  nvim"
-# 
-# function nvims(){
-	# items=("default" "LunarVim" "NvChad")
-	# config=$(printf "%s\n" "${items[@]}" | fzf --prompt"Neovim Config  >>" --height=~50% --layout=reverse --border --exit-0)
-	# if[[ -z $config ]];
-	# then
-		# echo "Nothing selected"
-		# return 0
-	# elif [[$config =="default" ]] ; then
-		# config=""
-	# fi NVIM_APPNAME=$config nvim $@
-# }
+# alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+# alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+# alias nvim="NVIM_APPNAME=nvim nvim"
+alias nvim-astro="NVIM_APPNAME=astro-nvim nvim"
+
+function nvims() {
+  items=("default" "astro-nvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^a "nvims\n"
 
 bindkey -s ^a "nvims\n"
 
@@ -107,7 +111,7 @@ gpgconf --launch gpg-agent
 #Keybindings
 
 bindkey '^R' history-incremental-search-backward # Back incremental search
-bindkey -s '^f' 'ranger^M'
+bindkey -s '^f' 'ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"^M'
 bindkey -s '^h' 'htop^M'
 bindkey -s '^g' 'lazygit^M'
 
