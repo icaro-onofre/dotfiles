@@ -11,6 +11,9 @@ alias egrep='egrep --color=auto'
 #emacs  
 alias doom-install="git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install"
+alias chemacs-install="[ -f ~/.emacs ] && mv ~/.emacs ~/.emacs.bak
+[ -d ~/.emacs.d ] && mv ~/.emacs.d ~/.emacs.default
+git clone https://github.com/plexus/chemacs2.git ~/.emacs.d"
 alias es="emacsclient -nw -c -a 'emacs'"
 alias e="emacs -nw"
 alias xn='xrandr -o normal'
