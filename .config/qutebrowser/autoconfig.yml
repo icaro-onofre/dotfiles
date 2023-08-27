@@ -7,4 +7,4 @@
 config_version: 2
 settings:
   content.geolocation:
-    https://www.vivareal.com.br: false
+    https://www.google.com: false
