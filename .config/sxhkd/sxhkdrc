@@ -42,6 +42,12 @@ super + shift + n
 	xrandr -o normal
 super + shift + r
 	xrandr -o right
+#Select langauge
+
+super + space + p
+	setxkbmap br
+super + space + u
+	setxkbmap us
 
 #Generate random id
 super + shift + u 

@@ -373,3 +373,16 @@ emacs-org mode-latex preview https://orgmode.org/manual/Previewing-LaTeX-fragmen
 google docs-mudanças site studio https://docs.google.com/document/d/12GiR4vAAPv4IkhZk7WfII-Pm6pSf67YBWqOdNiZnjKY/edit
 youtube-playlists https://www.youtube.com/@icaroonofre6055/playlists
 youtube-playlists-util https://www.youtube.com/watch?v=qz-ywUM6hFk&list=PLukVBIiOn7eRGmL8GRbCnsi2Ms_9hhc2A
+<<<<<<< Updated upstream
+=======
+unifrota local webCliente http://localhost:8080/webCliente/cliente/home.jsf
+fatec-estagio https://www.fatecjd.edu.br/estagio/
+compras-teclado-wired thinkpad keyboard https://pt.aliexpress.com/item/1005005571225879.html?_t=pvid%3A0bca5b88-42ab-4f6b-aa4f-5b1ef5137b86&spm=a2g0o.ppclist.product.mainProduct&gatewayAdapt=glo2bra
+unifrota webCliente novo homolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
+unifrota webCliente localhost https://localhost:8443/webCliente/cliente/registroAbastecimentoOffLine.jsf
+unifrota local webAdmin https://localhost:8443/webAdmin/admin/home.jsf
+nix-nix packages https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=sxh
+oreilly xgh https://gohorseprocess.com.br/extreme-go-horse-xgh/
+unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
+unifrota-trello-java [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
+>>>>>>> Stashed changes
