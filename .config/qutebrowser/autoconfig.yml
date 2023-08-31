@@ -6,5 +6,7 @@
 
 config_version: 2
 settings:
-  content.proxy:
-    global: none
+  content.notifications.enabled:
+    https://blog.futfanatics.com.br: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
