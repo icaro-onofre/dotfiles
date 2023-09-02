@@ -489,7 +489,6 @@ unifrota webCliente localhost https://localhost:8443/webCliente/cliente/registro
 unifrota local webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 nix-nix packages https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=sxh
 oreilly xgh https://gohorseprocess.com.br/extreme-go-horse-xgh/
-unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
 unifrota-trello-java [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
 sala sao paulo-abracello-ingressos https://osesp.byinti.com/#/ticket/futureEvent/0609-abracello-iii-encontro-de-violoncelos
 sala sao paulo-Andras Schiff http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9349
@@ -503,3 +502,8 @@ unifrota-trello-java [46b2] No acertoAbastecimento.jsf, alterar placa, horario, 
 youtube-videos-Riff for Riffbros :KateFreud: https://www.youtube.com/watch?v=-LgCCoBaq-I
 google-maps Jundiai centro https://www.google.com/maps/place/Centro,+Jundia%C3%AD+-+State+of+S%C3%A3o+Paulo/@-23.1875737,-46.8873155,1979m/data=!3m1!1e3!4m6!3m5!1s0x94cf2693ec6d0493:0x5687e5818c079a17!8m2!3d-23.1873363!4d-46.8880201!16s%2Fg%2F11g30_85n9?entry=ttu
 compras-hackmount server case https://www.somcase.com.br/hack-potencia
+compras-pelican-classic rack 9u https://www.pelican.com/us/en/product/rack-mount-cases/9u/classic-rack/de2421-02-35-02/
+google-maps  Japurá https://www.google.com/maps/@-23.5536557,-46.6413879,3a,75y,165.56h,99.38t/data=!3m6!1e1!3m4!1sXw3ffIKtQ1xtKx5fXdqLlw!2e0!7i16384!8i8192?entry=ttu
+google-maps Tv  Noschese https://www.google.com/maps/@-23.5510718,-46.638775,3a,75y,91.57h,83.99t/data=!3m6!1e1!3m4!1sxTv40gqJPPFvT0vE9JQieA!2e0!7i16384!8i8192?entry=ttu
+google-maps Vila Maria Zelia https://www.google.com/maps/@-23.5326482,-46.5981291,283m/data=!3m1!1e3?entry=ttu
+sites-portal  do bixiga :artigos:historia:saopaulo: https://www.portaldobixiga.com.br/
