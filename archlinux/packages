@@ -104,12 +104,14 @@ chromium
 cifs-utils
 cinnamon-desktop
 clang
+clang15
 clisp
 clucene
 cmake
 cmocka
 coin
 compiler-rt
+compiler-rt15
 confuse
 containerd
 convertlit
@@ -824,6 +826,7 @@ libdc1394
 libdca
 libde265
 libdecor
+libdeflate
 libdnet
 libdrm
 libdv
@@ -1078,6 +1081,7 @@ llvm
 llvm-libs
 llvm14
 llvm14-libs
+llvm15-libs
 lm_sensors
 lmdb
 lmms
@@ -1165,6 +1169,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+npm
 npth
 nspr
 nss
@@ -1569,8 +1574,10 @@ qemu-audio-dbus
 qemu-audio-jack
 qemu-audio-oss
 qemu-audio-pa
+qemu-audio-pipewire
 qemu-audio-sdl
 qemu-audio-spice
+qemu-base
 qemu-block-curl
 qemu-block-dmg
 qemu-block-gluster
@@ -1580,7 +1587,9 @@ qemu-block-ssh
 qemu-chardev-baum
 qemu-chardev-spice
 qemu-common
+qemu-desktop
 qemu-docs
+qemu-emulators-full
 qemu-full
 qemu-hw-display-qxl
 qemu-hw-display-virtio-gpu
