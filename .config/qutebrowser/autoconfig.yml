@@ -7,5 +7,4 @@
 config_version: 2
 settings:
   content.geolocation:
-    https://www.vivareal.com.br: false
-    https://www.wemobi.me: false
+    https://www.wemobi.me: true
