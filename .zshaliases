@@ -74,3 +74,5 @@ alias ssh_unifrota_banco='ssh admin@novords.unifrota.com.br'
 alias b='bat'
 #Source
 alias so="source"
+#Bash
+alias now="date '+%d-%m-%Y_%H.%M'"
