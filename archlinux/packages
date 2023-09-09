@@ -19,6 +19,7 @@ amdvlk
 android-file-transfer
 ansible
 ansible-core
+antlr4-runtime
 aom
 apache
 appstream
@@ -1141,6 +1142,7 @@ mtdev
 multipath-tools
 musescore
 mypaint-brushes1
+mysql-workbench
 nasm
 ncdu
 ncurses
@@ -1359,6 +1361,7 @@ potrace
 powertop
 prettier
 procps-ng
+proj
 protobuf
 proxychains-ng
 psmisc
@@ -1684,6 +1687,7 @@ r
 radicale
 ragel
 ranger
+rapidjson
 raptor
 rasqal
 rav1e
@@ -1914,6 +1918,7 @@ vlc
 vmaf
 volatility3
 volume_key
+vsqlite++
 vte-common
 vte3
 vtk
