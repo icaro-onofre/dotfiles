@@ -70,6 +70,7 @@ alias txvzf='tar -xvzf OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz'
 #SSH
 alias ssh_unifrota_servidor='ssh admin@novo.unifrota.com.br'
 alias ssh_unifrota_banco='ssh admin@novords.unifrota.com.br'
+alias ssh_unifrota_servidor_prod='ssh centos@web.unifrota.com.br'
 #Bat
 alias b='bat'
 #Source
