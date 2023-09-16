@@ -607,6 +607,7 @@ jasper
 java-environment-common
 java-runtime-common
 jbig2dec
+jbigkit
 jdk-openjdk
 jemalloc
 jose
@@ -2041,7 +2042,6 @@ yakuake
 yaml-cpp
 yara
 yarn
-youtube-dl
 yubico-c
 yubico-c-client
 yubikey-manager
