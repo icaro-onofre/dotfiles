@@ -462,7 +462,7 @@ hugging face https://huggingface.co/
 theatr municipal-festival chopin https://theatromunicipal.org.br/pt-br/evento/2_festivalchopin/
 unifrota-trello https://trello.com/u/icaroonofre2/boards
 unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
-google-finance https://www.google.com/finance/?hl=en
+google-finance https://www.google.com/finance/portfolio/c21e629b-bd6d-4952-bfba-0c70a0218475?hl=en&window=1M
 8443  unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 unifrota  webCliente novohomolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
 datascience-trading view-brazil nonfarm payrolls https://www.tradingview.com/symbols/ECONOMICS-BRNFP/
@@ -530,3 +530,10 @@ Okonomicus-mongodb atlas https://cloud.mongodb.com/v2/6411bb918a3ee565c701b967#/
 docs-mongoengine-User guide-summary https://docs.mongoengine.org/guide/index.html
 google-maps cota 200 https://www.google.com/maps/place/Cota+200,+Cubat%C3%A3o+-+State+of+S%C3%A3o+Paulo/@-23.8917963,-46.4773521,2301m/data=!3m1!1e3!4m6!3m5!1s0x94ce170c9d23b46b:0x4ec8100b71c87555!8m2!3d-23.8925521!4d-46.4717568!16s%2Fg%2F11b6_dywnk?entry=ttu
 reddit-r/investimentos-funções pra buscar CDI do momento google sheets https://www.reddit.com/r/investimentos/comments/hqgkpx/di_selic_e_ipca_no_google_sheets/
+jupyter notebook http://localhost:8888/login?next=%2Ftree
+yahoo-finance https://finance.yahoo.com/
+yahoo-finance PETR3 https://finance.yahoo.com/quote/PETR3.SA/key-statistics/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAJzTL9PhWxyDIHJrE4mfqjwL0jMZZXEAu48cp2_DedQTg-r9IlJ3RpV9YuxRAGI5z46PQMgf1IBgfUTj5KLvbjUp0hSQOI3ui2EI3fZ77KqYVQNnsAc6DRqW_-yivsHro0LhY6GO2TAFHh0gR9xiEDgi_2iVIefuKCTF5pdta5Hp
+dosc-ipysheet https://ipysheet.readthedocs.io/en/stable/
+datascience-indice FOEX :ecology:klabin: https://www.foex.fi/
+investing-top ranking de divident yield https://investidor10.com.br/acoes/rankings/maiores-dividend-yield/
+cvm-resoluções-cvm 156 https://conteudo.cvm.gov.br/legislacao/resolucoes/resol156.html
