@@ -102,3 +102,5 @@ source ~/.zshaliases
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+
+export JAVA_URI_HOME="jdbc:mysql://rds.unifrota.com.br:3306/Unifrota?user=masterUnifrota&password=!#masterUnifrota#!"
