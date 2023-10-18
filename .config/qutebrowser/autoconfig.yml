@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.desktop_capture:
-    https://meet.google.com: true
+  content.geolocation:
+    https://app.unifrota.com.br: true

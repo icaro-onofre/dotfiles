@@ -360,7 +360,7 @@ glassdoor-jobs https://www.glassdoor.com/member/home/index.htm
 games-blue protocol https://www.playblueprotocol.com/en-us
 compras-insider-shorts https://www.insiderstore.com.br/products/future-shorts?variant=42792639955093
 compras-geniodesk-mesa https://www.geniodesks.com.br/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNWzz-6CGDSePxbj7kJJ6MOefhnJzzo4S6UiEgxEYTRqksl9Wo62rioRoCJ64QAvD_BwE
-compras-thinkpad c13-laptop https://www.google.com/search?q=thinkpad+c13&hl=en&sxsrf=APwXEdd9HSwYzTqShADAcppeBhxmp4NciA:1685654313231&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjLlrfU_6L_AhUWILkGHXMzARwQ_AUoAXoECAIQAw&biw=1355&bih=736&dpr=1
+compras-laptop-thinkpad c13-laptop https://www.google.com/search?q=thinkpad+c13&hl=en&sxsrf=APwXEdd9HSwYzTqShADAcppeBhxmp4NciA:1685654313231&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjLlrfU_6L_AhUWILkGHXMzARwQ_AUoAXoECAIQAw&biw=1355&bih=736&dpr=1
 siga-notas https://siga.cps.sp.gov.br/aluno/notasparciais.aspx
 electronics-project-keyboard-drop.com-parts https://drop.com/mechanical-keyboards/drops/?sc=keyboards&tgs=diy-kits
 electronics-projects-keyboard-aliexpress-planck frame https://pt.aliexpress.com/item/1005005470282210.html?spm=a2g0o.productlist.main.1.7abc47d2oF8Shp&algo_pvid=3d43a8be-b994-4250-b8dc-5f15c3e7dbe1&algo_exp_id=3d43a8be-b994-4250-b8dc-5f15c3e7dbe1-0&pdp_npi=3%40dis%21BRL%21141.99%21141.99%21%21%21%21%21%402102186a16856573452738980d077f%2112000033211418247%21sea%21BR%210&curPageLogUid=UGaHvo7XQoLh
@@ -399,9 +399,25 @@ google-maps São Paulo https://www.google.com/maps/@-23.5761033,-46.6203717,3708
 unifrota local webFornecedor http://localhost:8080/webFornecedor/fornecedor/home.jsf
 youtube-osesp-orquestra jovem do estado-Mahler3 https://www.youtube.com/watch?v=BrLH31RGW3A
 unifrota-trello-java [e5c6] [Bug] Erro ao salvar transação offline no webFornecedor https://trello.com/c/gX3iXr0H/79-e5c6-bug-erro-ao-salvar-transa%C3%A7%C3%A3o-offline-no-webfornecedor
-compras-thinkpad e14-laptop https://www.lenovo.com/br/pt/laptops/thinkpad/serie-e/E14-G2/p/22TPE14E4N2
+compras-laptop-thinkpad e14-laptop https://www.lenovo.com/br/pt/laptops/thinkpad/serie-e/E14-G2/p/22TPE14E4N2
 unifrota webCliente prod https://web.unifrota.com.br:8443/webCliente/cliente/home.jsf
 unifrota webAdmin prod https://web.unifrota.com.br:8443/webAdmin/admin/home.jsf
 chatGPT https://chat.openai.com/#
 stackoverflow-why use hibernate? https://stackoverflow.com/questions/760834/how-can-i-design-a-java-web-application-without-an-orm-and-without-embedded-sql
 compras-thinkpad wireless keyboard https://www.lenovo.com/us/en/p/accessories-and-software/keyboards-and-mice/keyboards/4y40x49493?orgRef=https%253A%252F%252Fwww.google.com%252F
+stephen hough ssp https://osesp.byinti.com/#/ticket/futureEvent/0110-matinais-osesp-fischer-e-hough
+unifrota dash https://dash.unifrota.com.br/
+unifrota-trello-java [9e50] [Bug] Erro de vírgula e ponto em números decimais https://trello.com/c/9Hxhigfx/78-9e50-bug-erro-de-v%C3%ADrgula-e-ponto-em-n%C3%BAmeros-decimais
+unifrota pdf https://app.unifrota.com.br/pdv/#/login
+unifrota pdf web https://app.unifrota.com.br/pdv/#/login
+discord-unifrota #developer https://discord.com/channels/760522574312243200/796003075289645066
+docs-mysql DATE_FORMAT() https://www.w3schools.com/sql/func_mysql_date_format.asp
+artigo-ponto https://registroponto.com.br/
+docs-jboss eclipse IDE https://docs.jboss.org/jbosside/tutorial/build/en/html_single/
+unifrota-trello-pdv https://trello.com/b/Zp8jo3hm/unifrota-pdv-colaborador-e-gestor
+calendario feriados 2023 https://g1.globo.com/economia/noticia/2023/01/06/feriados-de-2023-e-pontos-facultativos-veja-calendario-nacional.ghtml
+artigo-medium-neovim setup for react,typescript,tailwind,css https://blog.inkdrop.app/my-neovim-setup-for-react-typescript-tailwind-css-etc-in-2022-a7405862c9a4
+google translate https://www.google.com/search?hl=en&q=google%20translate
+imgur https://imgur.com/
+compras-laptop-thinkpad x1 nano https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx1/thinkpad-x1-nano-gen-3-(13-inch-intel)/len101t0054
+compras-laptop-thinkpad x1 nano custom https://www.lenovo.com/us/en/configurator/cto/index.html?bundleId=21K1CTO1WWUS1
