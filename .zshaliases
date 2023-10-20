@@ -62,5 +62,6 @@ alias now="date '+%d-%m-%Y_%H.%M'"
 alias unifrota_ssh_jboss="ssh admin@novo.unifrota.com.br"
 alias unifrota_ssh_banco="ssh admin@novords.unifrota.com.br"
 alias unifrota_ssh_jboss_prod="ssh centos@web.unifrota.com.br"
+alias unifrota_ssh_banco_prod="ssh centos@rds.unifrota.com.br"
 #Keyboard setup
 alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_caps_toggle | setxbmap us,br | sxhkd & "
