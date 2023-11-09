@@ -47,8 +47,6 @@ alias find1="sudo find . -xdev -type f -size +1G"
 alias mongo="mongosh"
 #Python
 alias svenv="source .venv/bin/activate"
-#xclip
-alias xcc="xclip -selection clipboard"
 alias z='zathura'
 alias hx='helix'
 alias n='nvim'
@@ -65,3 +63,7 @@ alias unifrota_ssh_jboss_prod="ssh centos@web.unifrota.com.br"
 alias unifrota_ssh_banco_prod="ssh centos@rds.unifrota.com.br"
 #Keyboard setup
 alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_caps_toggle | setxbmap us,br | sxhkd & "
+#Kill jboss
+alias Kb="sudo ps -ef | grep jboss | grep -v grep | awk '{print $2}' | xargs kill"
+#xclip
+alias xc="xclip -sel clip"
