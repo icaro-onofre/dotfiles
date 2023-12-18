@@ -381,7 +381,6 @@ unifrota webCliente localhost https://localhost:8443/webCliente/cliente/registro
 unifrota local webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 nix-nix packages https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=sxh
 oreilly xgh https://gohorseprocess.com.br/extreme-go-horse-xgh/
-unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
 unifrota-trello-java [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
 sala sao paulo-abracello-ingressos https://osesp.byinti.com/#/ticket/futureEvent/0609-abracello-iii-encontro-de-violoncelos
 sala sao paulo-Andras Schiff http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9349
@@ -414,7 +413,6 @@ discord-unifrota #developer https://discord.com/channels/760522574312243200/7960
 docs-mysql DATE_FORMAT() https://www.w3schools.com/sql/func_mysql_date_format.asp
 artigo-ponto https://registroponto.com.br/
 docs-jboss eclipse IDE https://docs.jboss.org/jbosside/tutorial/build/en/html_single/
-unifrota-trello-pdv https://trello.com/b/Zp8jo3hm/unifrota-pdv-colaborador-e-gestor
 calendario feriados 2023 https://g1.globo.com/economia/noticia/2023/01/06/feriados-de-2023-e-pontos-facultativos-veja-calendario-nacional.ghtml
 artigo-medium-neovim setup for react,typescript,tailwind,css https://blog.inkdrop.app/my-neovim-setup-for-react-typescript-tailwind-css-etc-in-2022-a7405862c9a4
 google translate https://www.google.com/search?hl=en&q=google%20translate
@@ -491,3 +489,6 @@ github-repos-BrasilAPI https://github.com/BrasilAPI/BrasilAPI
 github-repos-feriados do brasil https://github.com/joaopbini/feriados-brasil
 github-repos-balena-io etcher-releases https://github.com/balena-io/etcher/releases/tag/v1.18.13
 github-repos-ventoys-releases https://github.com/ventoy/Ventoy/releases
+music-penguin cafe orchestra https://www.youtube.com/watch?v=FhIguI99BDo
+memes-1 hour of GTA 5 npcs driving off an overpass https://www.youtube.com/watch?v=te74HWzG6-o
+sala são paulo-25 anos sala são Mahler 2 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
