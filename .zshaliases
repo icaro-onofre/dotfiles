@@ -64,6 +64,6 @@ alias unifrota_ssh_banco_prod="ssh centos@rds.unifrota.com.br"
 #Keyboard setup
 alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_caps_toggle | setxbmap us,br | sxhkd & "
 #Kill jboss
-alias Kb="sudo ps -ef | grep jboss | grep -v grep | awk '{print $2}' | xargs kill"
 #xclip
 alias xc="xclip -sel clip"
+alias kill-jboss="ps aux | grep -ie jboss | awk '{print $2}' | xargs kill -9"

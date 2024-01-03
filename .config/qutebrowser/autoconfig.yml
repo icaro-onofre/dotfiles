@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.geolocation:
-    https://app.unifrota.com.br: true
+  content.notifications.enabled:
+    https://intermezzopian.os.tc: false
