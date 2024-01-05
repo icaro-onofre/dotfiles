@@ -1,13 +1,22 @@
---require "core.nvimsurround"
-require "core.mason"
-require "core.dbg"
-require "core.nvimtree"
-require "core.treesitter"
---require "core.cmp"
-require "core.lsp"
-require "core.marks"
-require "core.plugins"
-require "core.keymaps"
-require "core.options"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require 'colorizer'.setup()
+require("lazy").setup({
+"folke/which-key.nvim",
+{ "folke/neoconf.nvim", cmd = "Neoconf" },
+"folke/neodev.nvim",
+"sindrets/diffview.nvim",
+"folke/tokyonight.nvim",
+"nvim-treesitter/nvim-treesitter",
+})
+
