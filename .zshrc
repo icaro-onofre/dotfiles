@@ -108,5 +108,6 @@ export JAVA_URI_HOME="jdbc:mysql://rds.unifrota.com.br:3306/Unifrota?user=master
 [[ -s "/home/icaro/.gvm/scripts/gvm" ]] && source "/home/icaro/.gvm/scripts/gvm"
 
 export PATH="$PATH:/home/icaro/bin/flutter/bin"
+export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
 
 export CHROME_EXECUTABLE="chromium"
