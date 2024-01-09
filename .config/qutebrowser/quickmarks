@@ -502,3 +502,7 @@ unifrota-trello [2918][feat] Implementar colunas separadas para dias úteis e do
 compras-cases-cases.br.com https://casesbr.com/
 archwiki-pacman https://wiki.archlinux.org/title/pacman
 archwiki-pacman/Tips and tricks https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
+unifrota-trello [b39b][feat] Coluna nova no totalizador demonstrando separadamente apenas as horas extras realizadas em domingos/feriados https://trello.com/c/ArjdNkG9/804-b39bfeat-coluna-nova-no-totalizador-demonstrando-separadamente-apenas-as-horas-extras-realizadas-em-domingos-feriados
+gcloud-docs-cli reference https://cloud.google.com/sdk/gcloud/reference
+github-repos-obsidian.el https://github.com/licht1stein/obsidian.el
+sheets-rascunhos https://docs.google.com/spreadsheets/d/1v-8eoLTu3-HYgmxyAo4dlYL5k9EK-VsIyexnRJTeyuI/edit#gid=0

@@ -67,3 +67,7 @@ alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_cap
 #xclip
 alias xc="xclip -sel clip"
 alias kill-jboss="ps aux | grep -ie jboss | awk '{print $2}' | xargs kill -9"
+alias kj="ps -ef | grep jboss | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias sx="setxkbmap us,br ; setxkbmap -option grp:alt_caps_toggle ; setxkbmap -option caps:super"
+# Ping & Network oneliners
+alias pg="ping www.google.com"
