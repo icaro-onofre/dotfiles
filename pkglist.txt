@@ -49,7 +49,6 @@ ripgrep
 rofi
 rofi-greenclip
 rofi-pass
-seahorse
 starship
 steam
 stow
