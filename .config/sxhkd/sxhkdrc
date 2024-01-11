@@ -27,8 +27,20 @@ super + x
 super + alt + a 
 	steam steam://rungameid/714010
 
+# Launch qutebrowser
 super + q 
 	qutebrowser
+# Launch discord
+super + shift + d
+	discord
+
+# Launch flameshot
+super + shift + v
+	flameshot
+
+# Launch obsidian
+super + shift + o
+	flameshot
 
 # Maim select screen
 super + shift + s
@@ -52,7 +64,6 @@ super + space + u
 #Generate random id
 super + shift + u 
 	uuidgen | cut -c 1-4 | xclip -selection clipboard 
-
 
 #Reload configs
 super + shift + w

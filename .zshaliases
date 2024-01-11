@@ -1,4 +1,3 @@
-alias t='tmux'
 alias h='history'
 alias l='lsd -l'
 alias ls='ls --color'
@@ -68,12 +67,14 @@ alias aws-regions='aws ec2 describe-regions --output table'
 alias qx86='qemu-system-x86_64'
 alias txvzf='tar -xvzf OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz'
 #SSH
-alias ssh_unifrota_servidor='ssh admin@novo.unifrota.com.br'
-alias ssh_unifrota_banco='ssh admin@novords.unifrota.com.br'
-alias ssh_unifrota_servidor_prod='ssh centos@web.unifrota.com.br'
+alias ssh_unifrota_jboss='ssh admin@web.unifrota.com.br'
+alias ssh_unifrota_banco='ssh admin@rds.unifrota.com.br'
 #Bat
 alias b='bat'
 #Source
 alias so="source"
 #Bash
 alias now="date '+%d-%m-%Y_%H.%M'"
+alias t='tmux'
+alias tds="t new -d -s "
+alias xcc="xclip -sel clip"
