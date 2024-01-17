@@ -78,3 +78,7 @@ alias now="date '+%d-%m-%Y_%H.%M'"
 alias t='tmux'
 alias tds="t new -d -s "
 alias xcc="xclip -sel clip"
+#Archlinux speciic aliases
+alias archlinux-install-yay="sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+" # install aur helper yay
+alias sx="setxkbmap -option caps:super;setxkbmap -option grp:alt_caps_toggle; setxkbmap us,br"
