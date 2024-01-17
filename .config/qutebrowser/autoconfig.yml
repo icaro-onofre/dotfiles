@@ -7,4 +7,4 @@
 config_version: 2
 settings:
   content.geolocation:
-    https://www.wemobi.me: true
+    https://www.google.com: false
