@@ -47,9 +47,11 @@ alias find1="sudo find . -xdev -type f -size +1G"
 alias mongo="mongosh"
 #Python
 alias svenv="source .venv/bin/activate"
+#Programms shorthands
 alias z='zathura'
 alias hx='helix'
 alias n='nvim'
+alias sc='sc-im'
 alias mongosh_sgvg='mongosh mongodb+srv://cluster0.rs3gboy.mongodb.net --apiVersion 1 --username icaroonofres'
 alias aws-regions='aws ec2 describe-regions --output table'
 #Qemu aliases
