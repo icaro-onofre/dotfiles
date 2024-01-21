@@ -38,11 +38,11 @@
 *.color15: #fdf6e3
 
 !! URxvt Appearance
-URxvt.font: xft:inconsolata:style=Regular:size=13
-URxvt.boldFont: xft:inconsolata:style=Bold:size=13
-URxvt.italicFont: xft:inconsolata:style=Italic:size=13
-URxvt.boldItalicFont: xft:inconsolata:style=Bold Italic:size=13
-URxvt.letterSpace: -1
+URxvt.font: xft:inconsolata:style=Regular:size=11
+URxvt.boldFont: xft:inconsolata:style=Bold:size=11
+URxvt.italicFont: xft:inconsolata:style=Italic:size=11
+URxvt.boldItalicFont: xft:inconsolata:style=Bold Italic:size=11
+URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false

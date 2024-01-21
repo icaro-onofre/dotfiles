@@ -20,6 +20,11 @@ require("lazy").setup({
 "nvim-treesitter/nvim-treesitter",
 "nvim-treesitter/nvim-treesitter",
 "HiPhish/rainbow-delimiters.nvim",
+{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+{'neovim/nvim-lspconfig'},
+{'hrsh7th/cmp-nvim-lsp'},
+{'hrsh7th/nvim-cmp'},
+{'L3MON4D3/LuaSnip'},
 {
 	'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	dependencies = { 'nvim-lua/plenary.nvim' },
@@ -59,3 +64,18 @@ vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
 --vim.keymap.set('n', '<leader>gq',DiffViewClose, {})
 -- Set no swap
 vim.opt.swapfile = false
+
+--Editor remaps 
+-- Move text in visual mode
+vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
+vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n","J","mzJ`z")
+
+vim.keymap.set("n","<C-d>","<C-d>zz")
+vim.keymap.set("n","<C-u>","<C-u>zz")
+
+vim.keymap.set("n","n","nzzzv")
+vim.keymap.set("n","N","Nzzzv")
+
+--vim.keymap.set("x","<leader>p","\"_dp"(

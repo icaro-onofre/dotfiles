@@ -7,6 +7,9 @@ super + shift + p
 # Terminal
 super + t
 		kitty
+
+super + shift + t
+		urxvt
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
