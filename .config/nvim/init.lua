@@ -25,6 +25,7 @@ require("lazy").setup({
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
+{'nvim-tree/nvim-web-devicons'},
 {
 	'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	dependencies = { 'nvim-lua/plenary.nvim' },
