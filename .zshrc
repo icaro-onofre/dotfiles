@@ -29,6 +29,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey '^R' history-incremental-search-backward
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -103,6 +104,7 @@ bindkey -s ^a "nvims\n"
 bindkey -s ^a "nvims\n"
 
 source ~/.zshaliases
+source ~/.zshaliases_dangerous
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
@@ -130,3 +132,11 @@ export CHROME_EXECUTABLE=chromium
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export JAVA_URI_HOME="jdbc:mysql://rds.unifrota.com.br:3306/Unifrota?user=masterUnifrota&password=!#masterUnifrota#!"
+
+[[ -s "/home/icaro/.gvm/scripts/gvm" ]] && source "/home/icaro/.gvm/scripts/gvm"
+
+export PATH="$PATH:/home/icaro/bin/flutter/bin"
+export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
+
+export CHROME_EXECUTABLE="chromium"
