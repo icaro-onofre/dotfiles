@@ -104,7 +104,7 @@ bindkey -s ^a "nvims\n"
 bindkey -s ^a "nvims\n"
 
 source ~/.zshaliases
-source ~/.zshaliases_dangerous
+#source ~/.zshaliases_dangerous
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent

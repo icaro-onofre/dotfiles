@@ -1,3 +1,4 @@
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -20,6 +21,7 @@ require("lazy").setup({
 "nvim-treesitter/nvim-treesitter",
 "nvim-treesitter/nvim-treesitter",
 "HiPhish/rainbow-delimiters.nvim",
+"chentoast/marks.nvim",
 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 {'neovim/nvim-lspconfig'},
 {'hrsh7th/cmp-nvim-lsp'},
@@ -31,6 +33,18 @@ require("lazy").setup({
 	dependencies = { 'nvim-lua/plenary.nvim' },
 },
 
+-- Surround nvim add "" () {} or anything add anything around selected text
+{
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+}
+
 })
 
 -- Set leader key
@@ -39,7 +53,7 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true  	
 vim.opt.shiftwidth=4
 vim.opt.tabstop=4
-vim.cmd 'colorscheme tokyonight-storm' -- select this colorscheme if it is installed
+vim.cmd 'colorscheme tokyonight-night' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
 -- treesitter configurations
 require'nvim-treesitter.configs'.setup {
@@ -61,9 +75,11 @@ vim.keymap.set('n', '<leader>fp',builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
+
 -- diff view keybindings
 --vim.keymap.set('n', '<leader>gd',DiffViewOpen, {})
 --vim.keymap.set('n', '<leader>gq',DiffViewClose, {})
+
 -- Set no swap
 vim.opt.swapfile = false
 
@@ -85,6 +101,9 @@ vim.keymap.set("n","N","Nzzzv")
 
 -- LSP configs
 require('lsp-zero')
+-- Run yay -S typscript-language-server
+require('lspconfig').tailwindcss.setup({})
+-- Run sudo npm i -g @tailwindcss/language-server
 require('lspconfig').tsserver.setup({})
 -- PLUGIN marks.nvim setup.
 require'marks'.setup {
