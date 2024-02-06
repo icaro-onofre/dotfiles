@@ -22,12 +22,6 @@ floating_modifier $mod
 # Lock screen
 bindsym $mod+Shift+l exec i3lock
 
-# start a terminal
-bindsym $mod+t exec alacritty
-
-# start zathura
-bindsym $mod+z exec zathura
-
 #Scractch pad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show

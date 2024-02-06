@@ -407,8 +407,8 @@ compras-thinkpad wireless keyboard https://www.lenovo.com/us/en/p/accessories-an
 stephen hough ssp https://osesp.byinti.com/#/ticket/futureEvent/0110-matinais-osesp-fischer-e-hough
 unifrota dash https://dash.unifrota.com.br/
 unifrota-trello-java [9e50] [Bug] Erro de vírgula e ponto em números decimais https://trello.com/c/9Hxhigfx/78-9e50-bug-erro-de-v%C3%ADrgula-e-ponto-em-n%C3%BAmeros-decimais
-unifrota pdf https://app.unifrota.com.br/pdv/#/login
-unifrota pdf web https://app.unifrota.com.br/pdv/#/login
+unifrota pdv https://app.unifrota.com.br/pdv/#/login
+unifrota pdv web https://app.unifrota.com.br/pdv/#/login
 discord-unifrota #developer https://discord.com/channels/760522574312243200/796003075289645066
 docs-mysql DATE_FORMAT() https://www.w3schools.com/sql/func_mysql_date_format.asp
 artigo-ponto https://registroponto.com.br/
@@ -527,3 +527,23 @@ ingressos-theatro municipal-mahler 2 29|30/03/2024 https://theatromunicipal.org.
 ingressos-theatro municipal-Doren Carwithen&Shostakovich 31/03/2024 https://theatromunicipal.org.br/pt-br/evento/carwitheneshostakovich/
 ingressos-theatro municipal-Ladislau, Holst e Tchaikovsky 24/02/2024 https://theatromunicipal.org.br/pt-br/evento/camerata_ladislauholstetchaikovsky/
 ingressos-theatro municipal-Carmen 03:11/05/2024 https://theatromunicipal.org.br/pt-br/evento/carmen/
+unifrota-trello Jornada Equipamento: 3 fotos obrigatórias https://trello.com/c/Vm6y2Ao2/696-jornada-equipamento-3-fotos-obrigat%C3%B3rias
+docs-shadcnui-components https://ui.shadcn.com/docs/components/accordion
+compras-bolsa-COFB x evo https://www.codeofbell.com/products/x-pak-evo-sling-pack
+books-Data Science Handbook https://datascience.stanford.edu/programs/stanford-data-science-scholars-program/data-science-handbook
+docs-flutter-BuildContext https://api.flutter.dev/flutter/widgets/BuildContext-class.html
+google-maps praça curiosa Pacaembu https://www.google.com/maps/@-23.5487098,-46.6754474,141m/data=!3m1!1e3?entry=ttu
+llms-maritaca.ai https://chat.maritaca.ai/
+github-repos-lsp zero-list of supported lsps https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
+ingressos-sala são paulo-matinal 04/02/2024 https://osesp.byinti.com/#/ticket/futureEvent/concertos-matinais-orquestra-experimental-de-repertorio
+imagens-sala são paulo mapa de assentos http://www.salasaopaulo.art.br/salasaopaulo/mapasala.aspx
+compras-github copilot https://github.com/github-copilot/signup/billing?payment_duration=yearly
+tools-4devs-cnpj https://www.4devs.com.br/gerador_de_cnpj
+tools-uol mail pro-checar se email é valido com senha https://mailpro.uol.com.br/
+docs-javadoc aws-class AmazonS3Cliente https://www.javadoc.io/doc/com.amazonaws/aws-java-sdk/1.6.1/index.html
+videos-I WISH I Knew These Tailwind Tips Earlier :tailwind:tech:frontend: https://www.youtube.com/watch?v=QBajvZaWLXs
+ingressos-sala são paulo-egberto gismonti 20:30 06/03/24 https://tucca.byinti.com/#/event/-WNg0F_iseWwm0c8z-gq
+docs-javadoc jasperrepots 5.6.0 https://www.javadoc.io/doc/net.sf.jasperreports/jasperreports/5.6.0/index.html
+ingressos-ssp-concurso de composições 20H30 22/02/24 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9722
+unifrota-trello DASH: Painel de Localização - Clique com botão direito preenche filtro com a frota ou placa selecionada https://trello.com/c/bhEEljnV/835-dash-painel-de-localiza%C3%A7%C3%A3o-clique-com-bot%C3%A3o-direito-preenche-filtro-com-a-frota-ou-placa-selecionada?search_id=15287c63-de88-4e49-80a6-ee16226d0f3c
+unifrota-trello [71d4][feat] Bonificar dia Offline https://trello.com/c/Qb0oAwMR/841-imagepng

@@ -23,6 +23,7 @@ require("lazy").setup({
 	"HiPhish/rainbow-delimiters.nvim",
 	"tpope/vim-fugitive",
 	"chentoast/marks.nvim",
+	"nvim-tree/nvim-web-devicons",
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' },
@@ -66,8 +67,8 @@ vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
 -- diff view keybindings
---vim.keymap.set('n', '<leader>gd',DiffViewOpen, {})
---vim.keymap.set('n', '<leader>gq',DiffViewClose, {})
+-- vim.keymap.set('n', '<leader>gd',DiffViewOpen<CR>)
+-- vim.keymap.set('n', '<leader>gq',DiffViewClose <CR>, {})
 -- Set no swap
 vim.opt.swapfile = false
 
@@ -108,3 +109,24 @@ require'marks'.setup {
   },
   mappings = {}
 }
+-- LSP setups 
+require('lsp-zero')
+require('lspconfig').lua_ls.setup({})
+
+-- Tailwind css
+-- Run npm install -g @tailwindcss/language-server
+-- require'lspconfig'.tailwindcss.setup{}
+-- Typescript 
+-- Run npm install -g typescript typescript-language-server
+-- add to root of project 
+-- {
+  -- "compilerOptions": {
+    -- "module": "commonjs",
+    -- "target": "es6",
+    -- "checkJs": false
+  -- },
+  -- "exclude": [
+    -- "node_modules"
+  -- ]
+-- }
+-- require'lspconfig'.tsserver.setup{}
