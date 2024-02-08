@@ -1,4 +1,6 @@
 -- Icaro's Neovim conifguration
+--
+-- Lazy configuration bootstrap and plugins installation.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -37,8 +39,10 @@ require("lazy").setup({
 
 })
 
+-- NEOVIM Configuration
 -- Set leader key
 vim.g.mapleader = " "
+vim.opt.swapfile = false
 -- Basic UI configurations
 vim.opt.termguicolors = true  	
 vim.opt.shiftwidth=4
@@ -59,6 +63,9 @@ require'nvim-treesitter.configs'.setup {
 		additional_vim_regex_highlighting = true,
 	},
 }
+
+
+
 -- Telescope keymaps
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff',builtin.find_files, {})
@@ -66,11 +73,11 @@ vim.keymap.set('n', '<leader>fp',builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
--- diff view keybindings
+
+-- DiffView keybindings
 -- vim.keymap.set('n', '<leader>gd',DiffViewOpen<CR>)
 -- vim.keymap.set('n', '<leader>gq',DiffViewClose <CR>, {})
--- Set no swap
-vim.opt.swapfile = false
+
 
 -- PLUGIN marks.nvim setup.
 require'marks'.setup {
