@@ -1,5 +1,4 @@
 # My i3 config file author:fforelle
-
 set $mod Mod4
 
 font pango:monospace 8
@@ -21,21 +20,9 @@ floating_modifier $mod
 
 # Lock screen
 bindsym $mod+Shift+l exec i3lock
-
-# start a terminal
-bindsym $mod+t exec alacritty
-
-# start zathura
-bindsym $mod+z exec zathura
-
 #Scractch pad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-
-# start pavucontrol
-
-# Take screenshot
-bindsym $mod+- exec scrot ~/Images/prints/ --select
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -170,7 +157,5 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 0
-

@@ -9,3 +9,6 @@ xrandr --auto
 usr/bin/emacs --daemon
 xset m 1/1
 exec i3
+#rclone mount --daemon Livros: ~/Livros
+#rclone mount --daemon IcaroZweig: ~/mount/Icaro-Zweig
+#polybar &

@@ -97,3 +97,9 @@ alias kj="ps -ef | grep jboss | grep -v grep | awk '{print $2}' | xargs kill -9"
 alias sx="setxkbmap us,br ; setxkbmap -option grp:alt_caps_toggle ; setxkbmap -option caps:super"
 # Ping & Network oneliners
 alias pg="ping www.google.com"
+
+
+# Python scrapy
+# imoviz viva real
+alias imoviz_scrapy_vivareal="'scrapy shell https://www.vivareal.com.br/venda/sp/sao-paulo/#onde=,S%C3%A3o%20Paulo,S%C3%A3o%20Paulo,,,,,city,BR%3ESao%20Paulo%3ENULL%3ESao%20Paulo,-23.555771,-46.639557,&itl_id=1000183&itl_name=vivareal_-_botao-cta_buscar_to_vivareal_resultado-pesquisahttps://www.vivareal.com.br/venda/sp/sao-paulo/%23onde=,S%C3%A3o%20Paulo,S%C3%A3o%20Paulo,,,,,city,BR%3ESao%20Paulo%3ENULL%3ESao%20Paulo,-23.555771,-46.639557,&itl_id=1000183&itl_name=vivareal_-_botao-cta_buscar_to_vivareal_resultado-pesquisa
+'"

@@ -55,6 +55,7 @@ vim.opt.shiftwidth=4
 vim.opt.tabstop=4
 vim.cmd 'colorscheme tokyonight-night' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
+
 -- treesitter configurations
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -66,6 +67,15 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+  },
+    incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<CR>',
+      scope_incremental = '<CR>',
+      node_incremental = '<TAB>',
+      node_decremental = '<S-TAB>',
+    },
   },
 }
 -- Telescope keymaps
@@ -105,6 +115,7 @@ require('lsp-zero')
 require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm i -g @tailwindcss/language-server
 require('lspconfig').tsserver.setup({})
+
 -- PLUGIN marks.nvim setup.
 require'marks'.setup {
   -- whether to map keybinds or not. default true
