@@ -1,4 +1,4 @@
-# My i3 config file author:fforelle
+# Icaro' i3 config file
 
 set $mod Mod4
 
@@ -22,20 +22,9 @@ floating_modifier $mod
 # Lock screen
 bindsym $mod+Shift+l exec i3lock
 
-# start a terminal
-bindsym $mod+t exec alacritty
-
-# start zathura
-bindsym $mod+z exec zathura
-
 #Scractch pad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-
-# start pavucontrol
-
-# Take screenshot
-bindsym $mod+- exec scrot ~/Images/prints/ --select
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -65,12 +54,6 @@ bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -168,7 +151,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
 
 
 font pango:DejaVu Sans Mono 0

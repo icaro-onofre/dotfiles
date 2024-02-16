@@ -23,6 +23,7 @@ require("lazy").setup({
 	"HiPhish/rainbow-delimiters.nvim",
 	"tpope/vim-fugitive",
 	"chentoast/marks.nvim",
+	"nvim-tree/nvim-web-devicons",
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' },
@@ -33,6 +34,29 @@ require("lazy").setup({
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
+	-- Neo tree Files visualization in a tree like way
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+		  "nvim-lua/plenary.nvim",
+		  "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		  "MunifTanjim/nui.nvim",
+		  -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		}
+	},
+
+	-- Neovim surround.
+	{
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+	}
 
 })
 
@@ -42,7 +66,7 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true  	
 vim.opt.shiftwidth=4
 vim.opt.tabstop=4
-vim.cmd 'colorscheme tokyonight-storm' -- select this colorscheme if it is installed
+vim.cmd 'colorscheme tokyonight-night' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
 vim.wo.relativenumber = true
 -- treesitter configurations 
@@ -108,3 +132,13 @@ require'marks'.setup {
   },
   mappings = {}
 }
+
+-- Language servers using LSP-zero
+
+-- Typescript
+-- Ensure that the typescript language server is installed with npm globally!
+require'lspconfig'.tsserver.setup{}
+
+-- Tailwind
+-- Ensure that tailwind language server is installed with npm globally!
+require'lspconfig'.tailwindcss.setup{}
