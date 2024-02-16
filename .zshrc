@@ -140,3 +140,10 @@ export PATH="$PATH:/home/icaro/bin/flutter/bin"
 export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
 
 export CHROME_EXECUTABLE="chromium"
+
+# bun completions
+[ -s "/home/fforelle/.bun/_bun" ] && source "/home/fforelle/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

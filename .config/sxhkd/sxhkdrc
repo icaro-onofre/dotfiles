@@ -1,3 +1,6 @@
+# Kitty
+super + t
+		kitty
 # Rofi 
 super + p
 		rofi -combi-modi window,drun -show combi -show-icons
