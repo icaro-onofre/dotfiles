@@ -380,23 +380,23 @@ unifrota webCliente localhost https://localhost:8443/webCliente/cliente/registro
 unifrota local webAdmin https://localhost:8443/webAdmin/admin/home.jsf
 nix-nix packages https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=sxh
 oreilly xgh https://gohorseprocess.com.br/extreme-go-horse-xgh/
-unifrota-trello-java [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
+unifrota-trello [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
 sala sao paulo-abracello-ingressos https://osesp.byinti.com/#/ticket/futureEvent/0609-abracello-iii-encontro-de-violoncelos
 sala sao paulo-Andras Schiff http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9349
 unifrota webAdmin novoHomolog https://novo.unifrota.com.br:8443/webAdmin/admin/home.jsf
-unifrota-trello-java [e3d6] Replicar apontamento correto de Item https://trello.com/c/SfJWFBh5/68-e3d6-replicar-apontamento-correto-de-item
+unifrota-trello [e3d6] Replicar apontamento correto de Item https://trello.com/c/SfJWFBh5/68-e3d6-replicar-apontamento-correto-de-item
 google-maps Praca Min Costa Manso https://www.google.com/maps/@-23.5534304,-46.6298744,564m/data=!3m1!1e3?entry=ttu
 google-maps  rua Nioac https://www.google.com/maps/@-23.5518333,-46.6286502,3a,75y,77.14h,78.96t/data=!3m6!1e1!3m4!1s0kTirBuEidsV9oXDLldQMQ!2e0!7i16384!8i8192?entry=ttu
-unifrota-trello-java [ae6d] Filtro opção outros não filtra corretamente. https://trello.com/c/kp2iFk6j/72-ae6d-filtro-op%C3%A7%C3%A3o-outros-n%C3%A3o-filtra-corretamente
+unifrota-trello [ae6d] Filtro opção outros não filtra corretamente. https://trello.com/c/kp2iFk6j/72-ae6d-filtro-op%C3%A7%C3%A3o-outros-n%C3%A3o-filtra-corretamente
 google-maps Se predio bonito https://www.google.com/maps/@-23.5501378,-46.6340804,3a,75y,336.81h,110.46t/data=!3m7!1e1!3m5!1siZSJZKRhHDX-cXh2-3T3dA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DiZSJZKRhHDX-cXh2-3T3dA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D325.50528%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu
-unifrota-trello-java [46b2] No acertoAbastecimento.jsf, alterar placa, horario, condutor. https://trello.com/c/pJp08TRe/24-46b2-no-acertoabastecimentojsf-alterar-placa-horario-condutor
+unifrota-trello [46b2] No acertoAbastecimento.jsf, alterar placa, horario, condutor. https://trello.com/c/pJp08TRe/24-46b2-no-acertoabastecimentojsf-alterar-placa-horario-condutor
 youtube-videos-Riff for Riffbros :KateFreud: https://www.youtube.com/watch?v=-LgCCoBaq-I
 google-maps Jundiai centro https://www.google.com/maps/place/Centro,+Jundia%C3%AD+-+State+of+S%C3%A3o+Paulo/@-23.1875737,-46.8873155,1979m/data=!3m1!1e3!4m6!3m5!1s0x94cf2693ec6d0493:0x5687e5818c079a17!8m2!3d-23.1873363!4d-46.8880201!16s%2Fg%2F11g30_85n9?entry=ttu
 compras-hackmount server case https://www.somcase.com.br/hack-potencia
 google-maps São Paulo https://www.google.com/maps/@-23.5761033,-46.6203717,37089m/data=!3m1!1e3?entry=ttu
 unifrota local webFornecedor http://localhost:8080/webFornecedor/fornecedor/home.jsf
 youtube-osesp-orquestra jovem do estado-Mahler3 https://www.youtube.com/watch?v=BrLH31RGW3A
-unifrota-trello-java [e5c6] [Bug] Erro ao salvar transação offline no webFornecedor https://trello.com/c/gX3iXr0H/79-e5c6-bug-erro-ao-salvar-transa%C3%A7%C3%A3o-offline-no-webfornecedor
+unifrota-trello [e5c6] [Bug] Erro ao salvar transação offline no webFornecedor https://trello.com/c/gX3iXr0H/79-e5c6-bug-erro-ao-salvar-transa%C3%A7%C3%A3o-offline-no-webfornecedor
 compras-laptop-thinkpad e14-laptop https://www.lenovo.com/br/pt/laptops/thinkpad/serie-e/E14-G2/p/22TPE14E4N2
 unifrota webCliente prod https://web.unifrota.com.br:8443/webCliente/cliente/home.jsf
 unifrota webAdmin prod https://web.unifrota.com.br:8443/webAdmin/admin/home.jsf
@@ -405,7 +405,7 @@ stackoverflow-why use hibernate? https://stackoverflow.com/questions/760834/how-
 compras-thinkpad wireless keyboard https://www.lenovo.com/us/en/p/accessories-and-software/keyboards-and-mice/keyboards/4y40x49493?orgRef=https%253A%252F%252Fwww.google.com%252F
 stephen hough ssp https://osesp.byinti.com/#/ticket/futureEvent/0110-matinais-osesp-fischer-e-hough
 unifrota dash https://dash.unifrota.com.br/
-unifrota-trello-java [9e50] [Bug] Erro de vírgula e ponto em números decimais https://trello.com/c/9Hxhigfx/78-9e50-bug-erro-de-v%C3%ADrgula-e-ponto-em-n%C3%BAmeros-decimais
+unifrota-trello [9e50] [Bug] Erro de vírgula e ponto em números decimais https://trello.com/c/9Hxhigfx/78-9e50-bug-erro-de-v%C3%ADrgula-e-ponto-em-n%C3%BAmeros-decimais
 unifrota pdv web https://app.unifrota.com.br/pdv/#/login
 discord-unifrota #developer https://discord.com/channels/760522574312243200/796003075289645066
 docs-mysql DATE_FORMAT() https://www.w3schools.com/sql/func_mysql_date_format.asp
@@ -427,7 +427,7 @@ google-maps R.Péricles https://www.google.com/maps/@-23.6337286,-46.686392,3a,7
 google-maps Vila Clarice golden view https://www.google.com/maps/@-23.4673061,-46.7466677,3a,75y,284.89h,89.99t/data=!3m6!1e1!3m4!1sp_03k7wkxfutnX42eLLySQ!2e0!7i16384!8i8192?hl=en&entry=ttu
 wikipedia-jarkarta servlet https://en.wikipedia.org/wiki/Jakarta_Servlet
 cursos-dev-alura https://www.alura.com.br/
-unifrota-trello-java [feat][21a5] Cadastro veiculo locado. https://trello.com/c/fMRpDSlC/89-feat21a5-cadastro-veiculo-locado
+unifrota-trello [feat][21a5] Cadastro veiculo locado. https://trello.com/c/fMRpDSlC/89-feat21a5-cadastro-veiculo-locado
 google-maps Jardim Imperial https://www.google.com/maps/place/Jardim+Imperial,+Atibaia+-+State+of+S%C3%A3o+Paulo/@-23.14279,-46.5850286,1445m/data=!3m1!1e3!4m6!3m5!1s0x94cec170050f48b5:0x85b53ab207fc1f94!8m2!3d-23.143297!4d-46.5861072!16s%2Fg%2F1ymvkh2xj?entry=ttu
 google-maps Aeroporto Trike Icaro https://www.google.com/maps/place/Jardim+Imperial,+Atibaia+-+State+of+S%C3%A3o+Paulo/@-23.1283627,-46.576455,850m/data=!3m1!1e3!4m6!3m5!1s0x94cec170050f48b5:0x85b53ab207fc1f94!8m2!3d-23.143297!4d-46.5861072!16s%2Fg%2F1ymvkh2xj?entry=ttu
 google-maps Jardim Bonfiglioli https://www.google.com/maps/place/Jardim+Bonfiglioli,+Jundia%C3%AD+-+State+of+S%C3%A3o+Paulo/@-23.2062733,-46.8883071,1270m/data=!3m1!1e3!4m10!1m2!2m1!1sbonfignoli!3m6!1s0x94cf26b14e1b76cd:0x6937327eb63fa992!8m2!3d-23.2072407!4d-46.8894995!15sCgtib25maWdsaW9saSIDiAEBkgEMc3VibG9jYWxpdHkx4AEA!16s%2Fg%2F120mysg7?hl=en&entry=ttu
@@ -438,7 +438,7 @@ docs-jboss6-ssl and certificate configuration https://docs.jboss.org/jbossweb/3.
 ingressos-Sala São Paulo- matinal Alsop e Segev https://osesp.byinti.com/#/ticket/futureEvent/0511-matinais-osesp-alsop-e-segev
 artigo-manipulando html com servlet https://forum.freecodecamp.org/t/how-to-manipulate-html-dynamically-through-servlet/508961
 artigo-java JSP-thymeleaf https://www.wimdeblauwe.com/books/taming-thymeleaf/
-unifrota-trello-java [aa00][feat] cadastro de jornada de veículo https://trello.com/c/4waOs56G/93-aa00feat-cadastro-de-jornada-de-ve%C3%ADculo
+unifrota-trello [aa00][feat] cadastro de jornada de veículo https://trello.com/c/4waOs56G/93-aa00feat-cadastro-de-jornada-de-ve%C3%ADculo
 google-maps casa do Allister https://www.google.com/maps/@-23.6324251,-46.6810107,72m/data=!3m1!1e3?entry=ttu
 docs-hibernate-an introduction to hibernate 6 https://docs.jboss.org/hibernate/orm/6.3/introduction/html_single/Hibernate_Introduction.html
 calc https://www.google.com/search?hl=en&q=calc
@@ -472,12 +472,12 @@ sala são paulo-mapa de assentos http://www.salasaopaulo.art.br/salasaopaulo/map
 ingressos-theatro municipal-carmina burana & chico rei https://theatromunicipalsp.byinti.com/#/event/eventomaracatu-e-burana
 ingressos-sala são paulo-matinal 10/12/2023 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9457
 reddit-emacs-Solution  Run/eval mysql in org babel source block https://www.reddit.com/r/emacs/comments/bb823o/solution_runeval_mysql_in_org_babel_source_block/
-unifrota-trello-java [bd08][feat] Ajustar data dos registros para remover aaaa-mm-dd e deixar o tempo, e exibir dia da semana na data https://trello.com/c/96F4XiQO/105-bd08feat-ajustar-data-dos-registros-para-remover-aaaa-mm-dd-e-deixar-o-tempo-e-exibir-dia-da-semana-na-data
+unifrota-trello [bd08][feat] Ajustar data dos registros para remover aaaa-mm-dd e deixar o tempo, e exibir dia da semana na data https://trello.com/c/96F4XiQO/105-bd08feat-ajustar-data-dos-registros-para-remover-aaaa-mm-dd-e-deixar-o-tempo-e-exibir-dia-da-semana-na-data
 github-repos-treehopper :neovim:plugin: https://github.com/mfussenegger/nvim-treehopper
-unifrota-trello-java [816c][feat]:Recalcular inconsistências das jornadas após alteração de registro https://trello.com/c/odhlwRhg/107-816cfeatrecalcular-inconsist%C3%AAncias-das-jornadas-ap%C3%B3s-altera%C3%A7%C3%A3o-de-registro
+unifrota-trello [816c][feat]:Recalcular inconsistências das jornadas após alteração de registro https://trello.com/c/odhlwRhg/107-816cfeatrecalcular-inconsist%C3%AAncias-das-jornadas-ap%C3%B3s-altera%C3%A7%C3%A3o-de-registro
 ingressos-cinemarquisa-Maestro 08/12/23 :cinema: https://www.cinemarquise.com.br/paulista/filme/15679/maestro
 docs-jboss-downloads https://jbossas.jboss.org/downloads
-unifrota-trello-java NEOPONTO PARÂMETROS HORA EXTRA https://trello.com/c/fu2uK7Ck/727-neoponto-par%C3%A2metros-hora-extra?search_id=cc513b0f-7aaf-4fd5-8275-6c65acb7ee9d
+unifrota-trello NEOPONTO PARÂMETROS HORA EXTRA https://trello.com/c/fu2uK7Ck/727-neoponto-par%C3%A2metros-hora-extra?search_id=cc513b0f-7aaf-4fd5-8275-6c65acb7ee9d
 ingressos-sala são paulo-matinal classe de regência 17/12 https://osesp.byinti.com/#/ticket/futureEvent/1712-matinais-ojesp-classe-reg-academia
 tools-character counter https://wordcounter.net/character-count
 unifrota-trello https://trello.com/b/Zp8jo3hm/unifrota-pdv-dash-gestor
@@ -556,3 +556,7 @@ github-repos-julia programming language https://github.com/JuliaLang/julia
 docs-ipython https://ipython.readthedocs.io/en/stable/
 unifrota webCliente homolog https://homolog.unifrota.com.br:8443/webCliente/cliente/home.jsf
 videos-graphql no node.js do zero :tutorial:graphql: https://www.youtube.com/watch?v=1dz48pReq_c
+fb marketplace https://www.facebook.com/marketplace/
+music-choro no 11 https://www.youtube.com/watch?v=GbUzedx6Euo&t=35s
+ingressos-theatro municipal sp- 17:00 24/02/24 Camerata da Orquestra Experimental de Repertório – Ladislau, Holst e Tchaikovsky https://theatromunicipalsp.byinti.com/#/ticket/futureEvent/camerataladislauholstetchaikovsky
+ingressos-theatro municipal sp- 11:00 31/03/24 Carwithen e Shostakovich https://theatromunicipalsp.byinti.com/#/ticket/futureEvent/orquestra-experimental-de-repertorio-apresenta-carwithen-e-shostakovich
