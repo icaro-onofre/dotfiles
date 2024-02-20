@@ -113,3 +113,8 @@ export PATH="$PATH:/home/icaro/bin/flutter/bin"
 export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
 
 export CHROME_EXECUTABLE="chromium"
+
+
+# Setup zoxide
+# Uncomment if zoxide is installed.
+eval "$(zoxide init zsh)"
