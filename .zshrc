@@ -147,3 +147,6 @@ export CHROME_EXECUTABLE="chromium"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+#Zoxide setup
+eval "$(zoxide init zsh)"
