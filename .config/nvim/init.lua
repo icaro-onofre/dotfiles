@@ -15,35 +15,52 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 "folke/which-key.nvim",
 { "folke/neoconf.nvim", cmd = "Neoconf" },
+
 "folke/neodev.nvim",
 "sindrets/diffview.nvim",
-"folke/tokyonight.nvim",
-"nvim-treesitter/nvim-treesitter",
-"nvim-treesitter/nvim-treesitter",
-"HiPhish/rainbow-delimiters.nvim",
-"chentoast/marks.nvim",
+
+"folke/tokyonight.nvim",					 -- UI&Icons
+
+"nvim-treesitter/nvim-treesitter",			 -- Ui&Syntax highlightining.
+
+"nvim-treesitter/nvim-treesitter", 			 -- File manager
+
+"HiPhish/rainbow-delimiters.nvim",			 -- UI&Icons
+
+"chentoast/marks.nvim",						 -- UI&Icons
+
+--LSP Zero block
 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 {'neovim/nvim-lspconfig'},
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
-{'nvim-tree/nvim-web-devicons'},
-{
-	'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	dependencies = { 'nvim-lua/plenary.nvim' },
-},
 
--- Surround nvim add "" () {} or anything add anything around selected text
+{'nvim-tree/nvim-web-devicons'}, 			-- UI&Icons
+
+{ 'nvim-telescope/telescope.nvim', tag = '0.1.5', -- Telescope grep fuzzy find
+	dependencies = { 'nvim-lua/plenary.nvim' }, },
+
+
+-- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
 {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", 
     event = "VeryLazy",
     config = function()
         require("nvim-surround").setup({
             -- Configuration here, or leave empty to use defaults
         })
     end
-}
+},
+
+{
+  "olrtg/nvim-emmet",
+  config = function()
+    vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+  end,
+},
+
 
 })
 
@@ -87,8 +104,9 @@ vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
 
 -- diff view keybindings
---vim.keymap.set('n', '<leader>gd',DiffViewOpen, {})
---vim.keymap.set('n', '<leader>gq',DiffViewClose, {})
+vim.keymap.set('n', '<leader>gd',"<Cmd>DiffviewOpen<CR>", {})
+vim.keymap.set('n', '<leader>gq',"<Cmd>DiffviewClose<CR>", {})
+vim.keymap.set('n', '<leader>gw',"<Cmd>DiffviewFileHistory<CR>", {})
 
 -- Set no swap
 vim.opt.swapfile = false
@@ -153,3 +171,9 @@ require'marks'.setup {
   },
   mappings = {}
 }
+
+
+-- PLUGIN lsp zero keymaps config
+-- For a listing of all keymaps available for lsp server do :h default_keymaps
+vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+
