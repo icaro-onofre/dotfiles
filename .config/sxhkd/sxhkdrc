@@ -46,7 +46,7 @@ super + shift + v
 
 # Launch obsidian
 super + shift + o
-	flameshot
+	obsidian
 
 # Maim select screen
 super + shift + s

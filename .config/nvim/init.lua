@@ -97,7 +97,7 @@ require'nvim-treesitter.configs'.setup {
 }
 -- Telescope keymaps
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff',builtin.find_files, {})
+vim.keymap.set('n', '<leader>t',builtin.find_files, {})
 vim.keymap.set('n', '<leader>fp',builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
@@ -175,5 +175,6 @@ require'marks'.setup {
 
 -- PLUGIN lsp zero keymaps config
 -- For a listing of all keymaps available for lsp server do :h default_keymaps
-vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
