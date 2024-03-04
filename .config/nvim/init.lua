@@ -75,8 +75,8 @@ vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
 
 -- DiffView keybindings
--- vim.keymap.set('n', '<leader>gd',DiffViewOpen<CR>)
--- vim.keymap.set('n', '<leader>gq',DiffViewClose <CR>, {})
+vim.keymap.set('n', '<leader>gd','<CMD>DiffviewOpen<CR>')
+vim.keymap.set('n', '<leader>gq','<CMD>DiffviewClose <CR>' )
 
 
 -- PLUGIN marks.nvim setup.
