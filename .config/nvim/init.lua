@@ -41,7 +41,7 @@ vim.opt.shiftwidth=4
 vim.opt.tabstop=4
 vim.cmd 'colorscheme tokyonight-storm' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
--- treesitter configurations 
+-- treesitter configurations
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },

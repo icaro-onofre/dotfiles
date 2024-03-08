@@ -8,6 +8,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -18,11 +19,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+t exec alacritty
-
-# start zathura
-bindsym $mod+z exec zathura
+# Lock screen
+bindsym $mod+Shift+l exec i3lock
 
 #Scractch pad
 bindsym $mod+Shift+minus move scratchpad
@@ -164,6 +162,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+
 
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 0
