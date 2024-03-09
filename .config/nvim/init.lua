@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -88,10 +87,10 @@ require'nvim-treesitter.configs'.setup {
     incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<CR>',
-      scope_incremental = '<CR>',
-      node_incremental = '<TAB>',
-      node_decremental = '<S-TAB>',
+      init_selection = '<leader>gn',
+      scope_incremental = '<leader>grc',
+      node_incremental = '<Tab>',
+      node_decremental = '<S-Tab>',
     },
   },
 }
@@ -129,7 +128,7 @@ vim.keymap.set("n","N","Nzzzv")
 
 -- LSP configs
 require('lsp-zero')
--- Run yay -S typscript-language-server
+-- Run yay -S typescript-language-server
 require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm i -g @tailwindcss/language-server
 require('lspconfig').tsserver.setup({})
@@ -175,6 +174,8 @@ require'marks'.setup {
 
 -- PLUGIN lsp zero keymaps config
 -- For a listing of all keymaps available for lsp server do :h default_keymaps
-vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
+vim.keymap.set('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+vim.keymap.set('n', '<leader><F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+vim.keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
