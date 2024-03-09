@@ -103,6 +103,7 @@ bindkey -s ^a "nvims\n"
 bindkey -s ^a "nvims\n"
 
 source ~/.zshaliases
+#source ~/.zshaliases_dangerous
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
@@ -130,3 +131,36 @@ export CHROME_EXECUTABLE=chromium
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export JAVA_URI_HOME="jdbc:mysql://rds.unifrota.com.br:3306/Unifrota?user=masterUnifrota&password=!#masterUnifrota#!"
+
+[[ -s "/home/icaro/.gvm/scripts/gvm" ]] && source "/home/icaro/.gvm/scripts/gvm"
+
+export PATH="$PATH:/home/icaro/bin/flutter/bin"
+export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
+
+export CHROME_EXECUTABLE="chromium"
+
+# bun completions
+[ -s "/home/fforelle/.bun/_bun" ] && source "/home/fforelle/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#Zoxide setup
+eval "$(zoxide init zsh)"
+
+# BEGIN Funções Úteis
+# ctrl+z para toglar entre bg e fg (Encontrei aqui: https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/)
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+# END Funções Úteis

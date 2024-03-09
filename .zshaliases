@@ -55,10 +55,12 @@ alias mongo="mongosh"
 alias svenv="source .venv/bin/activate"
 #xclip
 alias xcc="xclip -selection clipboard"
-alias z='zathura'
+alias ndot='n ~/.dotfiles/.configure/nvim'
+#Programms shorthands
 alias hx='helix'
 alias n='nvim'
 alias ndot='n ~/.dotfiles/.configure/nvim'
+alias sc='sc-im'
 alias mongosh_sgvg='mongosh mongodb+srv://cluster0.rs3gboy.mongodb.net --apiVersion 1 --username icaroonofres'
 #aws aliases
 alias aws-codecommit-list-branches="aws codecommit list-branches --repository-name Okonomicus"
@@ -82,3 +84,27 @@ alias xcc="xclip -sel clip"
 alias archlinux-install-yay="sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 " # install aur helper yay
 alias sx="setxkbmap -option caps:super;setxkbmap -option grp:alt_caps_toggle; setxkbmap us,br"
+# ssh unifrota
+alias unifrota_ssh_jboss="ssh admin@novo.unifrota.com.br"
+alias unifrota_ssh_banco="ssh admin@novords.unifrota.com.br"
+alias unifrota_ssh_jboss_prod="ssh centos@web.unifrota.com.br"
+alias unifrota_ssh_banco_prod="ssh centos@rds.unifrota.com.br"
+#Keyboard setup
+alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_caps_toggle | setxbmap us,br | sxhkd & "
+#Kill jboss
+#xclip
+alias xc="xclip -sel clip"
+alias kill-jboss="ps aux | grep -ie jboss | awk '{print $2}' | xargs kill -9"
+alias kj="ps -ef | grep jboss | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias sx="setxkbmap us,br ; setxkbmap -option grp:alt_caps_toggle ; setxkbmap -option caps:super"
+# Ping & Network oneliners
+alias pg="ping www.google.com"
+
+
+# Python scrapy
+# imoviz viva real
+alias imoviz_scrapy_vivareal="'scrapy shell https://www.vivareal.com.br/venda/sp/sao-paulo/#onde=,S%C3%A3o%20Paulo,S%C3%A3o%20Paulo,,,,,city,BR%3ESao%20Paulo%3ENULL%3ESao%20Paulo,-23.555771,-46.639557,&itl_id=1000183&itl_name=vivareal_-_botao-cta_buscar_to_vivareal_resultado-pesquisahttps://www.vivareal.com.br/venda/sp/sao-paulo/%23onde=,S%C3%A3o%20Paulo,S%C3%A3o%20Paulo,,,,,city,BR%3ESao%20Paulo%3ENULL%3ESao%20Paulo,-23.555771,-46.639557,&itl_id=1000183&itl_name=vivareal_-_botao-cta_buscar_to_vivareal_resultado-pesquisa
+'"
+# Javascript 
+# Shadcn-ui
+alias shadcn='pnpx shadcn-ui@latest'

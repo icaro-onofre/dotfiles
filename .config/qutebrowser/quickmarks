@@ -9,7 +9,7 @@ Okonomicus-notion/docs https://www.notion.so/Docs-a55a823c1d364488b5f2b52a28377c
 Okonomicus-notion/tasks https://www.notion.so/Tasks-0f4a56f22db941b2bf8774368afe6b2b
 3000 http://localhost:3000/
 archlinux-homepage https://archlinux.org/
-gmail https://mail.google.com/mail/u/0/#inbox
+gmail https://mail.google.com/mail/u/1/#inbox
 mongodb atlas https://cloud.mongodb.com/v2/640e18d157673a5bb7445084#/clusters
 design-99 design-12 design styles https://99designs.com/blog/trends/graphic-design-trends/
 design&music-soundmedia.jp- reasearch on microphone arrangement http://soundmedia.jp/nuaudktua/
@@ -85,7 +85,7 @@ wolfram alpha https://www.wolframalpha.com/
 github-repos-nvim navbuddy https://github.com/SmiteshP/nvim-navbuddy
 dall-e https://labs.openai.com/
 campo limpo paulista-nfe https://geisweb.net.br/campolimpopaulista/
-sheets https://docs.google.com/spreadsheets/u/0/?tgif=d
+sheets https://docs.google.com/spreadsheets/u/1/?tgif=d
 SGVG-git https://github.com/icaro-onofre/SGVG
 design-material design-darkmode https://m2.material.io/design/color/dark-theme.html#usage
 behance https://www.behance.net/
@@ -420,7 +420,7 @@ eldenring-minx max weapon upgrade:sheets: https://docs.google.com/spreadsheets/d
 masp-ingressos https://masp.byinti.com/#/ticket/
 masp https://masp.org.br/
 electronics-projects-keyboard-parts-blanck keycaps https://campaign.aliexpress.com/wow/gcp/tesla-pc-new/index?UTABTest=aliabtest377151_530968&src=google&aff_fcid=b877f56c1d474e878d2b6283eac049dd-1687789136577-07088-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=b877f56c1d474e878d2b6283eac049dd-1687789136577-07088-UneMJZVf&terminal_id=69e7f48c96b84bd0bffbe328785b7fbc&wh_weex=true&wx_navbar_hidden=true&wx_navbar_transparent=true&ignoreNavigationBar=true&wx_statusbar_hidden=true&bt_src=ppc_direct_lp&scenario=pcBridgePPC&productId=1005004683825856&OLP=1085100208_f_group2&o_s_id=1085100208
-docs-flutter https://docs.flutter.dev/get-started/install/linux
+docs-flutter https://docs.flutter.dev/release/whats-new
 spring-initializr https://start.spring.io/
 heroku https://www.heroku.com/
 tutoriais-java-jsf https://www.youtube.com/watch?v=RD2mUPTjyog&list=PL62G310vn6nHSNpACkELWiPlM8J8z8t5J
@@ -480,7 +480,7 @@ fatec-estagio https://www.fatecjd.edu.br/estagio/
 compras-teclado-wired thinkpad keyboard https://pt.aliexpress.com/item/1005005571225879.html?_t=pvid%3A0bca5b88-42ab-4f6b-aa4f-5b1ef5137b86&spm=a2g0o.ppclist.product.mainProduct&gatewayAdapt=glo2bra
 unifrota webCliente novo homolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
 unifrota webCliente localhost https://localhost:8443/webCliente/cliente/registroAbastecimentoOffLine.jsf
-unifrota local webAdmin https://localhost:8443/webAdmin/admin/home.jsf
+unifrota webAdmin local https://localhost:8443/webAdmin/admin/home.jsf
 nix-nix packages https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=sxh
 oreilly xgh https://gohorseprocess.com.br/extreme-go-horse-xgh/
 unifrota-trello-java [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
@@ -610,3 +610,142 @@ ingressos-ssp-sinfonia de anime 18/04/24 http://www.salasaopaulo.art.br/concerto
 ingressos-ssp- 23-25/05/24 Tom Borrow Mahler no 1 https://osesp.byinti.com/#/event/osesp-fischer-regente-e-borrow-piano-beethoven-e-mahler
 trello https://trello.com/b/Zp8jo3hm/unifrota-pdv-dash-gestor
 git-repos https://github.com/icaro-onofre?tab=repositories
+compras-bolsas-cofb x pod https://www.codeofbell.com/products/x-pod-sling-pack
+tse-Certidão de quitação eleitoral https://www.tse.jus.br/servicos-eleitorais/certidoes/certidao-de-quitacao-eleitoral
+compras-EDC-porta objetos pochete https://www.amazon.com.br/Objetos-Pochete-Cintura-Militar-Masculino/dp/B09FKNSRCG/ref=asc_df_B09FKNSRCG/?tag=googleshopp00-20&linkCode=df0&hvadid=397591442156&hvpos=&hvnetw=g&hvrand=2550105699339895156&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9100393&hvtargid=pla-1416787835022&mcid=264e8e4d9dba33a99048b5d94cbf8b67&th=1
+videos-concert grand comparison https://www.youtube.com/watch?v=T2GYYV8JSqM
+aws-billing and cost management https://us-east-1.console.aws.amazon.com/costmanagement/home?region=sa-east-1#/home
+wikipedia-backtesting https://en.wikipedia.org/wiki/Backtesting#:~:text=Backtesting%20is%20a%20term%20used,previous%20time%20period(s).
+investing-RI-mailing-Klabin https://ri.klabin.com.br/en/mailing/
+StudioDeIdiomas-figma-preview https://www.figma.com/proto/qfcIuL9sxpKwkhMRbYh4hB/StudioDeIdiomas?type=design&node-id=2107-457&t=pwSyBYCfuZUIdpTs-0&scaling=scale-down-width&page-id=0%3A1
+ingressos-theatro municipal-mahler 2 29-30/03/2024 https://theatromunicipal.org.br/pt-br/evento/ressurreicao/
+music-smooth opertator enzo https://www.youtube.com/watch?v=S6V3GdYg2lc
+twitch-drawyu https://www.twitch.tv/drawyu
+wikipedia-redes-Modo promíscuo https://pt.wikipedia.org/wiki/Modo_prom%C3%ADscuo
+memes-menina lavando a tv https://www.reddit.com/r/perfectlycutscreams/comments/1aew4yg/mom_come_see_what_shes_doing/
+companies-insper https://www.insper.edu.br/
+stack-tauri https://tauri.app/
+stack-shadcn/ui :ui: https://ui.shadcn.com/
+x-Nagata1306 https://twitter.com/Nagata1306
+youtube-channels-drawyu https://www.youtube.com/@drawyu
+instagram-drawyuzin https://www.instagram.com/drawyuzin/?hl=en
+memes-homens delicados https://br.ifunny.co/picture/me-y-tempos-duros-fazem-homens-duros-homens-duros-fazem-8dB6bRMdA
+memes-my friend's group https://www.reddit.com/r/SaikoReddit/comments/1ail624/legal/
+instagram-Patricia M F :psicologo: https://www.instagram.com/patriciamfpsicologia/?igsh=OWR0anMwa2d5amtl
+instagram-daniel ojesp :ojesp: https://www.instagram.com/daniel_zinho0/?next=%2Fiam.alynemuniz%2Ffeed%2F&ref=whub
+docs-conventional commits https://www.conventionalcommits.org/en/v1.0.0-beta.4/
+music-Best of Deutsche Grammophon 2023 https://www.youtube.com/watch?v=Mmbz5WvaoEk
+compras-laptop-dell latitude https://www.dell.com/en-us/shop/laptops/sf/latitude-laptops
+instagram-julius asal https://www.instagram.com/juliusasal/
+google-drive dollboy https://drive.google.com/drive/u/0/
+google-drive icaro https://drive.google.com/drive/u/1/home
+wikipedia-quantile :statistics: https://en.wikipedia.org/wiki/Quantile
+estudos-brsociety https://brsociety.club/register
+videos-Reading Music Is Easy When You Know THIS :musictheory: https://www.youtube.com/watch?v=WcsuofdtOy4
+pinterest-books-organic chemistry of explosives https://br.pinterest.com/pin/70087337939349891/
+pinterest-books-The Chemistry of Explosives https://br.pinterest.com/pin/697706167298837947/
+github-repos-lsp zero-server_configurations https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+Okonomicus-figma-preview https://www.figma.com/proto/3OuIuFCl0ynPP1tPUkU8vQ/Okonomicus?type=design&node-id=3-2&t=8VgZnYM04OmubejT-0&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=302%3A6
+archwiki-pacman-Tips and tricks https://wiki.archlinux.org/title/pacman/Tips_and_tricks
+music-mahler 9-ojesp https://www.youtube.com/watch?v=h_DWJEVYZv0
+music-mahler 3-ojesp https://www.youtube.com/watch?v=BrLH31RGW3A&t=1225s
+compras-bolsa-Multifunctional Waist Pack Pouch :edc:bolsa:waistpack: https://www.amazon.com/gp/product/B014M3SVBK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B014M3SVBK&linkCode=as2&tag=shopping07ea-20&linkId=lcml2w6v0fd9kk5v2kuhfu845l8wdbzb
+memes-man eating hot dogs https://br.pinterest.com/pin/158470480632003350/
+memes-cat sponge bob head https://br.pinterest.com/pin/190347521744554264/
+memes-eu nem quero mais festa https://br.pinterest.com/pin/49258189667942709/
+compras-bolsa-Tactical Waist Pack Bag Portable Fanny Pack Outdoor Hiking Travel :waistpack:edc: https://www.amazon.com/Tactical-Portable-Outdoor-Military-Cycling/dp/B0BR7NP3W3/ref=sr_1_6?crid=1BPH3ICEZXTIJ&keywords=Multifunctional+Waist+Pack+Pouch+Camping+Hiking+Outdoor&qid=1707579272&sprefix=multifunctional+waist+pack+pouch+camping+hiking+outdoor+%2Caps%2C257&sr=8-6
+compras-bolsa-Tactical Waistpack Backpack 3L :waistpack:edc: https://www.sixtysixdepot.com/products/tactical-waistpack-backpack-3l-waterproof?variant=28031843721&utm_source=pinterest&utm_medium=social
+memes-feeling of drea :images: https://static.wikia.nocookie.net/cultistsimulator_gamepedia_en/images/c/c9/Dread.png/revision/latest?cb=20210124113837
+google-maps- Brasília https://www.google.com/maps/place/Bras%C3%ADlia+-+Brasilia,+Federal+District/@-15.7217001,-48.1025159,50418m/data=!3m2!1e3!4b1!4m6!3m5!1s0x935a3d18df9ae275:0x738470e469754a24!8m2!3d-15.7975154!4d-47.8918874!16zL20vMDFoeV8?entry=ttu
+ingressos-sala são paulo-mahler 2 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
+sheets-plano financeiro vital https://docs.google.com/spreadsheets/d/1BT9gUlUStYG7q7ZpO3W7wY_hNh_i6K7kdLaYOyIa3qc/edit#gid=0
+ingressos-praça das artes- 24/02/24 Camerata da Orquestra Experimental de Repertório – Ladislau, Holst e Tchaikovsky https://theatromunicipalsp.byinti.com/#/ticket/futureEvent/camerataladislauholstetchaikovsky
+memes-minecraft ? https://www.youtube.com/watch?v=mhI7mTsC3hs
+documentaries-Iraq War Veterans, 20 Years Later https://www.youtube.com/watch?v=RIWfH3iEgXU
+manual https://www.manual.com.br/account/home
+b3 https://www.investidor.b3.com.br/login
+github-respos-qutebrowser https://github.com/qutebrowser/qutebrowser
+ingressos-sala são paulo-mahler 2 aniversario ssp 20:30 06/07/24 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
+wikipedia-boleto bancario https://pt.wikipedia.org/wiki/Boleto_banc%C3%A1rio
+spotify-playtlists-hardest https://open.spotify.com/playlist/5kreZCnIhJbUobcZ83DFrX
+unifrota-trello [2918][feat] Implementar colunas separadas para dias úteis e domingos/feriados para horas extras. https://trello.com/c/QkSuY5YF/801-2918feat-implementar-colunas-separadas-para-dias-%C3%BAteis-e-domingos-feriados-para-horas-extras
+compras-cases-cases.br.com https://casesbr.com/
+archwiki-pacman https://wiki.archlinux.org/title/pacman
+archwiki-pacman/Tips and tricks https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
+unifrota-trello [b39b][feat] Coluna nova no totalizador demonstrando separadamente apenas as horas extras realizadas em domingos/feriados https://trello.com/c/ArjdNkG9/804-b39bfeat-coluna-nova-no-totalizador-demonstrando-separadamente-apenas-as-horas-extras-realizadas-em-domingos-feriados
+gcloud-docs-cli reference https://cloud.google.com/sdk/gcloud/reference
+github-repos-obsidian.el https://github.com/licht1stein/obsidian.el
+sheets-rascunhos https://docs.google.com/spreadsheets/d/1v-8eoLTu3-HYgmxyAo4dlYL5k9EK-VsIyexnRJTeyuI/edit#gid=0
+stackoverflow-Is there a Java utility to do a deep comparison of two objects? [closed] https://stackoverflow.com/questions/1449001/is-there-a-java-utility-to-do-a-deep-comparison-of-two-objects
+docs-gqlgen :go:graphql: https://gqlgen.com/
+wikipedia-acer nigrum :botanic: https://en.wikipedia.org/wiki/Acer_nigrum
+github-repos-org roam https://github.com/org-roam/org-roam
+unifrota webCliente prod monitorRoterizacao https://web.unifrota.com.br:8443/webCliente/cliente/monitorRoteirizacao.jsf
+ingressos-sala são paulo-mahler 2 06/07/24 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
+stackoverflow-How to loop over files in directory and change path and add suffix to filename :bash: https://stackoverflow.com/questions/20796200/how-to-loop-over-files-in-directory-and-change-path-and-add-suffix-to-filename
+ipython-readings-25 ipython tips for your next advent of code https://switowski.com/blog/25-ipython-tips-for-your-next-advent-of-code/
+compras-bateria thinkpad x61-ali express https://pt.aliexpress.com/item/1005005922792900.html?spm=a2g0o.productlist.main.5.517373cb9GkQ0B&algo_pvid=c583cb7d-6957-47d7-a1cc-e1a8c65c6880&algo_exp_id=c583cb7d-6957-47d7-a1cc-e1a8c65c6880-2&pdp_npi=4%40dis%21BRL%2189.66%2189.66%21%21%21126.18%21126.18%21%402101c5b117054102654181450eb57a%2112000034867279333%21sea%21BR%210%21AB&curPageLogUid=KpIr8W8YDTDE&utparam-url=scene%3Asearch%7Cquery_from%3A
+unifrota-trello [d493][feat] Possibilitar realizar o vínculo de FornecedorxDepartamento https://trello.com/c/Z4RyJuOo/812-d493feat-possibilitar-realizar-o-v%C3%ADnculo-de-fornecedorxdepartamento
+github-repos-helix https://github.com/helix-editor/helix
+github-repos-neovim https://github.com/neovim/neovim
+unifrota-trello [2675][feat] Inserir odom/hori https://trello.com/c/SSs3yNgK/820-2675feat-inserir-odom-hori
+videos-tedtalks-How to Make Learning as Addictive as Social Media https://www.youtube.com/watch?v=P6FORpg0KVo
+ingressos-theatro municipal-O Contractador de Diamantes, de Francisco Mignone https://theatromunicipal.org.br/pt-br/evento/ocontractadordediamantes/
+ingressos-theatro municipal-Madama Butterfly, de Giacomo Puccini https://theatromunicipal.org.br/pt-br/evento/madamabutterfly/
+ingressos-theatro municipal-mahler 2 29|30/03/2024 https://theatromunicipal.org.br/pt-br/evento/ressurreicao/
+ingressos-theatro municipal-Doren Carwithen&Shostakovich 31/03/2024 https://theatromunicipal.org.br/pt-br/evento/carwitheneshostakovich/
+ingressos-theatro municipal-Ladislau, Holst e Tchaikovsky 24/02/2024 https://theatromunicipal.org.br/pt-br/evento/camerata_ladislauholstetchaikovsky/
+ingressos-theatro municipal-Carmen 03:11/05/2024 https://theatromunicipal.org.br/pt-br/evento/carmen/
+batsss :alugueldeinstrumentosmusicais: https://batsss.co/
+github-repos-juniper https://github.com/graphql-rust/juniper
+docs-juniper https://graphql-rust.github.io/
+github-repos-lsp zero-supported language servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
+compras-bolsas-large fanny pack for men https://www.amazon.com/Tactical-CrossBody-Adjustable-Workout-Running/dp/B09WMWWHW7/ref=sr_1_11_sspa?keywords=military%2Bwaist%2Bpack&qid=1708035114&sr=8-11-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&th=1
+compras-bolsas-large fanny pack for men-checkout https://www.amazon.com/gp/buy/spc/handlers/display.html?_from=cheetah
+memes-jogador de lol mais masculo https://www.youtube.com/shorts/etpHGJxzV_c
+wikipedia-estamina https://pt.wikipedia.org/wiki/Estamina
+videos-cpi vs fpga https://www.youtube.com/watch?v=BML1YHZpx2o
+music-tchaikovsky the nutcracker pletnev https://www.youtube.com/watch?v=6YRhkRSTU3g
+compras-gaveteiro-Gaveteiro office 4 mobly https://checkout.mobly.com.br/carrinho
+youtube-channels-biggie clean :biohazard:cleaning: https://www.youtube.com/@BiggieClean
+memes-where do you keep your oscars https://www.youtube.com/shorts/s1IcxJrmkaw
+manual-histórico de pedidos https://www.manual.com.br/account/order-history
+memes-hora do café https://www.instagram.com/reel/C3amZr-r-BJ/?igsh=MnZycDBteGd5Y3Rt
+docs-scrapy-selectors https://docs.scrapy.org/en/latest/topics/selectors.html
+stackoverflow-Apollo Server - how to split queries across multiple files on the server :graphql:apolloserver: https://stackoverflow.com/questions/73347840/apollo-server-how-to-split-queries-across-multiple-files-on-the-server
+Are you just living day to day? https://www.youtube.com/watch?v=amXl7FG7J4c
+youtube-channels-ethan travels https://www.youtube.com/@ethantravels
+protondb-elden ring https://www.protondb.com/app/1245620
+mubi-brazillian cinema https://mubi.com/en/br/collections/brazilian-cinema
+protondb-dragon's dogma https://www.protondb.com/app/367500
+protondb-lies of p https://www.protondb.com/app/1627720
+gemini https://gemini.google.com/u/1/app
+github-repos-tldr https://github.com/tldr-pages/tldr
+github-repos-tmux https://github.com/tmux/tmux
+tuta https://app.tuta.com/mail/N_abrWF-1F-9
+protondb-borderlands 3 https://www.protondb.com/app/397540
+reddit-elden ring won't launch (proton/linux) https://www.reddit.com/r/linux_gaming/comments/td14yg/elden_ring_wont_launch_protonlinux/
+protondb-aimlabs https://www.protondb.com/app/714010
+youtube-playlist-maratona jsf https://www.youtube.com/watch?v=RD2mUPTjyog&list=PL62G310vn6nHSNpACkELWiPlM8J8z8t5J
+github-repos-linux https://github.com/torvalds/linux
+protondb-lords of fallen https://www.protondb.com/app/1501750
+zoro-lain :watch-anime: https://zorox.to/watch/serial-experiments-lain-5km9/ep-1
+osdev-Bare Bones hello world https://wiki.osdev.org/Bare_Bones
+osdev-cross compiler https://wiki.osdev.org/GCC_Cross-Compiler#Introduction
+gnu-main mirror https://ftp.gnu.org/gnu/gcc/
+steamdb-aoe4 https://steamdb.info/app/1466860/charts/
+steamdb-terraria https://steamdb.info/app/105600/
+memes-lain scooby doo turns into a car https://www.youtube.com/shorts/wpTJDkqYIDc
+politica-minuta do golpe https://g1.globo.com/politica/noticia/2023/01/13/leia-a-integra-da-minuta-de-decreto-para-instaurar-estado-de-defesa-encontrada-na-casa-de-torres.ghtml
+music-Michelle Coltrane - My Favorite Things https://www.youtube.com/watch?v=fgim29Q0YjA&list=RDfgim29Q0YjA&start_radio=1&rv=eB6txyhHFG4
+shadcn-ui-components-accordion https://ui.shadcn.com/docs/components/accordion
+laingame https://3d.laingame.net/#/game
+memes-5 bananas herz https://www.instagram.com/reel/C3eaER-NBAK/?igsh=dmc2em0ydjc4ZWsy
+gmail-estudosmisto https://mail.google.com/mail/u/2/#inbox
+reddit-i3 named scratchpads https://www.reddit.com/r/i3wm/comments/sqoyvq/i3_scratchpad_toggle_or_create_script/
+aoe4-builds-reddit-guides on youtube https://www.reddit.com/r/aoe4/comments/wc8iqb/aoe4_build_orders_and_guides_on_youtube/
+aoe4-world https://aoe4world.com/
+ingressos-ssp-25/10/24 choro no 10 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9664
+ingressos-ssp- 29/11/24 choro no 6 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9677
+memes-pessoas com voz de personagens https://www.youtube.com/watch?v=kq-Q1qk8SxQ
+ingressos-ssp-10:50 24/03/24 Soundscape Big band https://salasaopaulo.byinti.com/#/ticket/futureEvent/matinais-soundscape-big-band
