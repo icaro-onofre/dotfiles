@@ -40,6 +40,8 @@ require("lazy").setup({
 { 'nvim-telescope/telescope.nvim', tag = '0.1.5', -- Telescope grep fuzzy find
 	dependencies = { 'nvim-lua/plenary.nvim' }, },
 
+-- Debugging with neovim dap
+{ 'mfussenegger/nvim-dap' },
 
 -- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
 {
@@ -132,6 +134,8 @@ require('lsp-zero')
 require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm i -g @tailwindcss/language-server
 require('lspconfig').tsserver.setup({})
+-- java language server
+require'lspconfig'.java_language_server.setup{}
 
 -- PLUGIN marks.nvim setup.
 require'marks'.setup {
@@ -175,7 +179,7 @@ require'marks'.setup {
 -- PLUGIN lsp zero keymaps config
 -- For a listing of all keymaps available for lsp server do :h default_keymaps
 
-vim.keymap.set('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-vim.keymap.set('n', '<leader><F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-vim.keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
