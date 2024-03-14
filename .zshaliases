@@ -77,3 +77,6 @@ alias pg="ping www.google.com"
 alias z="zoxide"
 # Copy to clipboard export command
 alias xcc-export-lang="echo 'export LANG=pt_BR.UTF-8; export LC_MEASUREMENT=pt_BR.UTF-8; export LC_PAPER=pt_BR.UTF-8; export LC_MONETARY=pt_BR.UTF-8; export LC_NAME=pt_BR.UTF-8; export LC_CTYPE=pt_BR.UTF-8; export LC_ADDRESS=pt_BR.UTF-8; export LC_NUMERIC=pt_BR.UTF-8; export LC_TELEPHONE=pt_BR.UTF-8; export LC_IDENTIFICATION=pt_BR.UTF-8; export LC_TIME=pt_BR.UTF-8; ./run.sh -b 0.0.0.0 &' | xclip -sel clip "
+
+# nmcli
+alias nmcli-conn-galaxy="nmcli device wifi connect Galaxy\ A14\ 4093 password 'u7itet8jmzqkzfz'"
