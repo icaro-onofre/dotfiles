@@ -9,7 +9,7 @@ super + shift + p
 		rofi-pass -combi-modi window,drun -show combi -show-icons
 # Terminal
 super + t
-		kitty
+		alacritty
 
 super + shift + t
 		urxvt

@@ -38,6 +38,8 @@ require("lazy").setup({
 { 'nvim-telescope/telescope.nvim', tag = '0.1.5', -- Telescope grep fuzzy find.
 	dependencies = { 'nvim-lua/plenary.nvim' }, },
 
+-- Debugging with neovim dap
+{ 'mfussenegger/nvim-dap' },
 
 -- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
 {
@@ -87,9 +89,9 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     keymaps = {
       init_selection = '<leader>gn',
-      scope_incremental = '<CR>',
-      node_incremental = '<TAB>',
-      node_decremental = '<S-TAB>',
+      scope_incremental = '<leader>grc',
+      node_incremental = '<Tab>',
+      node_decremental = '<S-Tab>',
     },
   },
 }
@@ -130,10 +132,12 @@ vim.keymap.set("n","N","Nzzzv")
 
 -- LSP configs
 require('lsp-zero')
--- Run yay -S typscript-language-server
+-- Run yay -S typescript-language-server
 require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm i -g @tailwindcss/language-server
 require('lspconfig').tsserver.setup({})
+-- java language server
+require'lspconfig'.java_language_server.setup{}
 
 -- PLUGIN marks.nvim setup.
 require'marks'.setup {
