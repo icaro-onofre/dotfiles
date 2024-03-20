@@ -165,3 +165,5 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 # END Funções Úteis
+
+export OPENAI_KEY=YOUR_KEY_HERE=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

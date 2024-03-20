@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -17,13 +16,11 @@ require("lazy").setup({
 { "folke/neoconf.nvim", cmd = "Neoconf" },
 
 "folke/neodev.nvim",
-"sindrets/diffview.nvim",
+"sindrets/diffview.nvim",					-- Git helper
 
 "folke/tokyonight.nvim",					 -- UI&Icons
 
 "nvim-treesitter/nvim-treesitter",			 -- Ui&Syntax highlightining.
-
-"nvim-treesitter/nvim-treesitter", 			 -- File manager
 
 "HiPhish/rainbow-delimiters.nvim",			 -- UI&Icons
 
@@ -38,7 +35,7 @@ require("lazy").setup({
 
 {'nvim-tree/nvim-web-devicons'}, 			-- UI&Icons
 
-{ 'nvim-telescope/telescope.nvim', tag = '0.1.5', -- Telescope grep fuzzy find
+{ 'nvim-telescope/telescope.nvim', tag = '0.1.5', -- Telescope grep fuzzy find.
 	dependencies = { 'nvim-lua/plenary.nvim' }, },
 
 
@@ -54,6 +51,7 @@ require("lazy").setup({
     end
 },
 
+-- Emmet plugin for writing markup language like html
 {
   "olrtg/nvim-emmet",
   config = function()
@@ -88,7 +86,7 @@ require'nvim-treesitter.configs'.setup {
     incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<CR>',
+      init_selection = '<leader>gn',
       scope_incremental = '<CR>',
       node_incremental = '<TAB>',
       node_decremental = '<S-TAB>',
@@ -102,6 +100,9 @@ vim.keymap.set('n', '<leader>fp',builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fm',builtin.marks, {})
+-- Lsp telescope
+vim.keymap.set('n', '<leader>fr',builtin.lsp_references, {})
 
 -- diff view keybindings
 vim.keymap.set('n', '<leader>gd',"<Cmd>DiffviewOpen<CR>", {})
@@ -175,6 +176,13 @@ require'marks'.setup {
 
 -- PLUGIN lsp zero keymaps config
 -- For a listing of all keymaps available for lsp server do :h default_keymaps
-vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
+vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+vim.keymap.set('n', '<F3>', '<cmd>lua vim.lsp.buf.format()<cr>', opts)
+vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
+vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
+vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
