@@ -16,7 +16,9 @@ require("lazy").setup({
 { "folke/neoconf.nvim", cmd = "Neoconf" },
 
 "folke/neodev.nvim",
-"sindrets/diffview.nvim",					-- Git helper
+"sindrets/diffview.nvim",					 -- Git helper
+"tpope/vim-fugitive",						 -- Git helper
+"lewis6991/gitsigns.nvim",					 -- Git helper
 
 "folke/tokyonight.nvim",					 -- UI&Icons
 
@@ -88,13 +90,66 @@ require'nvim-treesitter.configs'.setup {
     incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<leader>gn',
-      scope_incremental = '<leader>grc',
+      init_selection = 'vi',
+      scope_incremental = '<Tab>s',
       node_incremental = '<Tab>',
       node_decremental = '<S-Tab>',
     },
   },
 }
+
+-- gitsigns configuration
+
+require('gitsigns').setup {
+  signs = {
+    add          = { text = '│' },
+    change       = { text = '│' },
+    delete       = { text = '_' },
+    topdelete    = { text = '‾' },
+    changedelete = { text = '~' },
+    untracked    = { text = '┆' },
+  },
+  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  watch_gitdir = {
+    follow_files = true
+  },
+  auto_attach = true,
+  attach_to_untracked = false,
+  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+    delay = 1000,
+    ignore_whitespace = false,
+    virt_text_priority = 100,
+  },
+  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+  sign_priority = 6,
+  update_debounce = 100,
+  status_formatter = nil, -- Use default
+  max_file_length = 40000, -- Disable if file is longer than this (in lines)
+  preview_config = {
+    -- Options passed to nvim_open_win
+    border = 'single',
+    style = 'minimal',
+    relative = 'cursor',
+    row = 0,
+    col = 1
+  },
+  yadm = {
+    enable = false
+  },
+}
+
+-- Keymaps configurations
+
+-- neovim general keybindings
+vim.keymap.set('n', '<leader>R',"<Cmd>source %<CR>", {})
+
+
 -- Telescope keymaps
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>t',builtin.find_files, {})
@@ -110,6 +165,13 @@ vim.keymap.set('n', '<leader>fr',builtin.lsp_references, {})
 vim.keymap.set('n', '<leader>gd',"<Cmd>DiffviewOpen<CR>", {})
 vim.keymap.set('n', '<leader>gq',"<Cmd>DiffviewClose<CR>", {})
 vim.keymap.set('n', '<leader>gw',"<Cmd>DiffviewFileHistory<CR>", {})
+--gitsigns keybidings
+vim.keymap.set('n', 'gs',"<Cmd>Gitsigns stage_hunk<CR>", {})
+vim.keymap.set('n', 'gu',"<Cmd>Gitsigns undo_stage_hunk<CR>", {})
+vim.keymap.set('n', 'gn',"<Cmd>Gitsigns next_hunk<CR>", {})
+vim.keymap.set('n', 'gp',"<Cmd>Gitsigns next_hunk<CR>", {})
+vim.keymap.set('n', '<leader>G',"<Cmd>Git<CR>", {})
+-- vim.keymap.set('n', '<leader>gc',"Git commit ", {})
 
 -- Set no swap
 vim.opt.swapfile = false
