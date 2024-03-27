@@ -13,11 +13,13 @@ alias xn='xrandr -o normal'
 alias xr='xrandr -o right'
 # Git
 alias g="git status"
+alias gd="git diff"
 alias gl="git log --oneline"
 alias gwa="git worktree add"
 alias gwr="git worktree remove"
 alias gwl="git worktree list"
 alias gcount="git log | grep Date | awk '{print " : "$4" "$3" "$6}' | uniq -c" 		# Count commit by dates
+alias gcm="git commit -m"
 #Systemctl
 alias s="systemctl"
 #Journalctl
