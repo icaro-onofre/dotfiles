@@ -3,3 +3,5 @@
 	name = Icaro
 [diff]
 	tool = neovim
+[safe]
+	directory = /opt/flutter

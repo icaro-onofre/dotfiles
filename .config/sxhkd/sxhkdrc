@@ -1,3 +1,6 @@
+# Kitty
+super + t
+		kitty
 # Rofi 
 super + p
 		rofi -combi-modi window,drun -show combi -show-icons
@@ -7,6 +10,9 @@ super + shift + p
 # Terminal
 super + t
 		alacritty
+
+super + shift + t
+		urxvt
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
@@ -27,8 +33,20 @@ super + x
 super + alt + a 
 	steam steam://rungameid/714010
 
+# Launch qutebrowser
 super + q 
 	qutebrowser
+# Launch discord
+super + shift + d
+	discord
+
+# Launch flameshot
+super + shift + v
+	flameshot
+
+# Launch obsidian
+super + shift + o
+	obsidian
 
 # Maim select screen
 super + shift + s
@@ -42,12 +60,19 @@ super + shift + n
 	xrandr -o normal
 super + shift + r
 	xrandr -o right
+#Select langauge
+
+super + space + p
+	setxkbmap br
+super + space + u
+	setxkbmap us
 
 #Generate random id
 super + shift + u 
 	uuidgen | cut -c 1-4 | xclip -selection clipboard 
 
-
+super + shift + v
+	flameshot gui
 #Reload configs
 super + shift + w
     pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
