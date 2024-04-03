@@ -90,7 +90,7 @@ require'nvim-treesitter.configs'.setup {
     incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = 'vi',
+		init_selection = '<leader>vi',
       scope_incremental = '<Tab>s',
       node_incremental = '<Tab>',
       node_decremental = '<S-Tab>',
@@ -200,6 +200,13 @@ require('lspconfig').tailwindcss.setup({})
 require('lspconfig').tsserver.setup({})
 -- java language server
 require'lspconfig'.java_language_server.setup{}
+-- HTML language server 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
 
 -- PLUGIN marks.nvim setup.
 require'marks'.setup {
