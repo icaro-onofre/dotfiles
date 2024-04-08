@@ -19,7 +19,7 @@ rclone mount --daemon Icaro: ~/Documents/Icaro
 
 #Video configurations 
 #xrandr -s 1440x900 --set audio on
-xrandr --dpi 70
+xrandr --dpi 90
 #HDMI Config if nvidia is configured
 feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
 #xrandr --output HDMI-1-0 --auto; xrandr --output DP-1 --off;feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
