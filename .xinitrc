@@ -11,8 +11,8 @@ setxkbmap us,br
 #/usr/bin/emacs --daemon
 
 # Cloud files mount points
-rclone mount --daemon Livros: ~/Livros
-rclone mount --daemon Icaro: ~/Documents/Icaro
+#rclone mount --daemon Livros: ~/Livros
+#rclone mount --daemon Icaro: ~/Documents/Icaro
 
 #Status bar
 #polybar &

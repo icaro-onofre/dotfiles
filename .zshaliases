@@ -78,6 +78,7 @@ alias so="source"
 #Bash
 alias now="date '+%d-%m-%Y_%H.%M'"
 alias t='tmux'
+alias tnds='tmux new -d -s'
 alias tds="t new -d -s "
 alias xcc="xclip -sel clip"
 #Archlinux speciic aliases
