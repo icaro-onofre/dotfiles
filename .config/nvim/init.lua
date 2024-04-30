@@ -28,6 +28,8 @@ require("lazy").setup({
 
 "chentoast/marks.nvim",						 -- UI&Icons
 
+'norcalli/nvim-colorizer.lua',				 -- UI&Icons
+
 --LSP Zero block
 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 {'neovim/nvim-lspconfig'},
