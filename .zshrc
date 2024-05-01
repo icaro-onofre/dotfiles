@@ -154,3 +154,5 @@ bindkey '^Z' fancy-ctrl-z
 # Jboss
 export JBOSS_HOME=/home/fforelle/work/dev/unifrota_jboss
 export PATH=$PATH:$JBOSS_HOME/bin
+
+source ~/.zshaliases_dangerous
