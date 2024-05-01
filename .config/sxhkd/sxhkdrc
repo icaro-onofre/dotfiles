@@ -42,7 +42,7 @@ super + shift + d
 
 # Launch flameshot
 super + shift + v
-	flameshot
+	flameshot gui --clipboard
 
 # Launch obsidian
 super + shift + o
