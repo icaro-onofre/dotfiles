@@ -93,7 +93,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     keymaps = {
 		init_selection = '<leader>vi',
-      scope_incremental = '<Tab>s',
       node_incremental = '<Tab>',
       node_decremental = '<S-Tab>',
     },
