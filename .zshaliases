@@ -68,9 +68,6 @@ alias aws-regions='aws ec2 describe-regions --output table'
 #Qemu aliases
 alias qx86='qemu-system-x86_64'
 alias txvzf='tar -xvzf OpenJDK8U-jdk_x64_linux_hotspot_8u372b07.tar.gz'
-#SSH
-alias ssh_unifrota_jboss='ssh admin@web.unifrota.com.br'
-alias ssh_unifrota_banco='ssh admin@rds.unifrota.com.br'
 #Bat
 alias b='bat'
 #Source
@@ -85,11 +82,6 @@ alias xcc="xclip -sel clip"
 alias archlinux-install-yay="sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 " # install aur helper yay
 alias sx="setxkbmap -option caps:super;setxkbmap -option grp:alt_caps_toggle; setxkbmap us,br"
-# ssh unifrota
-alias unifrota_ssh_jboss="ssh admin@novo.unifrota.com.br"
-alias unifrota_ssh_banco="ssh admin@novords.unifrota.com.br"
-alias unifrota_ssh_jboss_prod="ssh centos@web.unifrota.com.br"
-alias unifrota_ssh_banco_prod="ssh centos@rds.unifrota.com.br"
 #Keyboard setup
 alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_caps_toggle | setxbmap us,br | sxhkd & "
 #Kill jboss
@@ -107,7 +99,16 @@ alias pg="ping www.google.com"
 alias imoviz_scrapy_vivareal="'scrapy shell https://www.vivareal.com.br/venda/sp/sao-paulo/#onde=,S%C3%A3o%20Paulo,S%C3%A3o%20Paulo,,,,,city,BR%3ESao%20Paulo%3ENULL%3ESao%20Paulo,-23.555771,-46.639557,&itl_id=1000183&itl_name=vivareal_-_botao-cta_buscar_to_vivareal_resultado-pesquisahttps://www.vivareal.com.br/venda/sp/sao-paulo/%23onde=,S%C3%A3o%20Paulo,S%C3%A3o%20Paulo,,,,,city,BR%3ESao%20Paulo%3ENULL%3ESao%20Paulo,-23.555771,-46.639557,&itl_id=1000183&itl_name=vivareal_-_botao-cta_buscar_to_vivareal_resultado-pesquisa
 '"
 # Javascript 
+
 # Shadcn-ui
 alias shadcn='pnpx shadcn-ui@latest'
+
+# UNION Aliases do trabalho
+alias uni_web_logs="ssh ec2-user@web.unifrota.com.br tail -100 -f /opt/jboss-unifrota/server/default/log/server.log"
+alias uni_web2_logs="ssh ec2-user@web2.unifrota.com.br tail -100 -f /opt/jboss-unifrota/server/default/log/server.log"
 alias run-jboss-freebsd-orig="export LANG=pt_BR.UTF-8 ; export LC_MEASUREMENT=pt_BR.UTF-8 ; export LC_PAPER=pt_BR.UTF-8 ; export LC_MONETARY=pt_BR.UTF-8 ; export LC_NAME=pt_BR.UTF-8 ; export LC_CTYPE=pt_BR.UTF-8 ; export LC_ADDRES
 S=pt_BR.UTF-8 ; export LC_NUMERIC=pt_BR.UTF-8 ; export LC_TELEPHONE=pt_BR.UTF-8 ; export LC_IDENTIFICATION=pt_BR.UTF-8 ; export LC_TIME=pt_BR.UTF-8 ; ./runOrig.sh -b 0.0.0.0 &"
+#SSH connections
+alias uni_web1='ssh ec2-user@@web.unifrota.com.br'
+alias uni_web2='ssh ec2-user@@web2.unifrota.com.br'
+alias ssh_unifrota_banco='ssh ec2-user@rds.unifrota.com.br'
