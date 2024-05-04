@@ -4,9 +4,6 @@ super + t
 # Rofi 
 super + p
 		rofi -combi-modi window,drun -show combi -show-icons
-# Pass manager
-super + shift + p 
-		rofi-pass -combi-modi window,drun -show combi -show-icons
 # Terminal
 super + t
 		alacritty
@@ -44,6 +41,10 @@ super + shift + d
 super + shift + v
 	flameshot gui --clipboard
 
+# Color picker
+super + shift + p
+	kcolorchooser	
+
 # Launch obsidian
 super + shift + o
 	obsidian
@@ -55,6 +56,7 @@ super + alt + s
 	maim --select ~/imgs/prints/print_01.png
 # Screen recording
 # ffmpeg -f x11grab -i :0.0 out.mkv
+
 #Rotate screen
 super + shift + n
 	xrandr -o normal
@@ -71,8 +73,6 @@ super + space + u
 super + shift + u 
 	uuidgen | cut -c 1-4 | xclip -selection clipboard 
 
-super + shift + v
-	flameshot gui
 #Reload configs
 super + shift + w
     pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
