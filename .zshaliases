@@ -20,6 +20,7 @@ alias xr='xrandr -o right'
 # Git
 alias g="git status"
 alias gl="git log --oneline"
+alias glt="git log --pretty=format:'%H - %ad - %an - %s' --since='today 00:00'"
 alias gwa="git worktree add"
 alias gwr="git worktree remove"
 alias gwl="git worktree list"
@@ -87,8 +88,7 @@ alias keyboard_setup="setxbmap -option caps:super | setxbmap -option grp:alt_cap
 #Kill jboss
 #xclip
 alias xc="xclip -sel clip"
-alias kill-jboss="ps aux | grep -ie jboss | awk '{print $2}' | xargs kill -9"
-alias kj="echo 'ps -ef | grep jboss | grep -v grep | awk '{print $2}' | xargs kill -9' | xclip -sel clip"
+alias kill-jboss="ps -ef | grep jboss | grep -v grep | awk '{print $2}'| xargs kill -9"
 alias sx="setxkbmap us,br ; setxkbmap -option grp:alt_caps_toggle ; setxkbmap -option caps:super"
 # Ping & Network oneliners
 alias pg="ping www.google.com"
