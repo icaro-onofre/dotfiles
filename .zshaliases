@@ -112,3 +112,6 @@ alias jboss-origin-locale"export LANG=pt_BR.UTF-8; export LC_MEASUREMENT=pt_BR.U
 alias uni_web1='ssh ec2-user@@web.unifrota.com.br'
 alias uni_web2='ssh ec2-user@@web2.unifrota.com.br'
 alias ssh_unifrota_banco='ssh ec2-user@rds.unifrota.com.br'
+# Okonomicus related aliases
+alias mongosh_okonomicus="mongosh "mongodb+srv://cluster0.udoak6a.mongodb.net/" --apiVersion 1 --username icaro"
+
