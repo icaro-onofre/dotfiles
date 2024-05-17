@@ -15,14 +15,16 @@ super + t
 super + alt + r
 	remmina
 
-super + shift + t
-		urxvt
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
 # Zathura
 super + z
 	zathura
+
+# Thunderbird
+super + shift + t
+	thunderbird
 
 # Polybar toggle
 super + shift + b 
