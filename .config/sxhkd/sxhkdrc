@@ -12,6 +12,14 @@ super + t
 super + alt + r
 	remmina
 
+# Eclipse
+super + alt + e
+	eclipse
+
+# Dbeave
+super + alt + b
+	dbeaver
+
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
