@@ -47,6 +47,7 @@ require("lazy").setup({
 
 
 -- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
+-- neovim surround
 {
     "kylechui/nvim-surround",
     version = "*", 
@@ -57,6 +58,8 @@ require("lazy").setup({
         })
     end
 },
+-- Vim multiline
+{ 'mg979/vim-visual-multi' },
 
 -- Emmet plugin for writing markup language like html
 {
