@@ -175,3 +175,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# Eclipse configs
+export PATH=$PATH:/home/icaro/bin/eclipse
+export PATH=$PATH:/home/icaro/bin/nvim-linux64/bin
