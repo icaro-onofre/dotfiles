@@ -157,7 +157,6 @@ export PATH=$PATH:$JBOSS_HOME/bin
 
 export OPENAI_KEY="sk-proj-SS90Xqouqdi8cJ5ryW2dT3BlbkFJSiUByXcQZ6seexwS3kKr"
 
-source ~/.zshaliases_dangerous
 
 
 # >>> conda initialize >>>

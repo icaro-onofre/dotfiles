@@ -20,7 +20,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # Lock screen
-bindsym $mod+Shift+l exec i3lock
+bindsym $mod+Shift+- exec i3lock
 
 #Scractch pad
 bindsym $mod+Shift+minus move scratchpad

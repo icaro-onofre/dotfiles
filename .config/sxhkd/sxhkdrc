@@ -1,12 +1,9 @@
 # Kitty
 super + t
-		alacritty
+		kitty
 # Rofi 
 super + p
 		rofi -combi-modi window,drun -show combi -show-icons
-# Terminal
-super + t
-		alacritty
 
 # Remmina
 super + alt + r

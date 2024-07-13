@@ -18,7 +18,6 @@ setxkbmap us,br
 #polybar &
 
 #Video configurations 
-#xrandr -s 1440x900 --set audio on
 xrandr --dpi 90
 #HDMI Config if nvidia is configured
 feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
