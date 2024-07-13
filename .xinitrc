@@ -18,10 +18,10 @@ setxkbmap us,br
 #polybar &
 
 #Video configurations 
-xrandr --dpi 90
+#xrandr --dpi 90
 #HDMI Config if nvidia is configured
 feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
-#xrandr --output HDMI-1-0 --auto; xrandr --output DP-1 --off;feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
+#xrandr --output HDMI-1-1 --mode 1440x900 --rate 60; 
 #xrandr --output 
 
 #Start i3 window server
