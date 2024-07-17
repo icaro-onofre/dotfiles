@@ -204,6 +204,8 @@ require('lsp-zero')
 -- Run yay -S typescript-language-server
 require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm i -g @tailwindcss/language-server
+-- require('lspconfig').tailwindcss.setup({})
+-- Run sudo npm install --save vscode-html-languageservice
 require('lspconfig').tsserver.setup({})
 -- java language server
 require'lspconfig'.java_language_server.setup{}
