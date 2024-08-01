@@ -96,7 +96,7 @@ bindkey -s ^a "nvims\n"
 bindkey -s ^a "nvims\n"
 
 source ~/.zshaliases
-#source ~/.zshaliases_dangerous
+source ~/.zshaliases_dangerous
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
@@ -153,6 +153,7 @@ bindkey '^Z' fancy-ctrl-z
 # Export paths
 # Jboss
 export JBOSS_HOME=/home/fforelle/work/dev/unifrota_jboss
+export EAP_HOME=/home/fforelle/work/dev/unifrota_jboss_experimental
 export PATH=$PATH:$JBOSS_HOME/bin
 
 export OPENAI_KEY="sk-proj-SS90Xqouqdi8cJ5ryW2dT3BlbkFJSiUByXcQZ6seexwS3kKr"

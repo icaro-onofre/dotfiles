@@ -25,4 +25,9 @@ feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
 #xrandr --output 
 
 #Start i3 window server
+
+# Disable power saving 
+xset s off
+xset s off -dpms
+
 exec i3
