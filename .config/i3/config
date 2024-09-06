@@ -152,6 +152,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+o workspace prev                              
+bindsym $mod+i workspace next
 
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 0

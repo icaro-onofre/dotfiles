@@ -1,0 +1,6 @@
+minecraft-launcher
+opencl-nvidia-dev-tkg
+spotify
+visual-studio-code-bin
+yay
+yay-debug
