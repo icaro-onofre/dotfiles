@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.geolocation:
-    https://www.vivareal.com.br: false
+  content.notifications.enabled:
+    https://calendar.google.com: true

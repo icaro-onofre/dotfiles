@@ -60,6 +60,10 @@ super + shift + p
 super + shift + o
 	obsidian
 
+# Launch obs-studio
+super + alt + o
+	obs
+
 # Maim select screen
 super + shift + s
 	maim --select | xclip -selection clipboard -target image/png
