@@ -56,6 +56,10 @@ super + shift + v
 super + shift + p
 	kcolorchooser	
 
+# Launch spotify
+super + alt + s
+	spotify
+
 # Launch obsidian
 super + shift + o
 	obsidian
