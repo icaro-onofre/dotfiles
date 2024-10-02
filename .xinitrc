@@ -8,7 +8,7 @@ setxkbmap -option grp:alt_caps_toggle
 setxkbmap us,br
 
 #Start emacs daemon 
-#/usr/bin/emacs --daemon
+/usr/bin/emacs --daemon
 
 # Cloud files mount points
 #rclone mount --daemon Livros: ~/Livros

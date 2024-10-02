@@ -9,6 +9,10 @@ super + p
 super + alt + r
 	remmina
 
+# Gnumeric
+super + alt + g
+	gnumeric
+
 # Eclipse
 super + alt + e
 	eclipse
@@ -29,7 +33,7 @@ super + shift + t
 	thunderbird
 
 # Polybar toggle
-super + shift + b 
+super + shift + p 
 	--no-startup-id polybar-msg cmd toggle
 # nemo
 super + n
@@ -53,8 +57,8 @@ super + shift + v
 	flameshot gui --clipboard
 
 # Color picker
-super + shift + p
-	kcolorchooser	
+super + shift + b
+	xcolor | xclip -sel clip	
 
 # Launch spotify
 super + alt + s
