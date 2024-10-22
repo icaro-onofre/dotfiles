@@ -62,7 +62,6 @@ alias svenv="source .venv/bin/activate"
 alias xcc="xclip -selection clipboard"
 alias ndot='n ~/.dotfiles/.configure/nvim'
 #Programms shorthands
-alias hx='helix'
 alias n='nvim'
 alias ndot='n ~/.dotfiles/.configure/nvim'
 alias sc='sc-im'
@@ -108,10 +107,7 @@ alias imoviz_scrapy_vivareal="'scrapy shell https://www.vivareal.com.br/venda/sp
 alias shadcn='pnpx shadcn-ui@latest'
 
 # UNION Aliases do trabalho
-alias uni_web_logs="ssh ec2-user@web.unifrota.com.br tail -100 -f /opt/jboss-unifrota/server/default/log/server.log"
-alias uni_web2_logs="ssh ec2-user@web2.unifrota.com.br tail -100 -f /opt/jboss-unifrota/server/default/log/server.log"
-alias run-jboss-freebsd-orig="./runOrig.sh -b 0.0.0.0 &"
-alias jboss-origin-locale"export LANG=pt_BR.UTF-8; export LC_MEASUREMENT=pt_BR.UTF-8; export LC_PAPER=pt_BR.UTF-8; export LC_MONETARY=pt_BR.UTF-8; export LC_NAME=pt_BR.UTF-8; export LC_CTYPE=pt_BR.UTF-8; export LC_ADDRESS=pt_BR.UTF-8; export LC_NUMERIC=pt_BR.UTF-8; export LC_TELEPHONE=pt_BR.UTF-8; export LC_IDENTIFICATION=pt_BR.UTF-8; export LC_TIME=pt_BR.UTF-8; ./runOrig.sh -b 0.0.0.0 &"
+alias web1-logs="ssh admin@web.unifrota.com.br tail -f -n 200 /opt/jboss-unifrota/server/default/log/server.log"
 #SSH connections
 alias uni_web1='ssh ec2-user@@web.unifrota.com.br'
 alias uni_web2='ssh ec2-user@@web2.unifrota.com.br'

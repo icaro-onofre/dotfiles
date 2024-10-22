@@ -127,8 +127,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 [[ -s "/home/icaro/.gvm/scripts/gvm" ]] && source "/home/icaro/.gvm/scripts/gvm"
 
-export PATH="$PATH:/home/icaro/bin/flutter/bin"
-export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
+export PATH="$PATH:/home/fforelle/opt/flutter/bin"
+# escritorio | export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
 
 export CHROME_EXECUTABLE="chromium"
 
@@ -177,5 +177,13 @@ unset __conda_setup
 
 
 # Eclipse configs
-export PATH=$PATH:/home/icaro/bin/eclipse
-export PATH=$PATH:/home/icaro/bin/nvim-linux64/bin
+# escritorio export PATH=$PATH:/home/icaro/bin/eclipse
+# escritorio export PATH=$PATH:/home/icaro/bin/nvim-linux64/bin
+export PATH=$PATH:/home/fforelle/go/bin
+export PATH=$PATH:/home/fforelle/.cargo/bin
+
+
+# Cloud consoles
+# google cloud
+export PATH=$PATH:/home/fforelle/bin/google-cloud-sdk/bin
+

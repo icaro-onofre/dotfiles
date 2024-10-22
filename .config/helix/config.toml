@@ -1,8 +1,7 @@
 theme = "tokyonight"
 
 [editor]
-line-number = "relative"
-mouse = false
+mouse = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,3 +10,9 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal."space"]
+o = ":sh kitty --title 'i3floati3' -e lazygit 2>/dev/null" # TODO: Add label "Open Lazygit" 
+
+[keys.normal]
+esc    = ["collapse_selection", "keep_primary_selection"]

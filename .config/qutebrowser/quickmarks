@@ -528,7 +528,7 @@ yahoo-finance  KLBN11 :klabin: https://finance.yahoo.com/quote/KLBN11.SA/
 zacks ranks :finance: https://www.zacks.com/stocks/zacks-rank
 google-finance KLBN11 & SUZB3 https://www.google.com/finance/quote/KLBN11:BVMF?hl=en&comparison=BVMF%3ASUZB3
 webAdmin prod https://web.unifrota.com.br:8443/webAdmin/admin/home.jsf
-webCliente prod https://web.unifrota.com.br:8443/webCliente/cliente/home.jsf
+webCliente prod https://web.unifrota.com.br/webCliente/cliente/home.jsf
 spotify https://open.spotify.com/
 webCliente local https://localhost:8443/webCliente/cliente/home.jsf
 gitlab https://gitlab.com/
@@ -809,7 +809,7 @@ google-maps Romeo:Café,Livraria e coworking :cafe: https://www.google.com/maps/
 trello https://trello.com/b/Zp8jo3hm/unifrota-pdv-dash-gestor
 ingressos-ssp-oss-matinal 10:50 14/04/2024 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9742
 unifrota-pdv web https://app.unifrota.com.br/pdv/
-ssp-mapa http://www.salasaopaulo.art.br/salasaopaulo/mapasala.aspx
+ssp-mapa https://osesp00sites.blob.core.windows.net/producao/assets/2024_sala_sao_paulo_mapa_assentos_sinfonicos_b85078f588.jpg
 bc-relatório focus https://www.bcb.gov.br/publicacoes/focus
 wixstudio https://www.wix.com/studio
 memes-Man can't believe 21 cars were stolen from Memphis auction site https://www.youtube.com/watch?v=gyO5zhBI9U8
@@ -977,7 +977,7 @@ compras-tenis-Tênis Olympikus Corre Vento 2 Laranja https://www.futfanatics.com
 ncdu https://dev.yorhel.nl/ncdu
 docs-debian-ALSA https://wiki.debian.org/ALSA
 webFornecedor prod 2 https://web2.unifrota.com.br:8443/webFornecedor/fornecedor/home.jsf
-webFornecedor prod https://web.unifrota.com.br:8443/webFornecedor/fornecedor/home.jsf
+webFornecedor prod https://web.unifrota.com.br/webFornecedor/fornecedor/home.jsf
 tools-dnschecker https://dnschecker.org/
 github-repos-zellij https://github.com/zellij-org/zellij
 openagents https://openagents.com/chat/156008
@@ -1063,3 +1063,24 @@ house prices today https://www.youtube.com/shorts/mIE1nHuAvYM
 sheets-dieta https://docs.google.com/spreadsheets/d/1Sl1e2pmQFwTMyrwRoTalQuU_3ABw4GBPm5BnQoPNO2I/edit?gid=1849849056#gid=1849849056
 docs-gnumeric http://www.gnumeric.org/development.html
 docs-gnumeric-keybinding reference https://help.gnome.org/users/gnumeric/stable/keybinding.html.en
+dash fornecedor https://app.unifrota.com.br/fornecedor/#/login
+memes-wojack-awkward face https://br.pinterest.com/pin/133630313934426117/
+memes-wojack-soy boy face surprised https://knowyourmeme.com/photos/2162936-soy-boy-face-soyjak
+memes-wojacj-soy boy surprised face https://knowyourmeme.com/photos/2162936-soy-boy-face-soyjak
+github-immich https://github.com/immich-app/immich
+memes-Spit on my Face 10 hours https://www.youtube.com/watch?v=FV5Lm3jFV6k
+emacsrocks https://emacsrocks.com/
+boiler room https://boilerroom.tv/city/sao-paulo
+github-filebrowser https://github.com/filebrowser/filebrowser
+osesp-assinaturas 2025 https://osesp.art.br/osesp/pt/assinante-osesp
+memes-ye old femboys https://www.youtube.com/watch?v=eaLxKaJ66-8
+compras-carteira-upwalletes carteira pequena https://www.upwallets.com.br/?utm_medium=paid&utm_source=ig&utm_id=6617070458290&utm_content=6617070542090&utm_term=6617070541490&utm_campaign=6617070458290&fbclid=PAZXh0bgNhZW0BMAABprk2nBfoJ4LqUMQ8ig7MOlHj1c3v85pVAX8k9NXHj9-TwBW58GFRbf0iUw_aem_6ZbD4r2fx9ENbxG3faaG6A
+docs-graphql-queries and mutations https://graphql.org/learn/queries/#fields
+receitas-le cordon bleu-macarons https://www.youtube.com/watch?v=V9V0m25wRqA
+github-repos-graphql apis https://github.com/graphql-kit/graphql-apis
+stackoverflow-mysql-How do I identify slow queries missing an index? https://stackoverflow.com/questions/56015661/how-do-i-identify-slow-queries-missing-an-index
+artigo-dns-Demystifying DNS Lookup: A Deep Dive into How Your Browser Connects to a Website https://taruntelang.medium.com/demystifying-dns-lookup-a-deep-dive-into-how-your-browser-connects-to-a-website-bac738aaef9a#:~:text=Your%20browser%20checks%20its%20local,IP%20address%2C%20expediting%20the%20connection.
+music-mahler 1-Joana Mallwitz https://www.youtube.com/watch?v=2N5LKcQdDA0
+instagram-saved https://www.instagram.com/icaro_onofre/saved/?hl=en
+google-maps rotas corrida aprimorada https://www.google.com/maps/dir/-23.2060261,-46.7867668/-23.2077233,-46.7907075/-23.210499,-46.7860084/-23.2084875,-46.7843403/-23.2064816,-46.7902169/@-23.207758,-46.7879528,1791m/data=!3m1!1e3!4m22!4m21!1m15!3m4!1m2!1d-46.7924657!2d-23.2014206!3s0x94cedf22095cea81:0xeca4cc074ac8703e!3m4!1m2!1d-46.7939696!2d-23.2064699!3s0x94cedf199dea1ca5:0xdf532d688478ed1c!3m4!1m2!1d-46.7923384!2d-23.208194!3s0x94cedf1ba2be519d:0x7973e1352497c674!1m0!1m0!1m0!1m0!3e2?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D
+memes-man playing ping pong with his mouth world record https://www.tiktok.com/@guinnessworldrecords/video/7410370341509336352?_r=1&_t=8qk8UFUdnSo
