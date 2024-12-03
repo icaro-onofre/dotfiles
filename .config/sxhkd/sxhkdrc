@@ -1,3 +1,6 @@
+# Dunst show last notification
+super + shift + alt + n
+	dunstctl history-pop
 # Kitty
 super + t
 		kitty
@@ -21,6 +24,9 @@ super + alt + e
 super + alt + b
 	dbeaver
 
+# Notes 
+super + shift + l 
+		kitty nvim ~/baum/
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
@@ -75,8 +81,9 @@ super + alt + o
 # Maim select screen
 super + shift + s
 	maim --select | xclip -selection clipboard -target image/png
-super + alt + s
-	maim --select ~/imgs/prints/print_01.png
+super + ctrl + s
+	xclip -sel clip -t image/png -o > ~/imgs/prints/img_$(uuidgen).png
+
 # Screen recording
 # ffmpeg -f x11grab -i :0.0 out.mkv
 

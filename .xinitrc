@@ -1,5 +1,6 @@
 #Start shortcuts daemon
 sxhkd &
+dunst &
 
 #Keyboard configuartion 
 xset m 1/1
@@ -31,3 +32,6 @@ xset s off
 xset s off -dpms
 
 exec i3
+
+/etc/xdg/autostart/gnome-keyring-*.desktop
+/etc/X11/xinit/xinitrc.d/50-systemd-user.sh

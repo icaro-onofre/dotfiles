@@ -12,9 +12,7 @@ alias egrep='egrep --color=auto'
 #emacs  
 alias doom-install="git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install"
-alias chemacs-install="[ -f ~/.emacs ] && mv ~/.emacs ~/.emacs.bak
-[ -d ~/.emacs.d ] && mv ~/.emacs.d ~/.emacs.default
-git clone https://github.com/plexus/chemacs2.git ~/.emacs.d"
+alias chemacs-install=" git clone https://github.com/plexus/chemacs2.git ~/.emacs.d"
 alias es="emacsclient -nw -c -a 'emacs'"
 alias e="emacs -nw"
 alias xn='xrandr -o normal'
@@ -108,6 +106,7 @@ alias shadcn='pnpx shadcn-ui@latest'
 
 # UNION Aliases do trabalho
 alias web1-logs="ssh admin@web.unifrota.com.br tail -f -n 200 /opt/jboss-unifrota/server/default/log/server.log"
+alias copy-web1-logs="scp admin@web.unifrota.com.br:/opt/jboss-unifrota/server/default/log/server.log ."
 #SSH connections
 alias uni_web1='ssh ec2-user@@web.unifrota.com.br'
 alias uni_web2='ssh ec2-user@@web2.unifrota.com.br'
