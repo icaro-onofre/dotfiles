@@ -156,8 +156,9 @@ bindsym $mod+o workspace prev
 bindsym $mod+i workspace next
 
 font pango:DejaVu Sans Mono 0
-for_window [class="^.*"] border pixel 1
-
+for_window [class="^.*"] border pixel 3
+client.focused #eba1eb #285577 #ffffff #2e9ef4 #bc4382
+#bc4382
 for_window [title="i3floati3"] floating enable
 for_window [title="i3floati3"] resize set 1280 720
 for_window [title="i3floati3"] move absolute position center

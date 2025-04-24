@@ -9,14 +9,14 @@ setxkbmap -option grp:alt_caps_toggle
 setxkbmap us,br
 
 #Start emacs daemon 
-/usr/bin/emacs --daemon
+# /usr/bin/emacs --daemon
 
 # Cloud files mount points
 #rclone mount --daemon Livros: ~/Livros
 #rclone mount --daemon Icaro: ~/Documents/Icaro
 
 #Status bar
-#polybar &
+polybar &
 
 #Video configurations 
 #xrandr --dpi 90
@@ -34,4 +34,4 @@ xset s off -dpms
 exec i3
 
 /etc/xdg/autostart/gnome-keyring-*.desktop
-/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh

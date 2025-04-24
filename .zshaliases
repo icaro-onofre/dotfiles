@@ -34,6 +34,7 @@ alias p="pacman"
 alias pss="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pqr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 alias pqet="pacman -Qet | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias phist="pacman -Qeq | xargs -n1 expac -Q '%l %n' | awk '{print $5,$2,$3,$6}' | sort"
 alias sd="cd ~ && cd \$(find * -type d | fzf)"
 #Yay
 alias yss="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
@@ -115,3 +116,4 @@ alias uni_ds_cpu_logs='ssh ec2-user@ds.unifrota.com.br "doas tail -f /var/log/jb
 # Okonomicus related aliases
 alias mongosh_okonomicus="mongosh "mongodb+srv://cluster0.udoak6a.mongodb.net/" --apiVersion 1 --username icaro"
 
+alias sssh="eval `ssh-agent`;ssh-add ~/.ssh/icaro"

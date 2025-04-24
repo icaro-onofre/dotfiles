@@ -115,7 +115,7 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true  	
 vim.opt.shiftwidth=4
 vim.opt.tabstop=4
-vim.cmd 'colorscheme tokyonight-night' -- select this colorscheme if it is installed
+vim.cmd 'colorscheme zaibatsu' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
 vim.cmd 'set nu'
 
@@ -141,6 +141,9 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- Interface configuration
+require'colorizer'.setup()
+--
 -- gitsigns configuration
 
 require('gitsigns').setup {
@@ -198,6 +201,8 @@ vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fm',builtin.marks, {})
+vim.keymap.set('n', '<leader>n',"<Cmd>cn<CR>", {})
+vim.keymap.set('n', '<leader>p',"<Cmd>cp<CR>", {})
 -- Lsp telescope
 vim.keymap.set('n', '<leader>fr',builtin.lsp_references, {})
 
@@ -221,10 +226,9 @@ vim.opt.swapfile = false
 
 --Editor remaps
 -- Move text in visual mode
-vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
-vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
-
-vim.keymap.set("n","J","mzJ`z")
+-- vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
+-- vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
+-- vim.keymap.set("n","J","mzJ`z")
 
 vim.keymap.set("n","<C-d>","<C-d>zz")
 vim.keymap.set("n","<C-u>","<C-u>zz")
@@ -240,13 +244,13 @@ vim.keymap.set("n","'","`")
 -- LSP configs
 require('lsp-zero')
 -- Run yay -S typescript-language-server
-require('lspconfig').tailwindcss.setup({})
--- Run sudo npm i -g @tailwindcss/language-server
 -- require('lspconfig').tailwindcss.setup({})
--- Run sudo npm install --save vscode-html-languageservice
+-- Run sudo npm i -g @tailwindcss/language-server
+require('lspconfig').tailwindcss.setup({})
+-- Run sudo npm -g install --save vscode-html-languageservice
 require('lspconfig').ts_ls.setup({})
 -- java language server
-require'lspconfig'.jdtls.setup{}
+-- require'lspconfig'.jdtls.setup{}
 -- install jdtls with yay -S jdtls
 -- HTML language server 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -307,6 +311,7 @@ vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.document_symbols()<cr>', opts)
 
 
 --Begin DAP Configuration
@@ -314,9 +319,8 @@ vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 -- configuring individual DAPs
 require("dap-vscode-js").setup({
   -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
-  -- debugger_path = "(runtimedir)/site/pack/packer/opt/vscode-js-debug", -- Path to vscode-js-debug installation.
-  -- debugger_cmd = { "js-debug-adapter" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
-  adapters = { 'pwa-node'}, 
+  debugger_path = "/home/fforelle/bin/vscode-js-debug/", -- Path to vscode-js-debug installation.
+  adapters = {'pwa-node', 'pwa-chrome'}, 
   -- log_file_path = "(stdpath cache)/dap_vscode_js.log" -- Path for file logging
   -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
   -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
@@ -324,7 +328,6 @@ require("dap-vscode-js").setup({
 -- end configuring individual daps
 
 local dap = require('dap')
-
 
 for _, language in ipairs({ "typescript", "javascript" }) do
   require("dap").configurations[language] = {
@@ -342,7 +345,31 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 		name = "Attach",
 		processId = require'dap.utils'.pick_process,
 		cwd = "${workspaceFolder}",
-	  }
+	  },
+	  {
+            type = "pwa-chrome",
+            request = "launch",
+            name = "Launch & Debug Chrome",
+            url = function()
+              local co = coroutine.running()
+              return coroutine.create(function()
+                vim.ui.input({
+                  prompt = "Enter URL: ",
+                  default = "http://localhost:3000",
+                }, function(url)
+                  if url == nil or url == "" then
+                    return
+                  else
+                    coroutine.resume(co, url)
+                  end
+                end)
+              end)
+            end,
+            webRoot = vim.fn.getcwd(),
+            protocol = "inspector",
+            sourceMaps = true,
+            userDataDir = false,
+          }
 	}  
 }
 end

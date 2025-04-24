@@ -441,7 +441,6 @@ compras-sapatos-nike https://www.nike.com.br/nav/categorias/tenis/cor/azul/gener
 museu ipiranga-ingressos https://bileto.sympla.com.br/event/83903/d/203376
 compras-slingbag-patagonia https://www.patagonia.com/product/atom-sling-bag-8-liters/48262.html
 8443 unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
-unifrota webCliente homolog https://homolog.unifrota.com.br:8443/webCliente/cliente/home.jsf
 docs-archlinunx-news https://archlinux.org/news/
 articles-python-scrapy-mass scraping with scrapy and AWS https://ibug.io/blog/2019/12/mass-crawl-douban-with-aws/
 infosec&cve-android security bulleti 2019 https://source.android.com/docs/security/bulletin/2019-04-01#2019-04-05-details
@@ -452,7 +451,6 @@ unifrota-trello https://trello.com/u/icaroonofre2/boards
 unifrota-trello-java https://trello.com/b/CO3Er2O0/unifrota-java
 google-finance https://www.google.com/finance/portfolio/c21e629b-bd6d-4952-bfba-0c70a0218475?hl=en&window=1M
 8443  unifrota webAdmin https://localhost:8443/webAdmin/admin/home.jsf
-unifrota  webCliente novohomolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
 datascience-trading view-brazil nonfarm payrolls https://www.tradingview.com/symbols/ECONOMICS-BRNFP/
 python-tutorials-strawberry mutations with prisma https://medium.com/dooboolab/prisma-with-fastapi-and-graphql-1e55a27c4ac2
 compras-ssd-kabum https://www.kabum.com.br/produto/85198/ssd-480-gb-kingston-a400-sata-leitura-500mb-s-e-gravacao-450mb-s-sa400s37-480g?srsltid=AfmBOopC3G9m2fN7pNIpKVeyP0An0bBxOo4ttbi137wBNfbsvXAlzuJsTTg
@@ -472,13 +470,11 @@ memes-ronaldinho sexo shop https://www.youtube.com/watch?v=p7b9vdTrFvw
 unifrota local webCliente http://localhost:8080/webCliente/cliente/home.jsf
 fatec-estagio https://www.fatecjd.edu.br/estagio/
 compras-teclado-wired thinkpad keyboard https://pt.aliexpress.com/item/1005005571225879.html?_t=pvid%3A0bca5b88-42ab-4f6b-aa4f-5b1ef5137b86&spm=a2g0o.ppclist.product.mainProduct&gatewayAdapt=glo2bra
-unifrota webCliente novo homolog https://novo.unifrota.com.br:8443/webCliente/cliente/home.jsf
 unifrota webCliente localhost https://localhost:8443/webCliente/cliente/registroAbastecimentoOffLine.jsf
 unifrota webAdmin local https://localhost:8443/webAdmin/admin/home.jsf
 nix-nix packages https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=sxh
 oreilly xgh https://gohorseprocess.com.br/extreme-go-horse-xgh/
 unifrota-trello-java [023b] Registro correto de idProduto e idCombustivel https://trello.com/c/pBAvFyjB/71-023b-registro-correto-de-idproduto-e-idcombustivel-webcliente-cliente-registroabastecimentoofflinejsf
-unifrota webAdmin novoHomolog https://novo.unifrota.com.br:8443/webAdmin/admin/home.jsf
 unifrota-trello-java [e3d6] Replicar apontamento correto de Item https://trello.com/c/SfJWFBh5/68-e3d6-replicar-apontamento-correto-de-item
 google-maps Praca Min Costa Manso https://www.google.com/maps/@-23.5534304,-46.6298744,564m/data=!3m1!1e3?entry=ttu
 google-maps  rua Nioac https://www.google.com/maps/@-23.5518333,-46.6286502,3a,75y,77.14h,78.96t/data=!3m6!1e1!3m4!1s0kTirBuEidsV9oXDLldQMQ!2e0!7i16384!8i8192?entry=ttu
@@ -527,7 +523,7 @@ cvm-resoluções-cvm 472 https://conteudo.cvm.gov.br/legislacao/instrucoes/inst4
 yahoo-finance  KLBN11 :klabin: https://finance.yahoo.com/quote/KLBN11.SA/
 zacks ranks :finance: https://www.zacks.com/stocks/zacks-rank
 google-finance KLBN11 & SUZB3 https://www.google.com/finance/quote/KLBN11:BVMF?hl=en&comparison=BVMF%3ASUZB3
-webAdmin prod https://web.unifrota.com.br:8443/webAdmin/admin/home.jsf
+webAdmin prod https://web.unifrota.com.br/webAdmin/admin/home.jsf
 webCliente prod https://web.unifrota.com.br/webCliente/cliente/home.jsf
 spotify https://open.spotify.com/
 webCliente local https://localhost:8443/webCliente/cliente/home.jsf
@@ -570,7 +566,7 @@ docs-kitty-kitty.conf https://sw.kovidgoyal.net/kitty/conf/
 minecraft-wiki-achievment https://minecraft.fandom.com/wiki/Achievement
 games-Buckshot Roulette https://mikeklubnika.itch.io/buckshot-roulette
 videos-One day, a computer will fit on a desk (1974) | RetroFocus https://www.youtube.com/watch?v=sTdWQAKzESA
-gmail-icaro https://mail.google.com/mail/u/1/#inbox
+gmail-icaro https://mail.google.com/mail/u/0/#inbox
 memes-how cat works https://www.youtube.com/watch?v=3dgQcSn9wAs
 memes-how a bird works https://www.youtube.com/watch?v=zrUWSfd0Heg
 protondb-the finals https://www.protondb.com/app/2073850
@@ -637,15 +633,12 @@ compras-bolsa-Tactical Waist Pack Bag Portable Fanny Pack Outdoor Hiking Travel 
 compras-bolsa-Tactical Waistpack Backpack 3L :waistpack:edc: https://www.sixtysixdepot.com/products/tactical-waistpack-backpack-3l-waterproof?variant=28031843721&utm_source=pinterest&utm_medium=social
 memes-feeling of drea :images: https://static.wikia.nocookie.net/cultistsimulator_gamepedia_en/images/c/c9/Dread.png/revision/latest?cb=20210124113837
 google-maps- Brasília https://www.google.com/maps/place/Bras%C3%ADlia+-+Brasilia,+Federal+District/@-15.7217001,-48.1025159,50418m/data=!3m2!1e3!4b1!4m6!3m5!1s0x935a3d18df9ae275:0x738470e469754a24!8m2!3d-15.7975154!4d-47.8918874!16zL20vMDFoeV8?entry=ttu
-ingressos-ssp-mahler 2 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
 sheets-plano financeiro vital https://docs.google.com/spreadsheets/d/1BT9gUlUStYG7q7ZpO3W7wY_hNh_i6K7kdLaYOyIa3qc/edit#gid=0
-ingressos-praça das artes- 24/02/24 Camerata da Orquestra Experimental de Repertório – Ladislau, Holst e Tchaikovsky https://theatromunicipalsp.byinti.com/#/ticket/futureEvent/camerataladislauholstetchaikovsky
 memes-minecraft ? https://www.youtube.com/watch?v=mhI7mTsC3hs
 documentaries-Iraq War Veterans, 20 Years Later https://www.youtube.com/watch?v=RIWfH3iEgXU
 manual https://www.manual.com.br/account/home
 b3 https://www.investidor.b3.com.br/login
 github-respos-qutebrowser https://github.com/qutebrowser/qutebrowser
-ingressos-ssp-mahler 2 aniversario ssp 20:30 06/07/24 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
 wikipedia-boleto bancario https://pt.wikipedia.org/wiki/Boleto_banc%C3%A1rio
 spotify-playtlists-hardest https://open.spotify.com/playlist/5kreZCnIhJbUobcZ83DFrX
 unifrota-trello [2918][feat] Implementar colunas separadas para dias úteis e domingos/feriados para horas extras. https://trello.com/c/QkSuY5YF/801-2918feat-implementar-colunas-separadas-para-dias-%C3%BAteis-e-domingos-feriados-para-horas-extras
@@ -661,7 +654,6 @@ docs-gqlgen :go:graphql: https://gqlgen.com/
 wikipedia-acer nigrum :botanic: https://en.wikipedia.org/wiki/Acer_nigrum
 github-repos-org roam https://github.com/org-roam/org-roam
 unifrota webCliente prod monitorRoterizacao https://web.unifrota.com.br:8443/webCliente/cliente/monitorRoteirizacao.jsf
-ingressos-ssp-mahler 2 06/07/24 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9633
 stackoverflow-How to loop over files in directory and change path and add suffix to filename :bash: https://stackoverflow.com/questions/20796200/how-to-loop-over-files-in-directory-and-change-path-and-add-suffix-to-filename
 ipython-readings-25 ipython tips for your next advent of code https://switowski.com/blog/25-ipython-tips-for-your-next-advent-of-code/
 compras-bateria thinkpad x61-ali express https://pt.aliexpress.com/item/1005005922792900.html?spm=a2g0o.productlist.main.5.517373cb9GkQ0B&algo_pvid=c583cb7d-6957-47d7-a1cc-e1a8c65c6880&algo_exp_id=c583cb7d-6957-47d7-a1cc-e1a8c65c6880-2&pdp_npi=4%40dis%21BRL%2189.66%2189.66%21%21%21126.18%21126.18%21%402101c5b117054102654181450eb57a%2112000034867279333%21sea%21BR%210%21AB&curPageLogUid=KpIr8W8YDTDE&utparam-url=scene%3Asearch%7Cquery_from%3A
@@ -670,12 +662,6 @@ github-repos-helix https://github.com/helix-editor/helix
 github-repos-neovim https://github.com/neovim/neovim
 unifrota-trello [2675][feat] Inserir odom/hori https://trello.com/c/SSs3yNgK/820-2675feat-inserir-odom-hori
 videos-tedtalks-How to Make Learning as Addictive as Social Media https://www.youtube.com/watch?v=P6FORpg0KVo
-ingressos-theatro municipal-O Contractador de Diamantes, de Francisco Mignone https://theatromunicipal.org.br/pt-br/evento/ocontractadordediamantes/
-ingressos-theatro municipal-Madama Butterfly, de Giacomo Puccini https://theatromunicipal.org.br/pt-br/evento/madamabutterfly/
-ingressos-theatro municipal-mahler 2 29|30/03/2024 https://theatromunicipal.org.br/pt-br/evento/ressurreicao/
-ingressos-theatro municipal-Doren Carwithen&Shostakovich 31/03/2024 :sinfonia: https://theatromunicipal.org.br/pt-br/evento/carwitheneshostakovich/
-ingressos-theatro municipal-Ladislau, Holst e Tchaikovsky 24/02/2024 https://theatromunicipal.org.br/pt-br/evento/camerata_ladislauholstetchaikovsky/
-ingressos-theatro municipal-Carmen 03:11/05/2024 https://theatromunicipal.org.br/pt-br/evento/carmen/
 batsss :alugueldeinstrumentosmusicais: https://batsss.co/
 github-repos-juniper https://github.com/graphql-rust/juniper
 docs-juniper https://graphql-rust.github.io/
@@ -721,15 +707,11 @@ music-Michelle Coltrane - My Favorite Things https://www.youtube.com/watch?v=fgi
 shadcn-ui-components-accordion https://ui.shadcn.com/docs/components/accordion
 laingame https://3d.laingame.net/#/game
 memes-5 bananas herz https://www.instagram.com/reel/C3eaER-NBAK/?igsh=dmc2em0ydjc4ZWsy
-gmail-estudosmisto https://mail.google.com/mail/u/2/#inbox
+gmail-estudosmisto https://mail.google.com/mail/u/3/#inbox
 reddit-i3 named scratchpads https://www.reddit.com/r/i3wm/comments/sqoyvq/i3_scratchpad_toggle_or_create_script/
 aoe4-builds-reddit-guides on youtube https://www.reddit.com/r/aoe4/comments/wc8iqb/aoe4_build_orders_and_guides_on_youtube/
 aoe4-world https://aoe4world.com/
-ingressos-ssp-25/10/24 choro no 10 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9664
-ingressos-ssp- 29/11/24 choro no 6 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9677
 memes-pessoas com voz de personagens https://www.youtube.com/watch?v=kq-Q1qk8SxQ
-ingressos-ssp-10:50 24/03/24 Soundscape Big band https://salasaopaulo.byinti.com/#/ticket/futureEvent/matinais-soundscape-big-band
-ingressos-ssp- 10:50 17/03/24 Osesp e Thierry Fischer https://salasaopaulo.byinti.com/#/ticket/futureEvent/matinais-osesp-e-thierry-fischer
 docs-JBoss Community Archive https://developer.jboss.org/en/wildfly/dev
 github-repos-wildfly-quickstart-getting started with wildfly https://github.com/wildfly/quickstart/blob/10.x/guide/GettingStarted.asciidoc
 docs-thymeleaf :templating-engine: https://www.thymeleaf.org/documentation.html
@@ -743,8 +725,6 @@ videos-Spring Boot Tutorial | Full Course [2023] [NEW] https://www.youtube.com/w
 docs-quarkus https://quarkus.io/guides/
 docs-graphql-introduction to graphql https://graphql.org/learn/
 google-drive bibliothekar https://drive.google.com/drive/u/4/home
-ingressos-theatro municipal-nabucco 27-05/09/24 :opera: https://theatromunicipal.org.br/pt-br/evento/nabucco/
-ingressos-theatro municipal-bluebeard's castle & Judith's gaze :opera: https://theatromunicipal.org.br/pt-br/evento/operas-bluebeards-castle-e-judiths-gaze-double-bill/
 aws-ec2 https://sa-east-1.console.aws.amazon.com/ec2/home?region=sa-east-1#Instances:v=3;$case=tags:true%5C,client:false;$regex=tags:false%5C,client:false
 music-Francisco Mignone maracatu do chico rei https://www.youtube.com/watch?v=ClO4eSuapyo
 reddit-i3 scratchpad toggle or create script https://www.reddit.com/r/i3wm/comments/sqoyvq/i3_scratchpad_toggle_or_create_script/
@@ -797,17 +777,12 @@ nubank-ri https://www.investidores.nu/
 dash https://dash.unifrota.com.br/
 docs-api pix https://developers.openpix.com.br/pix
 ingressos-ojesp https://orquestrajovemdoestado.byinti.com/#/ticket/
-ingressos-ssp-ojesp-beethoven 9 15:30 15/12/2024 https://orquestrajovemdoestado.byinti.com/#/event/-792-416-453-155-320-203-352-678-847-332-697-329-758-127
-ingressos-ssp-ojesp-korsakov:capricho espanhol,scherazade;guerra pexe:tributo a Portinari 15:30 17/11/24 https://orquestrajovemdoestado.byinti.com/#/event/-792-416-453-155-320-203-352-678-847-332-697-329
-ingressos-ssp-ojesp-Copland:four dances from rodeo;Berlioz:sinfonia fantastica 16:00 15/09/2024 https://orquestrajovemdoestado.byinti.com/#/event/-792-416-453-155-320-203-352-678
 taesa-ri https://ri.taesa.com.br/
 stackoverflow-bundling jars inside EAR with maven https://stackoverflow.com/questions/22001055/move-all-dependencies-in-ear-to-subfolder-in-maven
-ingressos-ssp-osesp-mahler 2  concerto especial 09/07/2024 https://osesp.byinti.com/#/ticket/futureEvent/25-anos-da-sala-sao-paulo-sinfonia-n2-ressurreicao-de-mahler
 github-repos-jboss developer-jboss eap quick starts / helloworld https://github.com/jboss-developer/jboss-eap-quickstarts/tree/7.2.0.GA/helloworld
 meme-friday in IT be like https://www.youtube.com/watch?v=VmDZFrZZWOU
 google-maps Romeo:Café,Livraria e coworking :cafe: https://www.google.com/maps/place/Romeo:+Caf%C3%A9,+Livraria+e+Coworking/@-23.2050954,-46.8749774,1073m/data=!3m1!1e3!4m6!3m5!1s0x94cf272d54a4050d:0xaf427a37b0acf97c!8m2!3d-23.2055927!4d-46.8737688!16s%2Fg%2F11kbtv4mb8?entry=ttu
 trello https://trello.com/b/Zp8jo3hm/unifrota-pdv-dash-gestor
-ingressos-ssp-oss-matinal 10:50 14/04/2024 http://www.salasaopaulo.art.br/concertoseingressos/concerto.aspx?IDApresentacao=9742
 unifrota-pdv web https://app.unifrota.com.br/pdv/
 ssp-mapa https://osesp00sites.blob.core.windows.net/producao/assets/2024_sala_sao_paulo_mapa_assentos_sinfonicos_b85078f588.jpg
 bc-relatório focus https://www.bcb.gov.br/publicacoes/focus
@@ -870,7 +845,6 @@ memes-welcome to brasil slander https://www.youtube.com/watch?v=NB3soQ9sAAY
 stackoverflow-java-optional parameters https://stackoverflow.com/questions/965690/how-do-i-use-optional-parameters-in-java
 google-maps- rua esquisita perto do municipal, hotel central 88 https://www.google.com/maps/@-23.5437024,-46.6369932,3a,75y,214.61h,90.16t/data=!3m6!1e1!3m4!1s66wcP1otTA5TFdrZETMhYA!2e0!7i16384!8i8192?hl=en&entry=ttu
 compras-mesa com regulagem de altura-ergodesk https://www.ergodesk.com.br/produtos/mesa-com-regulagem-de-altura-ergodesk-estrutura-sem-tampo/
-webCliente prod 2 https://web2.unifrota.com.br:8443/webCliente/cliente/home.jsf
 memes-only for good, never for evil https://www.youtube.com/watch?v=3JNIqGamHrY
 unifrota cloud https://cloud.unifrota.com.br/index.php/login
 google-maps Casa para alugar 29 R.Maria Benedita Sé https://www.google.com/maps/@-23.5477314,-46.6314626,3a,75y,326.97h,96.39t/data=!3m6!1e1!3m4!1s81CAEgDxSQLbupqJWRodgA!2e0!7i16384!8i8192?hl=en&entry=ttu
@@ -888,7 +862,6 @@ wikipedia-list of compositions by Gustav Mahler https://en.wikipedia.org/wiki/Li
 docs-tauri https://tauri.app/v1/guides/getting-started/setup
 specs-jwt RFC 7519 https://datatracker.ietf.org/doc/html/rfc7519
 github-repos-lmms https://github.com/LMMS/lmms
-ingressos-ofmg-mahler 7 20:30-22:30 19/07/24 https://filarmonica.byinti.com/#/event/veloce6-19-07-2024
 github-repos-monero https://github.com/monero-project/monero
 memes-brazil slander https://www.youtube.com/watch?v=NB3soQ9sAAY&t=21s
 investnews https://investnews.com.br/
@@ -913,7 +886,6 @@ memes-john lennon dentro da Hylux https://www.tiktok.com/@casadacolinaia/video/7
 doku-ohne Angst https://www.youtube.com/watch?v=-kDB3lDsk0s
 dados-quinto andar mercado imobiliario https://conteudos.quintoandar.com.br/dados-indices/
 quinto andar-imoveis para alugar em são paulo https://www.quintoandar.com.br/mapa-do-site/alugar/sao-paulo-sp-brasil
-ingressos-ssp-mahler 2 preço popular https://osesp.byinti.com/#/ticket/futureEvent/25-anos-da-sala-sao-paulo-sinfonia-n2-ressurreicao-de-mahler
 transfer unifrota https://transfer.unifrota.com.br/
 docs-freebsd-periodic https://man.freebsd.org/cgi/man.cgi?periodic.conf
 baladas-shotevents https://shotgun.live/
@@ -986,7 +958,6 @@ linux-repology https://repology.org/
 unifrota transfer https://transfer.unifrota.com.br/files/
 festival campos do jordão http://www.festivalcamposdojordao.org.br/
 festival campos do jordao-ingressos https://festivalcamposdojordao.byinti.com/#/ticket/
-ingressos-ssp-ojvm Rach 2 Tchaikovsky Romeo et Julliet https://festivalcamposdojordao.byinti.com/#/ticket/futureEvent/orq-jovem-vale-musica
 docs-linuxdocs-openssh configuration https://linux.fernandocejas.com/docs/guides/configure-ssh-access-on-your-linux-machine
 congresso nacional-glossario de termos orçamentários https://www.congressonacional.leg.br/legislacao-e-publicacoes/glossario-orcamentario
 finance-13 FINANCIAL PERFORMANCE MEASURES MANAGERS SHOULD MONITOR https://online.hbs.edu/blog/post/financial-performance-measures
@@ -1016,7 +987,6 @@ locaweb-login https://login.locaweb.com.br/login
 Icaro-figma-preview https://www.figma.com/proto/qK5AEXXKnIIFMIN4rmwUah/Portifolio?node-id=1244-3&t=DCLbe7qPekpDRPQF-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
 github-markeplace-FTP deploy locaweb https://github.com/marketplace/actions/ftp-deploy-locaweb
 specs-freedesktop https://www.freedesktop.org/wiki/Specifications/
-ingressos-festival campos do jordão https://festivalcamposdojordao.byinti.com/#/ticket/futureEvent/orq-do-festival
 memes-dying chinese panda https://i.imgflip.com/7j93ei.jpg?a477816
 wikipedia-Karl Polaynyi https://en.wikipedia.org/wiki/Karl_Polanyi
 jornalentreposto-tabela de preços https://www.jornalentreposto.com.br/precos-diarios/ceagesp-pescado/
@@ -1046,7 +1016,6 @@ instagram-ultra baile do gato https://www.instagram.com/ultrabailedogato/
 memes-sleep is for the week https://www.youtube.com/watch?v=eVNh_FYPODI
 wikipedia-Sub-replacement fertility https://en.wikipedia.org/wiki/Sub-replacement_fertility#:~:text=The%20United%20Nations%20Population%20Division,because%20of%20higher%20mortality%20rates.
 reddit-unixporn https://www.reddit.com/r/unixporn/
-ingressos-smg-Tchaikovsky Delius Piazzolla 29-09-24 https://filarmonica.byinti.com/#/ticket/futureEvent/juventude-6-29092024
 code quality-callbackhell http://callbackhell.com/
 teatro cultura artística-programação http://culturaartistica.org/eventos/
 google-maps palacete Nacim Schoueri https://www.google.com/maps/@-23.5447779,-46.630844,3a,75y,306.88h,119.4t/data=!3m7!1e1!3m5!1sLQYxxwb_KrEh8i_dvKTCMQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-29.398518644304488%26panoid%3DLQYxxwb_KrEh8i_dvKTCMQ%26yaw%3D306.88446002488297!7i16384!8i8192?coh=205410&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D
@@ -1127,3 +1096,58 @@ youtube-playlists-camping https://www.youtube.com/watch?v=_rN9M2__mzM&list=PLukV
 youtube-playlists-projetos de criação https://www.youtube.com/watch?v=XQ5Key3MC4o&list=PLukVBIiOn7eS6A4fvdYMGM7NU4_NZdKzA
 youtube-playlists-dance moves https://www.youtube.com/watch?v=al0I7AXJGNU&list=PLukVBIiOn7eQQsXNuZ66hoxaj6A7hRm24
 youtube-playlists-things to sleep when trying to sleep https://www.youtube.com/watch?v=_XfffJIzEtI&list=PLukVBIiOn7eRs0OygitFXE-RcHbwGPGtZ
+webCliente homolog https://3.230.147.189/webCliente/cliente/home.jsf
+compras-gabinete-ASUS Prime AP201 Black MicroATX :sffpc: https://www.amazon.com.br/ASUS-AP201-MicroATX-temperado-ferramentas/dp/B0C5LK9L62/ref=asc_df_B0C5LK9L62/?tag=googleshopp00-20&linkCode=df0&hvadid=709884378154&hvpos=&hvnetw=g&hvrand=13411387519240631006&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9100395&hvtargid=pla-2189486416718&mcid=7066c0aa6251326198929a5aacd54b63&gad_source=1&th=1
+memes-mazzaropi bota vermute aí https://www.youtube.com/watch?v=elepsnQQxc8
+memes-E SE O RENAN TIVER AI ATRÁS REPREENDE ESSE DIABO https://www.youtube.com/watch?v=gUIh5FEon_Y
+memes-What the transition from Friday to Monday feel like https://www.youtube.com/shorts/qvAB3si4fhk
+google-maps Condomínio Júlia Cristianini :favelização: https://www.google.com/maps/@-23.5364581,-46.6406291,3a,75y,48.7h,146.48t/data=!3m7!1e1!3m5!1sqUsDW0UgynXC8jar5wNDLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-56.479954502030694%26panoid%3DqUsDW0UgynXC8jar5wNDLA%26yaw%3D48.69769307720488!7i16384!8i8192?hl=en&entry=ttu&g_ep=EgoyMDI1MDIyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D
+mechanical keyboards-charybids-build guide https://www.youtube.com/watch?v=cGCYxeZLDmM
+instagram-wemobi https://www.instagram.com/wemobi.oficial/?hl=en
+pinterest-haris-mullet like curly haircut https://br.pinterest.com/pin/697706167306133044/
+pinterest-memes https://br.pinterest.com/Die_fforelle/memes/
+memes-the count arises https://www.youtube.com/watch?v=WvUmb98EZps
+memes-my autistic boyfriend goes nonverbal https://www.instagram.com/p/DD-22TVtfWZ/?hl=en
+memes-Caterpillars reacting to sound https://www.youtube.com/watch?v=jY2V5rL1m8k
+neovim-tips-substitution https://www.youtube.com/shorts/kK1L1o13xGE
+videos-João Gilberto samba da minhaa Terra (Alemanha,1967) https://www.youtube.com/watch?v=WNfMrjJJwW4
+memes-Where? Cuba https://www.youtube.com/watch?v=jWWmKgsUR6Q
+academia-Tay Training treinos para glúteo https://www.youtube.com/shorts/mBt6sdElCAo
+memes-mouse crashed by garage door https://www.youtube.com/watch?v=CKW75fbaSOw
+memes-sword shiba inu https://www.youtube.com/watch?v=3Xdo0MVZcSo
+memes-spoderman https://www.youtube.com/watch?v=MAG1LoaYVFI
+memes-release my nigga https://www.youtube.com/watch?v=HV0k_0uPvfI
+memes-david guetta ends racism https://www.youtube.com/watch?v=dEI7oX0XxJw
+memes-Raluca dizendo que iria comer o c* do Nando Moura https://www.youtube.com/watch?v=GMcehKHJyfE
+memes-whiplash baiano https://www.tiktok.com/@we2llie/video/7480558056783301943?_r=1&_t=ZM-8ubhJXUyNy1
+ip adress lookup https://whatismyipaddress.com/
+memes-spider pointing to himself https://i.redd.it/bekphnqftcb41.jpg
+docs-primefaces-SelectOneMenu https://primefaces.github.io/primefaces/8_0/#/components/selectonemenu
+memes-troley problem small talk https://img.ifunny.co/images/8f36a3ff442d66287aa221787d9e19cbb827b6476565d20a965018ce065a5c84_1.jpg
+youtube-playlist-cooking https://www.youtube.com/watch?v=wajz9sp7oKE&list=PLukVBIiOn7eQ2ARG__U0rtPzsfNCvbOmV
+google-photos icaro https://photos.google.com/
+memes-pica pau tônico https://www.youtube.com/watch?v=EN6f41ZWY6o
+cabeleireiro-stree barber shop-Campo Limpo Paulista https://booksy.com/pt-br/345693_street-barber_barbearias_952269_campo-limpo-paulista?do=invite&_branch_match_id=1431623884693737181&utm_medium=merchant_customer_invite&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVtzDKC3VJN8mp8EuyrytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAktofzzwAAAA%3D
+archive-Le Répertoire de La Cusine https://archive.org/details/lerepertoiredela0000saul
+instagram-archive https://www.instagram.com/archive/stories/?hl=en
+memes-i love when teachers do this https://www.youtube.com/watch?v=5qLhvQnaQug
+ingressos-tmsp-Mahler 3 20-21/06-25 https://theatromunicipalsp.byinti.com/#/event/orquestra-sinfonica-municipal-apresenta-mahler-ode-a-natureza
+reddit-piracy-deemix download spotify music https://www.reddit.com/r/Piracy/comments/1d3dnv5/guide_how_to_download_songs_from_spotify_using/
+reddit-unixporn-archlinux rice https://www.reddit.com/r/unixporn/comments/1jhbthv/labwc_its_not_much_but_its_mine/
+pinterest-móveis https://br.pinterest.com/Die_fforelle/m%C3%B3veis/
+pinterest-hairs corte tape fade https://br.pinterest.com/pin/697706167306647144/
+memes-vai com calma viado https://i.pinimg.com/736x/2f/1a/99/2f1a9999a7c7ad1c522b09dc22325947.jpg
+pinterest-hairs gay hair cut https://br.pinterest.com/pin/32017847346106252/
+tinkers-wiki https://tinkers-construct.fandom.com/wiki/Tinkers%27_Construct_Wiki
+specs-iana-json web token (jwt) https://www.iana.org/assignments/jwt/jwt.xhtml
+jose-docs https://jose.readthedocs.io/en/latest/
+receitas-green goddess salad https://www.youtube.com/shorts/XLj9Oq8yggQ
+github-jose https://github.com/panva/jose?tab=readme-ov-file
+sheets-SFF PC Master List https://docs.google.com/spreadsheets/d/1AddRvGWJ_f4B6UC7_IftDiVudVc8CJ8sxLUqlxVsCz4/edit?gid=534210212#gid=534210212
+github-jose-JWT Claims Set Validation & Signature Verification https://github.com/panva/jose/blob/main/docs/jwt/verify/functions/jwtVerify.md
+treino-diferença entre o leg press articulado e o não articulado https://www.instagram.com/reel/DGGFlE3xSlN/?igsh=MXhnMTQ0cWg1a3J5Mg%3D%3D
+wikipedia-one time pad OTP https://en.wikipedia.org/wiki/One-time_pad
+github-definitely typed https://github.com/DefinitelyTyped/DefinitelyTyped
+ingressos-tmsp-Mahler 5 15-06-25 https://theatromunicipalsp.byinti.com/#/event/orquestra-experimental-de-repertrio-apresenta-aniversrio-de-35-anos-da-oer
+memes-suffering from sucess https://upload.wikimedia.org/wikipedia/en/7/7d/DJ_Khaled_Suffering_from_Success.jpg
+memes-insane gym transformation https://www.youtube.com/shorts/FPxg7C_TPZI
