@@ -1,5 +1,3 @@
-#cd zoxide
-alias cd="z"
 alias h='history'
 alias l='lsd -l'
 alias ls='ls --color'
@@ -58,7 +56,7 @@ alias mongo="mongosh"
 #Python
 alias svenv="source .venv/bin/activate"
 #xclip
-alias xcc="xclip -selection clipboard"
+alias xcc="xclip -sel clip"
 alias ndot='n ~/.dotfiles/.configure/nvim'
 #Programms shorthands
 alias n='nvim'
@@ -117,3 +115,5 @@ alias uni_ds_cpu_logs='ssh ec2-user@ds.unifrota.com.br "doas tail -f /var/log/jb
 alias mongosh_okonomicus="mongosh "mongodb+srv://cluster0.udoak6a.mongodb.net/" --apiVersion 1 --username icaro"
 
 alias sssh="eval `ssh-agent`;ssh-add ~/.ssh/icaro"
+
+alias fix-resolution="cvt 1440 900 ; xrandr --newmode '1440x900_60.00' 106.50 1440 1520 1672 1904 900 903 909 934 -hsync +vsync ; xrandr --addmode VGA-0 '1440x900_60.00' ; xrandr --output VGA-0 --mode '1440x900_60.00' ;"

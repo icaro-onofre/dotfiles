@@ -188,4 +188,16 @@ export PATH=$PATH:/home/fforelle/.cargo/bin
 export PATH=$PATH:/home/fforelle/bin/google-cloud-sdk/bin
 
 export PATH=$PATH:/home/fforelle/bin/flutter/bin
+export PATH=$PATH:/usr/bin/dlv
 
+
+# pnpm
+export PNPM_HOME="/home/fforelle/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+# Configuring neovim on debian
+export PATH=$PATH:/home/fforelle/bin/nvim-linux-x86_64/bin

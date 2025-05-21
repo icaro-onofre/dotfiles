@@ -242,6 +242,7 @@ vim.keymap.set("n","'","`")
 
 
 -- LSP configs
+-- require('lsp-zero').gopls.setup({})
 require('lsp-zero')
 -- Run yay -S typescript-language-server
 -- require('lspconfig').tailwindcss.setup({})
