@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://calendar.google.com: true
+  content.geolocation:
+    https://www.drogaraia.com.br: true
