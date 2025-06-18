@@ -29,3 +29,7 @@ BraveSoftware
 .config/go/
 
 .config/gopls/
+
+.config/JetBrains/
+
+.config/pulse/
