@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginStats>
+  <Plugin type="Lua" id="68af97cac6ea0c2d4a72d60e61e5db73448a7e17" lru="1748292991" use-count="1"/>
+  <Plugin type="LV2" id="urn:ardour:a-reverb" lru="1748293324" use-count="4"/>
+  <Plugin type="LV2" id="urn:ardour:a-eq" lru="1748293219" use-count="3"/>
+  <Plugin type="LV2" id="https://community.ardour.org/node/7596" lru="1747876189" use-count="3"/>
+  <Plugin type="LV2" id="http://zynaddsubfx.sourceforge.net" lru="1749178265" use-count="4"/>
+</PluginStats>

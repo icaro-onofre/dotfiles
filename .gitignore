@@ -9,3 +9,23 @@ Google
 Jaspersoft\ Studio/
 rclone
 BraveSoftware
+
+.config/balenaEtcher/
+
+.config/cherrytree/
+
+.config/GitKraken/
+
+.config/spotify/
+
+.config/obsidian/
+
+.config/ventoy/
+
+.config/jgit/
+
+.config/gtk-2.0/
+
+.config/go/
+
+.config/gopls/
