@@ -8,6 +8,19 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
+#Named scratchpads
+# Launch alacritty and move it to scratchpad named "term"
+for_window [class="Alacritty" instance="term_scratchpad"] move scratchpad, scratchpad show
+
+for_window [class="obsidian"] floating enable, move to scratchpad, mark obsidian_scratchpad
+
+bindsym $mod+o [con_mark="obsidian_scratchpad"] scratchpad show
+
+# End of Named scrachpads
+
+# Keybinding to run it if not already running
+bindsym $mod+t exec --no-startup-id i3-msg '[instance="term_scratchpad"] scratchpad show' || alacritty --class term_scratchpad
+
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -152,8 +165,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+o workspace prev                              
-bindsym $mod+i workspace next
+# bindsym $mod+o workspace prev                              
+# bindsym $mod+i workspace next
 
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 3
