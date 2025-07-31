@@ -8,6 +8,19 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
+#Named scratchpads
+# Launch alacritty and move it to scratchpad named "term"
+for_window [class="Alacritty" instance="term_scratchpad"] move scratchpad, scratchpad show
+
+for_window [class="obsidian"] floating enable, move to scratchpad, mark obsidian_scratchpad
+
+bindsym $mod+o [con_mark="obsidian_scratchpad"] scratchpad show
+
+# End of Named scrachpads
+
+# Keybinding to run it if not already running
+bindsym $mod+t exec --no-startup-id i3-msg '[instance="term_scratchpad"] scratchpad show' || alacritty --class term_scratchpad
+
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -79,7 +92,7 @@ bindsym $mod+Shift+f floating toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -105,6 +118,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+# bindsym $mod+Alt+q workspace number $ws11
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -152,8 +166,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+o workspace prev                              
-bindsym $mod+i workspace next
+# bindsym $mod+o workspace prev                              
+# bindsym $mod+i workspace next
 
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 3

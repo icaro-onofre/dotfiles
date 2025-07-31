@@ -1,16 +1,13 @@
 # Dunst show last notification
 super + shift + alt + n
 	dunstctl history-pop
+
 # Kitty
 super + t
 		kitty
 # Rofi 
 super + p
 		rofi -combi-modi window,drun -show combi -show-icons
-
-# Remmina
-super + alt + r
-	remmina
 
 # Gnumeric
 super + alt + g
@@ -20,19 +17,17 @@ super + alt + g
 super + alt + e
 	eclipse
 
-# Dbeave
+# Dbeaver
 super + alt + b
 	dbeaver
 
 # Notes 
 super + shift + l 
 		kitty nvim ~/baum/
+
 # Emacs
 super + m 
 		emacsclient -c -a 'emacs'
-# Zathura
-super + z
-	zathura
 
 # Thunderbird
 super + shift + t

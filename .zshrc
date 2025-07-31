@@ -201,3 +201,5 @@ esac
 #
 # Configuring neovim on debian
 export PATH=$PATH:/home/fforelle/bin/nvim-linux-x86_64/bin
+
+export PATH=$PATH:/home/fforelle/bin
