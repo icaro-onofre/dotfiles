@@ -21,6 +21,29 @@ bindsym $mod+o [con_mark="obsidian_scratchpad"] scratchpad show
 # Keybinding to run it if not already running
 bindsym $mod+t exec --no-startup-id i3-msg '[instance="term_scratchpad"] scratchpad show' || alacritty --class term_scratchpad
 
+# Named stratch pad configuration
+
+#Terminal
+exec --no-startup-id kitty --title terminal
+for_window [title="terminal"] move to scratchpad, scratchpad hide, floating enable, resize set 80 ppt 70 ppt, move position center
+bindsym $mod+y [title="terminal"] scratchpad show
+
+#Notes
+exec --no-startup-id obsidian
+for_window [class="obsidian"] move to scratchpad, scratchpad hide, floating enable, resize set 160 ppt 70 ppt, move position center
+bindsym $mod+i [class="obsidian"] scratchpad show
+
+#Emacs
+# exec --no-startup-id emacsclient -c -a 'emacs'
+# for_window [class="emacsclient"] move to scratchpad, scratchpad hide, floating enable, resize set 120 ppt 100 ppt, move position center
+# bindsym $mod+m [class="emacsclient"] scratchpad show
+
+#Pavucontrol
+exec --no-startup-id pavucontrol
+for_window [class="pavucontrol"] move to scratchpad, scratchpad hide, floating enable, resize set 80 ppt 70 ppt, move position center
+bindsym $mod+x [class="pavucontrol"] scratchpad show
+
+# end of named scratchpad configuartion
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -165,9 +188,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# bindsym $mod+o workspace prev                              
-# bindsym $mod+i workspace next
 
 font pango:DejaVu Sans Mono 0
 for_window [class="^.*"] border pixel 3
