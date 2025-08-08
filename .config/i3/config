@@ -10,6 +10,9 @@ exec --no-startup-id nm-applet
 
 #Named scratchpads
 # Launch alacritty and move it to scratchpad named "term"
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 for_window [class="Alacritty" instance="term_scratchpad"] move scratchpad, scratchpad show
 
 for_window [class="obsidian"] floating enable, move to scratchpad, mark obsidian_scratchpad
@@ -57,10 +60,6 @@ floating_modifier $mod
 
 # Lock screen
 bindsym $mod+Shift+- exec i3lock
-
-#Scractch pad
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
 
 # kill focused window
 bindsym $mod+Shift+q kill
