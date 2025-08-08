@@ -25,9 +25,9 @@ super + alt + b
 super + shift + l 
 		kitty nvim ~/baum/
 
-# Emacs
-super + m 
-		emacsclient -c -a 'emacs'
+# Zathura
+super + z
+	zathura
 
 # Thunderbird
 super + shift + t
@@ -40,8 +40,8 @@ super + shift + p
 super + n
 	nemo
 # Pavucontrol
-super + x 
-	pavucontrol
+# super + x 
+# 	pavucontrol
 # Aim lab
 super + alt + a 
 	steam steam://rungameid/714010

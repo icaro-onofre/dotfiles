@@ -19,8 +19,6 @@ require("lazy").setup({
 "sindrets/diffview.nvim",					 -- Git helper
 "lewis6991/gitsigns.nvim",					 -- Git helper
 
-"folke/tokyonight.nvim",					 -- UI&Icons
-
 "nvim-treesitter/nvim-treesitter",			 -- Ui&Syntax highlightining.
 
 "HiPhish/rainbow-delimiters.nvim",			 -- UI&Icons
@@ -44,10 +42,6 @@ require("lazy").setup({
 -- Debugging with neovim dap
 { 'mfussenegger/nvim-dap' },
 
--- Database management
-{ 'tpope/vim-dadbod' },
-
-
 -- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
 -- neovim surround
 {
@@ -63,17 +57,9 @@ require("lazy").setup({
 -- Vim multiline
 { 'mg979/vim-visual-multi' },
 
--- Emmet plugin for writing markup language like html
-{
-  "olrtg/nvim-emmet",
-  config = function()
-	  vim.keymap.set({ "n", "v" }, '<C-e>', require('nvim-emmet').wrap_with_abbreviation)
-  end,
-},
 
 -- List od DAP(Debug adapter protocol) comment the line out for removing the installed DAP 
 { "mxsdev/nvim-dap-vscode-js" },
-
 
 })
 
@@ -83,7 +69,7 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true  	
 vim.opt.shiftwidth=4
 vim.opt.tabstop=4
-vim.cmd 'colorscheme zaibatsu' -- select this colorscheme if it is installed
+vim.cmd 'colorscheme wildcharm' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
 vim.cmd 'set nu'
 
