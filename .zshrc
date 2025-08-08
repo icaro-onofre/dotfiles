@@ -203,3 +203,5 @@ esac
 export PATH=$PATH:/home/fforelle/bin/nvim-linux-x86_64/bin
 
 export PATH=$PATH:/home/fforelle/bin
+
+export PATH=$PATH:/usr/local/go/bin
