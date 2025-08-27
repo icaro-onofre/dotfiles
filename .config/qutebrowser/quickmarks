@@ -831,7 +831,7 @@ docs-jakarta-Jakarta Contexts and Dependency Injection https://jakarta.ee/specif
 video-WAS: Java EE architecture: Containers, Components, Annotations :javaee: https://www.youtube.com/watch?v=5CVbtcHoVxA
 docs-jboss-Deploying Your JSF Applications https://docs.jboss.org/jbossas/6/JSF_Guide/en-US/html/jsf.deployer.config.html
 docs-wildfly-WildFly Bootable JAR Documentation https://docs.wildfly.org/bootablejar/
-google-calendar https://calendar.google.com/calendar/u/1/r/agenda
+google-calendar https://calendar.google.com/calendar/u/0/r/agenda
 compras-ergodesk-mesa com regulagem de altura https://www.ergodesk.com.br/produtos/mesa-com-regulagem-de-altura-ergodesk-estrutura-sem-tampo/
 docs-julia-Quantitative Economics with Julia https://julia.quantecon.org/intro.html
 iconic websites-dansmc http://www.dansmc.com/
@@ -1229,3 +1229,4 @@ img-Atol MIRV test https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Pea
 yt-formd t1 :sffpc: https://www.youtube.com/shorts/PZk6_7_ktoo
 memes-I've won...but at what cost? https://i.kym-cdn.com/entries/icons/original/000/032/562/iplcoialdcw31.jpg
 google-security https://myaccount.google.com/u/1/security?gar=WzJd&hl=en&utm_source=OGB&utm_medium=act
+webCliente local registroAbastecimentoOffline https://localhost:8443/webCliente/cliente/registroAbastecimentoOffLine.jsf
