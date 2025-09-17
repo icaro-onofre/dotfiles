@@ -182,7 +182,7 @@ require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm -g install --save vscode-html-languageservice
 require('lspconfig').ts_ls.setup({})
 -- java language server
--- require'lspconfig'.jdtls.setup{}
+require'lspconfig'.jdtls.setup{}
 -- install jdtls with yay -S jdtls
 -- HTML language server 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
