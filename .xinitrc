@@ -22,7 +22,9 @@ polybar &
 #Grandr --dpi 90
 #HDMI Config if nvidia is configured
 feh --bg-scale ~/.dotfiles/themes/lain_wp.jpg
+xrandr --output HDMI-1 --mode 1920x1080 --rate 144
 #xrandr --output HDMI-1-1 --mode 1440x900 --rate 60; 
+#xrandr --output HDMI-1 --mode 1920x1080 --rate 144
 #xrandr --output VGA-0 --mode 1440x900 --rate 60; 
 #xrandr --output 
 #
