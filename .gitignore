@@ -45,3 +45,10 @@ BraveSoftware
 .config/dconf
 .config/dlv
 .config/flutter
+.config/WebCord
+curriculum/icaro-en.aux
+curriculum/icaro-en.bcf
+curriculum/icaro-en.log
+curriculum/icaro-en.out
+curriculum/icaro-en.run.xml
+curriculum/icaro-en.pdf

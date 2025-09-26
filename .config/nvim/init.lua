@@ -19,8 +19,6 @@ require("lazy").setup({
 "sindrets/diffview.nvim",					 -- Git helper
 "lewis6991/gitsigns.nvim",					 -- Git helper
 
-"nvim-treesitter/nvim-treesitter",			 -- Ui&Syntax highlightining.
-
 "HiPhish/rainbow-delimiters.nvim",			 -- UI&Icons
 
 "chentoast/marks.nvim",						 -- UI&Icons
@@ -73,27 +71,6 @@ vim.cmd 'colorscheme wildcharm' -- select this colorscheme if it is installed
 vim.cmd 'set rnu'
 vim.cmd 'set nu'
 
--- treesitter configurations
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
-  -- List of parsers to ignore installing (or "all")
-  ignore_install = { "javascript" },
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-    incremental_selection = {
-    enable = true,
-    keymaps = {
-		init_selection = '<leader>vi',
-      node_incremental = '<Tab>',
-      node_decremental = '<S-Tab>',
-    },
-  },
-}
 
 -- Interface configuration
 require'colorizer'.setup()
@@ -205,7 +182,7 @@ require('lspconfig').tailwindcss.setup({})
 -- Run sudo npm -g install --save vscode-html-languageservice
 require('lspconfig').ts_ls.setup({})
 -- java language server
--- require'lspconfig'.jdtls.setup{}
+require'lspconfig'.jdtls.setup{}
 -- install jdtls with yay -S jdtls
 -- HTML language server 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
