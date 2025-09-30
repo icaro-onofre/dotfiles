@@ -52,3 +52,10 @@ curriculum/icaro-en.log
 curriculum/icaro-en.out
 curriculum/icaro-en.run.xml
 curriculum/icaro-en.pdf
+.config/ardour8
+curriculum/icaro-pt.aux
+curriculum/icaro-pt.log
+curriculum/icaro-pt.out
+curriculum/icaro-pt.pdf
+curriculum/icaro-pt.run.xml
+curriculum/icaro-pt.bcf

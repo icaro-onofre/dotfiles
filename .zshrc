@@ -81,7 +81,7 @@ setopt no_bare_glob_qual
 
 #Neovim switcher
 function nvims() {
-  items=("default" "astro-nvim" "nvchad")
+  items=("default" "astro-nvim" "nvchad" "lazynvim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
