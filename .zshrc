@@ -208,3 +208,5 @@ export PATH=$PATH:/home/fforelle/bin/nvim-linux-x86_64/bin
 export PATH=$PATH:/home/fforelle/bin
 
 export PATH=$PATH:/usr/local/go/bin
+
+export PATH=$PATH:/home/fforelle/bin/cmake-4.1.0-linux-aarch64/bin

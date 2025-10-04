@@ -15,16 +15,11 @@ bindsym $mod+minus scratchpad show
 
 for_window [class="Alacritty" instance="term_scratchpad"] move scratchpad, scratchpad show
 
-for_window [class="obsidian"] floating enable, move to scratchpad, mark obsidian_scratchpad
-
-bindsym $mod+o [con_mark="obsidian_scratchpad"] scratchpad show
-
-# End of Named scrachpads
 
 # Keybinding to run it if not already running
 bindsym $mod+t exec --no-startup-id i3-msg '[instance="term_scratchpad"] scratchpad show' || alacritty --class term_scratchpad
 
-# Named stratch pad configuration
+# NAMED STRATCH PAD CONFIGURATION
 
 #Terminal
 exec --no-startup-id kitty --title terminal
@@ -32,9 +27,9 @@ for_window [title="terminal"] move to scratchpad, scratchpad hide, floating enab
 bindsym $mod+y [title="terminal"] scratchpad show
 
 #Notes
-exec --no-startup-id obsidian
-for_window [class="obsidian"] move to scratchpad, scratchpad hide, floating enable, resize set 160 ppt 70 ppt, move position center
-bindsym $mod+i [class="obsidian"] scratchpad show
+# exec --no-startup-id obsidian
+# for_window [class="obsidian"] move to scratchpad, scratchpad hide, floating enable, resize set 160 ppt 70 ppt, move position center
+# bindsym $mod+i [class="obsidian"] scratchpad show
 
 #Emacs
 # exec --no-startup-id emacsclient -c -a 'emacs'
@@ -42,11 +37,11 @@ bindsym $mod+i [class="obsidian"] scratchpad show
 # bindsym $mod+m [class="emacsclient"] scratchpad show
 
 #Pavucontrol
-exec --no-startup-id pavucontrol
-for_window [class="pavucontrol"] move to scratchpad, scratchpad hide, floating enable, resize set 80 ppt 70 ppt, move position center
+# exec --no-startup-id pavucontrol
+bindsym $mod+Shift+x [class="pavucontrol"] move to scratchpad, scratchpad hide, floating enable, resize set 80 ppt 70 ppt, move position center
 bindsym $mod+x [class="pavucontrol"] scratchpad show
 
-# end of named scratchpad configuartion
+# END OF NAMED SCRATCHPAD CONFIGUARTION
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -65,7 +60,8 @@ bindsym $mod+Shift+- exec i3lock
 bindsym $mod+c kill
 
 # start dmenu (a program launcher)
- bindsym $mod+p exec "rofi -combi-modi window,drun -show combi -show-icons"
+bindsym $mod+p exec --no-startup-id dmenu_run
+#  bindsym $mod+p exec dmenu
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a

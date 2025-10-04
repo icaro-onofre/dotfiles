@@ -6,7 +6,7 @@ super + shift + alt + n
 super + t
 		kitty
 # Rofi 
-super + p
+super + shift + p
 		rofi -combi-modi window,drun -show combi -show-icons
 
 # Gnumeric
@@ -66,12 +66,12 @@ super + alt + s
 	spotify
 
 # Launch obsidian
-super + shift + o
-	obsidian
+# super + shift + o
+# 	obsidian
 
 # Launch obs-studio
-super + alt + o
-	obs
+# super + alt + o
+# 	obs
 
 # Maim select screen
 super + shift + s
