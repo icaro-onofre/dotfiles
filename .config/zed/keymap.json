@@ -27,5 +27,65 @@
     "bindings": {
       "f10": "debugger::StepOver"
     }
+  },
+  {
+    "context": "(FileFinder || FileFinder > Picker > Editor)",
+    "bindings": {
+      "ctrl-shift-i": null
+    }
+  },
+  {
+    "context": "(FileFinder || FileFinder > Picker > Editor)",
+    "bindings": {
+      "ctrl-shift-a": null
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "ctrl-shift-p": null
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "ctrl-shift-p": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
+    "bindings": {
+      "space f": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-x ctrl-f": null
+    }
+  },
+  {
+    "context": "(FileFinder || FileFinder > Picker > Editor)",
+    "bindings": {
+      "ctrl-p": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-e": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-p": null
+    }
   }
 ]

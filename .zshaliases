@@ -8,6 +8,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 #emacs  
+alias zed-install "curl -f https://zed.dev/install.sh | sh"
 alias doom-install="git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install"
 alias chemacs-install=" git clone https://github.com/plexus/chemacs2.git ~/.emacs.d"

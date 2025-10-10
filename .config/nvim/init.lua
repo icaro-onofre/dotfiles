@@ -41,6 +41,12 @@ require("lazy").setup({
 { 'mfussenegger/nvim-dap' },
 
 -- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
+{"smoka7/hop.nvim",
+ version="*",
+ opts = {
+	 keys = 'etovxqpdygfblzhckisuran'
+ }},
+
 -- neovim surround
 {
     "kylechui/nvim-surround",
@@ -52,11 +58,17 @@ require("lazy").setup({
         })
     end
 },
--- Vim multiline
-{ 'mg979/vim-visual-multi' },
 
+-- DAP Adapters
+-- Read these DOCS for configuring DAP https://codeberg.org/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+-- Flutter
+'nvim-flutter/flutter-tools.nvim',
+{
+	'nvim-lua/plenary.nvim',
+	'stevearc/dressing.nvim', -- optional for vim.ui.select
+},
 
--- List od DAP(Debug adapter protocol) comment the line out for removing the installed DAP 
+-- Typescript
 { "mxsdev/nvim-dap-vscode-js" },
 
 })
@@ -123,6 +135,9 @@ require('gitsigns').setup {
 -- neovim general keybindings
 vim.keymap.set('n', '<leader>R',"<Cmd>source %<CR>", {})
 
+-- Hop neovim keymaps
+vim.keymap.set('n', '<leader>w', '<Cmd>HopWord <CR>')
+vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
 
 -- Telescope keymaps
 local builtin = require('telescope.builtin')
@@ -184,6 +199,7 @@ require('lspconfig').ts_ls.setup({})
 -- java language server
 require'lspconfig'.jdtls.setup{}
 -- install jdtls with yay -S jdtls
+require'lspconfig'.dartls.setup{{}}
 -- HTML language server 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -246,66 +262,127 @@ vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.document_symbols()<cr>', opts)
 
 
---Begin DAP Configuration
+--BEGIN DAP Configuration
 
 -- configuring individual DAPs
-require("dap-vscode-js").setup({
-  -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
-  debugger_path = "/home/fforelle/bin/vscode-js-debug/", -- Path to vscode-js-debug installation.
-  adapters = {'pwa-node', 'pwa-chrome'}, 
-  -- log_file_path = "(stdpath cache)/dap_vscode_js.log" -- Path for file logging
-  -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
-  -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
-})
--- end configuring individual daps
+local dap = require("dap")
 
-local dap = require('dap')
+-- Typescript javascript configuration
+-- require("dap").adapters["pwa-node"] = {
+--   type = "server",
+--   host = "localhost",
+--   port = "${port}",
+--   executable = {
+--     command = "node",
+--     -- 💀 Make sure to update this path to point to your installation
+--     args = {"/path/to/js-debug/src/dapDebugServer.js", "${port}"},
+--   }
+-- }
+--
+-- require("dap").configurations.typescriptreact = {
+--   {
+--     type = "pwa-node",
+--     request = "launch",
+--     name = "Launch file",
+--     program = "${file}",
+--     cwd = "${workspaceFolder}",
+--   },
+-- }
 
-for _, language in ipairs({ "typescript", "javascript" }) do
-  require("dap").configurations[language] = {
-	{
-	  {
-		type = "pwa-node",
-		request = "launch",
-		name = "Launch file",
-		program = "${file}",
-		cwd = "${workspaceFolder}",
-	  },
-	  {
-		type = "pwa-node",
-		request = "attach",
-		name = "Attach",
-		processId = require'dap.utils'.pick_process,
-		cwd = "${workspaceFolder}",
-	  },
-	  {
-            type = "pwa-chrome",
-            request = "launch",
-            name = "Launch & Debug Chrome",
-            url = function()
-              local co = coroutine.running()
-              return coroutine.create(function()
-                vim.ui.input({
-                  prompt = "Enter URL: ",
-                  default = "http://localhost:3000",
-                }, function(url)
-                  if url == nil or url == "" then
-                    return
-                  else
-                    coroutine.resume(co, url)
-                  end
-                end)
-              end)
-            end,
-            webRoot = vim.fn.getcwd(),
-            protocol = "inspector",
-            sourceMaps = true,
-            userDataDir = false,
-          }
-	}  
+
+-- Typescript/Javascript launching chrome against localhost
+-- dap.adapters.chrome = {
+--     type = "executable",
+--     command = "node",
+--     args = {os.getenv("HOME") .. "/bin/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
+-- }
+--
+-- dap.configurations.typescriptreact = { -- change this to javascript if needed
+--     {
+--         type = "chrome",
+--         request = "attach",
+--         program = "${file}",
+--         cwd = vim.fn.getcwd(),
+--         sourceMaps = true,
+--         protocol = "inspector",
+--         port = 9222,
+--         webRoot = "${workspaceFolder}"
+--     }
+-- }
+--
+-- dap.configurations.typescriptreact = { -- change to typescript if needed
+--     {
+--         type = "chrome",
+--         request = "attach",
+--         program = "${file}",
+--         cwd = vim.fn.getcwd(),
+--         sourceMaps = true,
+--         protocol = "inspector",
+--         port = 9222,
+--         webRoot = "${workspaceFolder}"
+--     }
+-- }
+
+-- Flutter Configuration
+dap.adapters.dart = {
+  type = 'executable',
+  command = 'dart',    -- if you're using fvm, you'll need to provide the full path to dart (dart.exe for windows users), or you could prepend the fvm command
+  args = { 'debug_adapter' },
+  -- windows users will need to set 'detached' to false
+  options = { 
+    detached = false,
+  }
 }
-end
+dap.adapters.flutter = {
+  type = 'executable',
+  command = 'flutter',   -- if you're using fvm, you'll need to provide the full path to flutter (flutter.bat for windows users), or you could prepend the fvm command
+  args = { 'debug_adapter' },
+  -- windows users will need to set 'detached' to false
+  options = { 
+    detached = false,
+  }
+}
 
+dap.configurations.dart = {
+  {
+    type = "dart",
+    request = "launch",
+    name = "Launch dart",
+    dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart", -- ensure this is correct
+    flutterSdkPath = "/opt/flutter/bin/flutter",                  -- ensure this is correct
+    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
+    cwd = "${workspaceFolder}",
+  },
+  {
+    type = "flutter",
+    request = "launch",
+    name = "Launch flutter",
+    dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart", -- ensure this is correct
+    flutterSdkPath = "/opt/flutter/bin/flutter",             -- ensure this is correct
+    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
+    cwd = "${workspaceFolder}",
+  }
+}
+
+
+-- dap.configurations.dart = {
+--   {
+--     type = "dart",
+--     request = "launch",
+--     name = "Launch Dart Program",
+--     program = "${file}",
+--     cwd = "${workspaceFolder}",
+--   },
+--   {
+--     type = "dart",
+--     request = "attach",
+--     name = "Attach to Dart VM",
+--     cwd = "${workspaceFolder}",
+--     toolArgs = { "--enable-vm-service" },
+--   },
+-- }
+
+-- END DAP Configuration
 -- DAP keymaps
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
