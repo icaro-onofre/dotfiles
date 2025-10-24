@@ -80,7 +80,6 @@ vim.opt.termguicolors = true
 vim.opt.shiftwidth=4
 vim.opt.tabstop=4
 vim.cmd 'colorscheme wildcharm' -- select this colorscheme if it is installed
-vim.cmd 'set rnu'
 vim.cmd 'set nu'
 
 
@@ -136,7 +135,7 @@ require('gitsigns').setup {
 vim.keymap.set('n', '<leader>R',"<Cmd>source %<CR>", {})
 
 -- Hop neovim keymaps
-vim.keymap.set('n', '<leader>w', '<Cmd>HopWord <CR>')
+vim.keymap.set('n', '<leader>w', '<Cmd>HopWordMW <CR>')
 vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
 
 -- Telescope keymaps
@@ -200,6 +199,10 @@ require('lspconfig').ts_ls.setup({})
 require'lspconfig'.jdtls.setup{}
 -- install jdtls with yay -S jdtls
 require'lspconfig'.dartls.setup{{}}
+
+require'lspconfig'.gopls.setup{{}}
+
+
 -- HTML language server 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -267,61 +270,30 @@ vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.document_symbols()<cr>', opts)
 -- configuring individual DAPs
 local dap = require("dap")
 
--- Typescript javascript configuration
--- require("dap").adapters["pwa-node"] = {
---   type = "server",
---   host = "localhost",
---   port = "${port}",
---   executable = {
---     command = "node",
---     -- 💀 Make sure to update this path to point to your installation
---     args = {"/path/to/js-debug/src/dapDebugServer.js", "${port}"},
---   }
--- }
---
--- require("dap").configurations.typescriptreact = {
---   {
---     type = "pwa-node",
---     request = "launch",
---     name = "Launch file",
---     program = "${file}",
---     cwd = "${workspaceFolder}",
---   },
--- }
-
-
+-- REMEMBER to launch chrome on debug mode:   google-chrome-stable --remote-debugging-port=9222
 -- Typescript/Javascript launching chrome against localhost
--- dap.adapters.chrome = {
---     type = "executable",
---     command = "node",
---     args = {os.getenv("HOME") .. "/bin/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
--- }
---
--- dap.configurations.typescriptreact = { -- change this to javascript if needed
---     {
---         type = "chrome",
---         request = "attach",
---         program = "${file}",
---         cwd = vim.fn.getcwd(),
---         sourceMaps = true,
---         protocol = "inspector",
---         port = 9222,
---         webRoot = "${workspaceFolder}"
---     }
--- }
---
--- dap.configurations.typescriptreact = { -- change to typescript if needed
---     {
---         type = "chrome",
---         request = "attach",
---         program = "${file}",
---         cwd = vim.fn.getcwd(),
---         sourceMaps = true,
---         protocol = "inspector",
---         port = 9222,
---         webRoot = "${workspaceFolder}"
---     }
--- }
+dap.adapters.chrome = {
+    type = "executable",
+    command = "node",
+    args = {os.getenv("HOME") .. "/bin/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
+}
+
+dap.configurations.typescriptreact = { -- change this to javascript if needed
+    {
+        type = "chrome",
+        request = "attach",
+        program = "${file}",
+		runtimeExecutable = "google-chrome-stable",
+		runtimeArgs = {
+			"--remote-debugging-port=9222"
+		},
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = "inspector",
+        port = 9222,
+        webRoot = "${workspaceFolder}"
+    }
+}
 
 -- Flutter Configuration
 dap.adapters.dart = {
@@ -364,23 +336,6 @@ dap.configurations.dart = {
   }
 }
 
-
--- dap.configurations.dart = {
---   {
---     type = "dart",
---     request = "launch",
---     name = "Launch Dart Program",
---     program = "${file}",
---     cwd = "${workspaceFolder}",
---   },
---   {
---     type = "dart",
---     request = "attach",
---     name = "Attach to Dart VM",
---     cwd = "${workspaceFolder}",
---     toolArgs = { "--enable-vm-service" },
---   },
--- }
 
 -- END DAP Configuration
 -- DAP keymaps
