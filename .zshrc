@@ -81,7 +81,7 @@ setopt no_bare_glob_qual
 
 #Neovim switcher
 function nvims() {
-  items=("default" "astro-nvim" "nvchad" "lazynvim" "nvim-debug-test")
+  items=("default" "astro-nvim" "nvchad" "lazynvim" "nvim-debug-test" "nvim-flutter")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -210,3 +210,9 @@ export PATH=$PATH:/home/fforelle/bin
 export PATH=$PATH:/usr/local/go/bin
 
 export PATH=$PATH:/home/fforelle/bin/cmake-4.1.0-linux-aarch64/bin
+
+# Fixing portals
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_DESKTOP_PORTAL_DIR=/usr/share/xdg-desktop-portal/portals
+export TERMINAL=/usr/bin/kitty
