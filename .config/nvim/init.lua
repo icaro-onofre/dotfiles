@@ -1,111 +1,142 @@
+-- =========================================================
+-- BOOTSTRAP LAZY.NVIM
+-- =========================================================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
+-- =========================================================
+-- PLUGIN SETUP
+-- =========================================================
 require("lazy").setup({
+
+-- =========================
+-- Core Utilities
+-- =========================
 "folke/which-key.nvim",
 { "folke/neoconf.nvim", cmd = "Neoconf" },
-
 "folke/neodev.nvim",
-"sindrets/diffview.nvim",					 -- Git helper
-"lewis6991/gitsigns.nvim",					 -- Git helper
 
-"HiPhish/rainbow-delimiters.nvim",			 -- UI&Icons
+-- =========================
+-- Git
+-- =========================
+"sindrets/diffview.nvim",
+"lewis6991/gitsigns.nvim",
 
-"chentoast/marks.nvim",						 -- UI&Icons
+-- =========================
+-- UI / Icons / Visual
+-- =========================
+"HiPhish/rainbow-delimiters.nvim",
+"chentoast/marks.nvim",
+"norcalli/nvim-colorizer.lua",
+"nvim-tree/nvim-web-devicons",
 
-'norcalli/nvim-colorizer.lua',				 -- UI&Icons
+-- =========================
+-- Navigation / Motion
+-- =========================
+{
+  "smoka7/hop.nvim",
+  version="*",
+  opts = {
+    keys = 'etovxqpdygfblzhckisuran'
+  }
+},
 
---BEGIN LSP Zero block
+{
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  opts = {},
+  keys = {
+    {
+      "<C-s>",
+      mode = { "n", "x", "o" },
+      function() require("flash").jump() end,
+      desc = "Flash jump"
+    }
+  }
+},
+
+-- =========================
+-- Editing Improvements
+-- =========================
+{
+  "kylechui/nvim-surround",
+  version="*",
+  event="VeryLazy",
+  config = function()
+    require("nvim-surround").setup({})
+  end
+},
+
+-- =========================
+-- Telescope
+-- =========================
+{
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.5',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+},
+
+-- =========================
+-- LSP + Completion
+-- =========================
 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 {'neovim/nvim-lspconfig'},
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
---END LSP Zero block
 
-{'nvim-tree/nvim-web-devicons'}, 			-- UI&Icons
-
-{ 'nvim-telescope/telescope.nvim', tag = '0.1.5', -- Telescope grep fuzzy find.
-	dependencies = { 'nvim-lua/plenary.nvim' }, },
-
--- Debugging with neovim dap
+-- =========================
+-- Debugging
+-- =========================
 { 'mfussenegger/nvim-dap' },
+{ "mxsdev/nvim-dap-vscode-js" },
 
--- BEGIN Text Navigation improvements
-
-{"smoka7/hop.nvim",
- version="*",
- opts = {
-	 keys = 'etovxqpdygfblzhckisuran'
- }},
-
-{
-  "folke/flash.nvim",
-  event = "VeryLazy",
-  ---@type Flash.Config
-  opts = {},
-  keys = {
-   { "<C-s>", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" }
-    -- { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    -- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-  },
-},
--- END Text Navigation improvements
-  
--- BEGIN Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
--- neovim surround
-{
-    "kylechui/nvim-surround",
-    version = "*", 
-    event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
-},
-
--- DAP Adapters
--- Read these DOCS for configuring DAP https://codeberg.org/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
--- Flutter
+-- =========================
+-- Flutter Tools
+-- =========================
 'nvim-flutter/flutter-tools.nvim',
 {
-	'nvim-lua/plenary.nvim',
-	'stevearc/dressing.nvim', -- optional for vim.ui.select
-},
-
--- Typescript
-{ "mxsdev/nvim-dap-vscode-js" },
+  'nvim-lua/plenary.nvim',
+  'stevearc/dressing.nvim'
+}
 
 })
 
--- Set leader key
+-- =========================================================
+-- GENERAL NEOVIM SETTINGS
+-- =========================================================
 vim.g.mapleader = " "
--- Basic UI configurations
-vim.opt.termguicolors = true  	
-vim.opt.shiftwidth=4
-vim.opt.tabstop=4
-vim.cmd 'colorscheme wildcharm' -- select this colorscheme if it is installed
-vim.cmd 'set nu'
 
+vim.opt.termguicolors = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.swapfile = false
 
--- Interface configuration
-require'colorizer'.setup()
---
--- gitsigns configuration
+vim.cmd("set nu")
+vim.cmd("colorscheme wildcharm")
 
+-- =========================================================
+-- PLUGIN CONFIGURATIONS
+-- =========================================================
+
+-- Colorizer
+require('colorizer').setup()
+
+-- =========================================================
+-- GITSIGNS CONFIG
+-- =========================================================
 require('gitsigns').setup {
   signs = {
     add          = { text = '│' },
@@ -115,258 +146,180 @@ require('gitsigns').setup {
     changedelete = { text = '~' },
     untracked    = { text = '┆' },
   },
-  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
-  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
-  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
-  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
-  watch_gitdir = {
-    follow_files = true
-  },
+  signcolumn = true,
+  watch_gitdir = { follow_files = true },
   auto_attach = true,
-  attach_to_untracked = false,
-  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
-  current_line_blame_opts = {
-    virt_text = true,
-    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-    delay = 1000,
-    ignore_whitespace = false,
-    virt_text_priority = 100,
-  },
-  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
-  sign_priority = 6,
-  update_debounce = 100,
-  status_formatter = nil, -- Use default
-  max_file_length = 40000, -- Disable if file is longer than this (in lines)
-  preview_config = {
-    -- Options passed to nvim_open_win
-    border = 'single',
-    style = 'minimal',
-    relative = 'cursor',
-    row = 0,
-    col = 1
-  },
 }
 
--- Keymaps configurations
+-- =========================================================
+-- KEYMAPS
+-- =========================================================
 
--- neovim general keybindings
-vim.keymap.set('n', '<leader>R',"<Cmd>source %<CR>", {})
+-- -------- General --------
+vim.keymap.set('n', '<leader>R', "<Cmd>source %<CR>")
 
--- quickfix list
-vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
-vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })
+-- -------- Quickfix --------
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>')
+vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>')
 
--- Hop neovim keymaps
-vim.keymap.set('n', '<leader>w', '<Cmd>HopWordMW <CR>')
-vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
+-- -------- Motion --------
+vim.keymap.set('n', '<leader>w', '<Cmd>HopWordMW<CR>')
+vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
 
--- Telescope keymaps
+-- -------- Telescope --------
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>',builtin.find_files, {})
-vim.keymap.set('n', '<leader>fp',builtin.git_files, {})
-vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
-vim.keymap.set('n', '<M-b>',builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fm',builtin.marks, {})
-vim.keymap.set('n', '<leader>n',"<Cmd>cn<CR>", {})
-vim.keymap.set('n', '<leader>p',"<Cmd>cp<CR>", {})
--- Lsp telescope
-vim.keymap.set('n', '<leader>fr',builtin.lsp_references, {})
-vim.keymap.set('n', '<leader>fo',builtin.lsp_document_symbols, {})
 
--- vim.keymap.set('n', '<leader>fc',builtin.telescope.builtin.colorscheme, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files)
+vim.keymap.set('n', '<leader>fp', builtin.git_files)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+vim.keymap.set('n', '<M-b>', builtin.buffers)
+vim.keymap.set('n', '<leader>fh', builtin.help_tags)
+vim.keymap.set('n', '<leader>fm', builtin.marks)
 
+-- LSP Telescope
+vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
+vim.keymap.set('n', '<leader>fo', builtin.lsp_document_symbols)
 
--- diff view keybindings
-vim.keymap.set('n', '<leader>gd',"<Cmd>DiffviewOpen<CR>", {})
-vim.keymap.set('n', '<leader>gq',"<Cmd>DiffviewClose<CR>", {})
-vim.keymap.set('n', '<leader>gw',"<Cmd>DiffviewFileHistory<CR>", {})
---gitsigns keybidings
-vim.keymap.set('n', 'gs',"<Cmd>Gitsigns stage_hunk<CR>", {})
-vim.keymap.set('n', 'gu',"<Cmd>Gitsigns undo_stage_hunk<CR>", {})
-vim.keymap.set('n', 'gn',"<Cmd>Gitsigns next_hunk<CR>", {})
-vim.keymap.set('n', 'gp',"<Cmd>Gitsigns next_hunk<CR>", {})
-vim.keymap.set('n', '<leader>G',"<Cmd>Git<CR>", {})
--- vim.keymap.set('n', '<leader>gc',"Git commit ", {})
+-- -------- Git --------
+vim.keymap.set('n', '<leader>gd', "<Cmd>DiffviewOpen<CR>")
+vim.keymap.set('n', '<leader>gq', "<Cmd>DiffviewClose<CR>")
+vim.keymap.set('n', '<leader>gw', "<Cmd>DiffviewFileHistory<CR>")
 
--- Set no swap
-vim.opt.swapfile = false
+vim.keymap.set('n', 'gs', "<Cmd>Gitsigns stage_hunk<CR>")
+vim.keymap.set('n', 'gu', "<Cmd>Gitsigns undo_stage_hunk<CR>")
+vim.keymap.set('n', 'gn', "<Cmd>Gitsigns next_hunk<CR>")
+vim.keymap.set('n', 'gp', "<Cmd>Gitsigns next_hunk<CR>")
 
---Editor remaps
--- Move text in visual mode
--- vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
--- vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
--- vim.keymap.set("n","J","mzJ`z")
-
+-- -------- Editor behavior --------
 vim.keymap.set("n","<C-d>","<C-d>zz")
 vim.keymap.set("n","<C-u>","<C-u>zz")
-
 vim.keymap.set("n","n","nzzzv")
 vim.keymap.set("n","N","Nzzzv")
-
 vim.keymap.set("n","'","`")
 
---vim.keymap.set("x","<leader>p","\"_dp"(
-
-
--- LSP configs
--- require('lsp-zero').gopls.setup({})
+-- =========================================================
+-- LSP CONFIGURATION
+-- =========================================================
 require('lsp-zero')
--- Run yay -S typescript-language-server
--- require('lspconfig').tailwindcss.setup({})
--- Run sudo npm i -g @tailwindcss/language-server
-require('lspconfig').tailwindcss.setup({})
--- Run sudo npm -g install --save vscode-html-languageservice
-require('lspconfig').ts_ls.setup({})
--- java language server
-require'lspconfig'.jdtls.setup{}
--- install jdtls with yay -S jdtls
-require'lspconfig'.dartls.setup{{}}
 
-require'lspconfig'.gopls.setup{{}}
+local lspconfig = require('lspconfig')
 
+-- Language servers
+lspconfig.tailwindcss.setup({})
+lspconfig.ts_ls.setup({})
+lspconfig.jdtls.setup({})
+lspconfig.dartls.setup({})
+lspconfig.gopls.setup({})
 
--- HTML language server 
+-- HTML LSP capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
+lspconfig.html.setup {
+  capabilities = capabilities
 }
 
--- PLUGIN marks.nvim setup.
-require'marks'.setup {
-  -- whether to map keybinds or not. default true
-  default_mappings = true,
-  -- which builtin marks to show. default {}
-  builtin_marks = { ".", "<", ">", "^" },
-  -- whether movements cycle back to the beginning/end of buffer. default true
-  cyclic = true,
-  -- whether the shada file is updated after modifying uppercase marks. default false
-  force_write_shada = false,
-  -- how often (in ms) to redraw signs/recompute mark positions. 
-  -- higher values will have better performance but may cause visual lag, 
-  -- while lower values may cause performance penalties. default 150.
-  refresh_interval = 250,
-  -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
-  -- marks, and bookmarks.
-  -- can be either a table with all/none of the keys, or a single number, in which case
-  -- the priority applies to all marks.
-  -- default 10.
-  sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
-  -- disables mark tracking for specific filetypes. default {}
-  excluded_filetypes = {},
-  -- disables mark tracking for specific buftypes. default {}
-  excluded_buftypes = {},
-  -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
-  -- sign/virttext. Bookmarks can be used to group together positions and quickly move
-  -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
-  -- default virt_text is "".
-  bookmark_0 = {
-    sign = "⚑",
-    virt_text = "hello world",
-    -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
-    -- defaults to false.
-    annotate = false,
-  },
-  mappings = {}
-}
--- LSP configurations
+-- =========================================================
+-- LSP AUTOCOMMANDS
+-- =========================================================
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
-	local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-	if client:supports_method('textDocument/implementation') then
-	  -- Create a keymap for vim.lsp.buf.implementation ...
-	end
 
-	-- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
-	if client:supports_method('textDocument/completion') then
-	  -- Optional: trigger autocompletion on EVERY keypress. May be slow!
-	  -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-	  -- client.server_capabilities.completionProvider.triggerCharacters = chars
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-	  vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
-	end
+    -- Enable autocompletion
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+    end
 
-	-- Auto-format ("lint") on save.
-	-- Usually not needed if server supports "textDocument/willSaveWaitUntil".
-	if not client:supports_method('textDocument/willSaveWaitUntil')
-		and client:supports_method('textDocument/formatting') then
-	  vim.api.nvim_create_autocmd('BufWritePre', {
-		group = vim.api.nvim_create_augroup('my.lsp', {clear=false}),
-		buffer = args.buf,
-		callback = function()
-		  vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
-		end,
-	  })
-	end
+    -- Format on save
+    if not client:supports_method('textDocument/willSaveWaitUntil')
+      and client:supports_method('textDocument/formatting') then
+
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ timeout_ms = 1000 })
+        end
+      })
+
+    end
   end,
 })
 
--- LSP ZERO keymaps config
--- For a listing of all keymaps available for lsp server do :h default_keymaps
-vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-vim.keymap.set('n', '<F3>', '<cmd>lua vim.lsp.buf.format()<cr>', opts)
-vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
-vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
--- vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
+-- =========================================================
+-- LSP KEYMAPS
+-- =========================================================
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename)
+vim.keymap.set('n', '<F3>', vim.lsp.buf.format)
+vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action)
 
+vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
 
---BEGIN DAP Configuration
+vim.keymap.set('n', 'ga', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'go', vim.lsp.buf.type_definition)
 
--- configuring individual DAPs
+-- =========================================================
+-- MARKS.NVIM CONFIG
+-- =========================================================
+require'marks'.setup {
+  default_mappings = true,
+  builtin_marks = { ".", "<", ">", "^" },
+  cyclic = true,
+  refresh_interval = 250,
+  sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+
+  bookmark_0 = {
+    sign = "⚑",
+    virt_text = "hello world",
+    annotate = false,
+  }
+}
+
+-- =========================================================
+-- DAP (DEBUGGING) CONFIG
+-- =========================================================
 local dap = require("dap")
 
--- REMEMBER to launch chrome on debug mode:   google-chrome-stable --remote-debugging-port=9222
--- Typescript/Javascript launching chrome against localhost
+-- Chrome debugger
 dap.adapters.chrome = {
-    type = "executable",
-    command = "node",
-    args = {os.getenv("HOME") .. "/bin/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
+  type = "executable",
+  command = "node",
+  args = {os.getenv("HOME") .. "/bin/vscode-chrome-debug/out/src/chromeDebug.js"}
 }
 
-dap.configurations.typescriptreact = { -- change this to javascript if needed
-    {
-        type = "chrome",
-        request = "attach",
-        program = "${file}",
-		runtimeExecutable = "google-chrome-stable",
-		runtimeArgs = {
-			"--remote-debugging-port=9222"
-		},
-        cwd = vim.fn.getcwd(),
-        sourceMaps = true,
-        protocol = "inspector",
-        port = 9222,
-        webRoot = "${workspaceFolder}"
-    }
+dap.configurations.typescriptreact = {
+  {
+    type = "chrome",
+    request = "attach",
+    runtimeExecutable = "google-chrome-stable",
+    runtimeArgs = { "--remote-debugging-port=9222" },
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = "inspector",
+    port = 9222,
+    webRoot = "${workspaceFolder}"
+  }
 }
 
--- Flutter Configuration
+-- Flutter / Dart debugging
 dap.adapters.dart = {
   type = 'executable',
-  command = 'dart',    -- if you're using fvm, you'll need to provide the full path to dart (dart.exe for windows users), or you could prepend the fvm command
+  command = 'dart',
   args = { 'debug_adapter' },
-  -- windows users will need to set 'detached' to false
-  options = { 
-    detached = false,
-  }
+  options = { detached = false }
 }
+
 dap.adapters.flutter = {
   type = 'executable',
-  command = 'flutter',   -- if you're using fvm, you'll need to provide the full path to flutter (flutter.bat for windows users), or you could prepend the fvm command
+  command = 'flutter',
   args = { 'debug_adapter' },
-  -- windows users will need to set 'detached' to false
-  options = { 
-    detached = false,
-  }
+  options = { detached = false }
 }
 
 dap.configurations.dart = {
@@ -374,47 +327,21 @@ dap.configurations.dart = {
     type = "dart",
     request = "launch",
     name = "Launch dart",
-    dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart", -- ensure this is correct
-    flutterSdkPath = "/opt/flutter/bin/flutter",                  -- ensure this is correct
-    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
-    cwd = "${workspaceFolder}",
-  },
-  {
-    type = "flutter",
-    request = "launch",
-    name = "Launch flutter",
-    dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart", -- ensure this is correct
-    flutterSdkPath = "/opt/flutter/bin/flutter",             -- ensure this is correct
-    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
+    dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart",
+    flutterSdkPath = "/opt/flutter/bin/flutter",
+    program = "${workspaceFolder}/lib/main.dart",
     cwd = "${workspaceFolder}",
   }
 }
 
+-- =========================================================
+-- DAP KEYMAPS
+-- =========================================================
+vim.keymap.set('n','<F5>',function() require('dap').continue() end)
+vim.keymap.set('n','<F10>',function() require('dap').step_over() end)
+vim.keymap.set('n','<F11>',function() require('dap').step_into() end)
+vim.keymap.set('n','<F12>',function() require('dap').step_out() end)
+vim.keymap.set('n','<F9>',function() require('dap').toggle_breakpoint() end)
 
--- END DAP Configuration
--- DAP keymaps
-vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
-vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
-vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
-vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
-vim.keymap.set('n', '<F9>', function() require('dap').toggle_breakpoint() end)
-vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
-vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
-vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
-  require('dap.ui.widgets').hover()
-end)
-vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
-  require('dap.ui.widgets').preview()
-end)
-vim.keymap.set('n', '<Leader>df', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.frames)
-end)
-vim.keymap.set('n', '<Leader>ds', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.scopes)
-end)
-
---End DAP Configuration
+vim.keymap.set('n','<Leader>B',function() require('dap').set_breakpoint() end)
+vim.keymap.set('n','<Leader>dr',function() require('dap').repl.open() end)
