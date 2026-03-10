@@ -25,12 +25,13 @@ require("lazy").setup({
 
 'norcalli/nvim-colorizer.lua',				 -- UI&Icons
 
---LSP Zero block
+--BEGIN LSP Zero block
 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 {'neovim/nvim-lspconfig'},
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
+--END LSP Zero block
 
 {'nvim-tree/nvim-web-devicons'}, 			-- UI&Icons
 
@@ -40,13 +41,30 @@ require("lazy").setup({
 -- Debugging with neovim dap
 { 'mfussenegger/nvim-dap' },
 
--- Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
+-- BEGIN Text Navigation improvements
+
 {"smoka7/hop.nvim",
  version="*",
  opts = {
 	 keys = 'etovxqpdygfblzhckisuran'
  }},
 
+{
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  ---@type Flash.Config
+  opts = {},
+  keys = {
+   { "<C-s>", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" }
+    -- { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    -- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
+},
+-- END Text Navigation improvements
+  
+-- BEGIN Text&Code Editing Surround nvim add "" () {} or anything add anything around selected text
 -- neovim surround
 {
     "kylechui/nvim-surround",
@@ -134,22 +152,27 @@ require('gitsigns').setup {
 -- neovim general keybindings
 vim.keymap.set('n', '<leader>R',"<Cmd>source %<CR>", {})
 
+-- quickfix list
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
+vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })
+
 -- Hop neovim keymaps
 vim.keymap.set('n', '<leader>w', '<Cmd>HopWordMW <CR>')
 vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
 
 -- Telescope keymaps
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>t',builtin.find_files, {})
+vim.keymap.set('n', '<C-p>',builtin.find_files, {})
 vim.keymap.set('n', '<leader>fp',builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg',builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb',builtin.buffers, {})
+vim.keymap.set('n', '<M-b>',builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh',builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fm',builtin.marks, {})
 vim.keymap.set('n', '<leader>n',"<Cmd>cn<CR>", {})
 vim.keymap.set('n', '<leader>p',"<Cmd>cp<CR>", {})
 -- Lsp telescope
 vim.keymap.set('n', '<leader>fr',builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>fo',builtin.lsp_document_symbols, {})
 
 -- vim.keymap.set('n', '<leader>fc',builtin.telescope.builtin.colorscheme, {})
 
@@ -248,7 +271,38 @@ require'marks'.setup {
   },
   mappings = {}
 }
+-- LSP configurations
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('my.lsp', {}),
+  callback = function(args)
+	local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+	if client:supports_method('textDocument/implementation') then
+	  -- Create a keymap for vim.lsp.buf.implementation ...
+	end
 
+	-- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
+	if client:supports_method('textDocument/completion') then
+	  -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+	  -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+	  -- client.server_capabilities.completionProvider.triggerCharacters = chars
+
+	  vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
+	end
+
+	-- Auto-format ("lint") on save.
+	-- Usually not needed if server supports "textDocument/willSaveWaitUntil".
+	if not client:supports_method('textDocument/willSaveWaitUntil')
+		and client:supports_method('textDocument/formatting') then
+	  vim.api.nvim_create_autocmd('BufWritePre', {
+		group = vim.api.nvim_create_augroup('my.lsp', {clear=false}),
+		buffer = args.buf,
+		callback = function()
+		  vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
+		end,
+	  })
+	end
+  end,
+})
 
 -- LSP ZERO keymaps config
 -- For a listing of all keymaps available for lsp server do :h default_keymaps
@@ -262,7 +316,7 @@ vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.document_symbols()<cr>', opts)
+-- vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
 
 
 --BEGIN DAP Configuration
@@ -343,7 +397,7 @@ vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
 vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
-vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<F9>', function() require('dap').toggle_breakpoint() end)
 vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
 vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
