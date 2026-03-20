@@ -1,5 +1,5 @@
 alias h='history'
-alias l='lsd -l'
+alias l='lsd -ahlt'
 alias ls='ls --color'
 alias rr='ranger'
 alias dir='dir --color=auto'
@@ -106,6 +106,7 @@ alias shadcn='pnpx shadcn-ui@latest'
 
 # UNION Aliases do trabalho
  #eval  ssh admin@web.unifrota.com.br
+alias a='eval `ssh-agent`;ssh-add ~/.ssh/icaro-08-25'
 alias sshweb1='export TERM=xterm-256color;eval `ssh-agent`;ssh-add ~/.ssh/icaro-08-25; ssh admin@web.unifrota.com.br'
 alias web1-logs="ssh admin@web.unifrota.com.br tail -f -n 200 /opt/jboss-unifrota/server/default/log/server.log"
 alias copy-web1-logs="scp admin@web.unifrota.com.br:/opt/jboss-unifrota/server/default/log/server.log ."

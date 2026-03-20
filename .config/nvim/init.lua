@@ -156,6 +156,7 @@ require('gitsigns').setup {
 -- =========================================================
 
 -- -------- General --------
+vim.keymap.set('n', '<leader>s', "<Cmd>w<CR>")
 vim.keymap.set('n', '<leader>R', "<Cmd>source %<CR>")
 
 -- -------- Quickfix --------
@@ -178,6 +179,7 @@ vim.keymap.set('n', '<leader>fm', builtin.marks)
 
 -- LSP Telescope
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
+vim.keymap.set('n', '<leader>pd', builtin.diagnostics)
 vim.keymap.set('n', '<leader>fo', builtin.lsp_document_symbols)
 
 -- -------- Git --------
