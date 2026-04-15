@@ -215,4 +215,11 @@ export PATH=$PATH:/home/fforelle/bin/cmake-4.1.0-linux-aarch64/bin
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_TYPE=wayland
 export XDG_DESKTOP_PORTAL_DIR=/usr/share/xdg-desktop-portal/portals
+# NIX thing
 export TERMINAL=/usr/bin/kitty
+export NIXPKGS_ALLOW_UNFREE=1
+export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
+
+
+# opencode
+export PATH=/home/icaroonofre/.opencode/bin:$PATH

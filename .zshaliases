@@ -77,8 +77,8 @@ alias so="source"
 #Bash
 alias now="date '+%d-%m-%Y_%H.%M'"
 alias t='tmux'
-alias tnds='tmux new -d -s'
 alias tds="t new -d -s "
+alias tns="tmux new -s"
 alias xcc="xclip -sel clip"
 #Archlinux speciic aliases
 alias archlinux-install-yay="sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -106,7 +106,7 @@ alias shadcn='pnpx shadcn-ui@latest'
 
 # UNION Aliases do trabalho
  #eval  ssh admin@web.unifrota.com.br
-alias a='eval `ssh-agent`;ssh-add ~/.ssh/icaro-08-25'
+alias a='eval `ssh-agent`;ssh-add ~/.ssh/icarooonofrefedora'
 alias sshweb1='export TERM=xterm-256color;eval `ssh-agent`;ssh-add ~/.ssh/icaro-08-25; ssh admin@web.unifrota.com.br'
 alias web1-logs="ssh admin@web.unifrota.com.br tail -f -n 200 /opt/jboss-unifrota/server/default/log/server.log"
 alias copy-web1-logs="scp admin@web.unifrota.com.br:/opt/jboss-unifrota/server/default/log/server.log ."
@@ -126,3 +126,11 @@ alias api-logs="ssh -i ~/awskeys/RDSARM.pem admin@dasharm.unifrota.com.br 'journ
 
 # Backend flutter
 # alias backendair = 'cd ../../backend && export UNIENV=PROD; export UNI_PERF=TRUE; export PROD_DEBUG=TRUE; air'
+#
+#
+# NIX THINGS
+alias npa="nix profile add"
+alias npans="nix profile add nixpkgs#"
+alias nixinstall="sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon"
+alias ni='nix-env -iA nixpkgs.$(nix-env -qaP | fzf | awk "{print \$1}" | cut -d. -f2-)'
+alias flutter-depencies-fedora="sudo dnf install -y git curl unzip which xz zip clang cmake make ninja-build pkg-config gtk3-devel mesa-libGL-devel libsecret-devel libcurl-devel"
