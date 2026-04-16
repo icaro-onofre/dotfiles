@@ -289,10 +289,11 @@ require'marks'.setup {
 local dap = require("dap")
 
 -- Chrome debugger
+-- TODO corrigir o dap adapter para o chrome, para que eu consiga debuggar aplicativos em REACT
 dap.adapters.chrome = {
   type = "executable",
   command = "node",
-  args = {os.getenv("HOME") .. "/bin/vscode-chrome-debug/out/src/chromeDebug.js"}
+  args = {os.getenv("HOME") .. "/.local/share/nvim/dap_adapters/js-debug/src/dapDebugServer.ts"}
 }
 
 dap.configurations.typescriptreact = {
