@@ -1,107 +1,100 @@
-*{
-    font-family: JetBrainsMono, 'Font Awesome 6 Free';
-    font-size: 14px;
-    font-weight: 700;
+/* ── Reset ──────────────────────────────────────────────────── */
+* {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;          /* NO rounded corners anywhere */
+    padding: 0;
+    margin: 0;
     min-height: 0;
-    color: white;
 }
 
+/* ── Bar itself ─────────────────────────────────────────────── */
 window#waybar {
-    background-color: transparent;
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+    border-bottom: 2px solid #1e1e1e;
 }
 
-#workspaces{
-    margin: 2px 4px; /* vertical | horizontal */
-    transition: none;
-    background: transparent;
-    border-radius: 10px;
+/* ── All modules baseline ───────────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0;
 }
 
-#workspaces button{
-    transition: none;
-    background: #0f1213;
-    padding: 2px 10px;
-    border-radius: 10px;
-    margin: 0 2px;
-}
-
-#workspaces button.active, #workspaces button.focused{
-    padding: 2px 16px;
-    font-size: 20px;
-    border-radius: 10px;
-    background: #A9C4D1;
-}
-
-/*  MODULES LEFT  */
-
-#custom-archicon{
-  font-size: 20px;
-  color: #89B4FA;
-  background: #0f1213;
-
-  padding: 2px 10px;
-  margin: 2px 2px;
-  border-radius: 10px;
-  transition: none;
-}
-
-/*  MODULES CENTER  */
-
-#clock{
-  padding: 2px 10px;
-  margin: 2px 4px;
-  border-radius: 10px;
-  transition: none;
-
-  background: #0f1213;
-}
-
-/*  MODULES LEFT  */
-
-#pulseaudio{
-  padding: 2px 10px;
-  margin: 2px 4px;
-  border-radius: 10px;
-  transition: none;
-
-  background: #0f1213;
-}
-
-#backlight{
-  padding: 2px 10px;
-  margin: 2px 4px;
-  border-radius: 10px;
-  transition: none;
-
-  background: #0f1213;
-}
-	
-#battery{
-  padding: 2px 10px;
-  margin: 2px 4px;
-  border-radius: 10px;
-  transition: none;
-
-  background: #0f1213;
-}
-
-#network{
-  padding: 2px 10px;
-  margin: 2px 4px;
-  border-radius: 10px;
-  transition: none;
-
-  background: #0f1213;
-}
-
+#clock,
+#custom-weather,
 #memory,
-#cpu,
-#tray,
-#sway-mode{
-  padding: 2px 10px;
-  margin: 2px 4px;
-  border-radius: 10px;
-  transition: none;
+#disk,
+#pulseaudio,
+#custom-discord,
+#tray {
+    padding: 0 16px;
+    color: #e0e0e0;
+    background-color: transparent;
+    border-right: 1px solid #1e1e1e;
+}
 
-  background: #0f1213;
+#tray {
+    border-right: none;
+}
+
+/* ── Clock ──────────────────────────────────────────────────── */
+#clock {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-right: 2px solid #2a2a2a;
+}
+
+/* ── Weather ────────────────────────────────────────────────── */
+#custom-weather {
+    color: #89b4fa;
+}
+
+/* ── RAM ────────────────────────────────────────────────────── */
+#memory {
+    color: #a6e3a1;
+}
+
+#memory.warning {
+    color: #f9e2af;
+}
+
+#memory.critical {
+    color: #f38ba8;
+    font-weight: 700;
+}
+
+/* ── Disk ───────────────────────────────────────────────────── */
+#disk {
+    color: #cba6f7;
+}
+
+/* ── Volume ─────────────────────────────────────────────────── */
+#pulseaudio {
+    color: #fab387;
+}
+
+#pulseaudio.muted {
+    color: #585b70;
+}
+
+/* ── Discord indicator ──────────────────────────────────────── */
+#custom-discord {
+    color: #7289da;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* ── System tray ────────────────────────────────────────────── */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
 }
