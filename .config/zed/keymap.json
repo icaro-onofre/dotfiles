@@ -71,12 +71,6 @@
     }
   },
   {
-    "context": "(FileFinder || FileFinder > Picker > Editor)",
-    "bindings": {
-      "ctrl-p": null
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
       "ctrl-e": null
@@ -85,7 +79,123 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-p": null
+      "alt-e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "bindings": {
+      "alt-b": "tab_switcher::ToggleAll"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-shift-f9": "debugger::ClearAllBreakpoints"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-alt-t": [
+        "pane::CloseOtherItems",
+        {
+          "close_pinned": false
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-.": "zed::OpenKeymap"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-k ctrl-s": "zed::OpenKeymap"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-t": "theme_selector::Toggle"
+    }
+  },
+  {
+    "context": "(vim_mode == insert || vim_mode == normal) && showing_signature_help && !showing_completions",
+    "unbind": {
+      "ctrl-p": "editor::SignatureHelpPrevious"
+    }
+  },
+  {
+    "context": "vim_mode == insert && !(showing_code_actions || showing_completions)",
+    "unbind": {
+      "ctrl-p": "editor::ShowWordCompletions"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "unbind": {
+      "ctrl-p": [
+        "vim::Literal",
+        [
+          "ctrl-p",
+          "\u0010"
+        ]
+      ]
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "unbind": {
+      "ctrl-p": "editor::ContextMenuPrevious"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-p": "editor::MoveUp"
+    }
+  },
+  {
+    "context": "Editor && selection_mode",
+    "unbind": {
+      "ctrl-p": "editor::SelectUp"
+    }
+  },
+  {
+    "context": "Editor && showing_signature_help && !showing_completions",
+    "unbind": {
+      "ctrl-p": "editor::SignatureHelpPrevious"
+    }
+  },
+  {
+    "context": "FileFinder || FileFinder > Picker > Editor",
+    "unbind": {
+      "ctrl-p": "file_finder::Toggle"
+    }
+  },
+  {
+    "unbind": {
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "FileFinder || FileFinder > Picker > Editor",
+    "unbind": {
+      "ctrl-p": "file_finder::Toggle"
     }
   }
 ]
