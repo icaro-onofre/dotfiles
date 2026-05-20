@@ -27,13 +27,16 @@ require("lazy").setup({
 "folke/which-key.nvim",
 { "folke/neoconf.nvim", cmd = "Neoconf" },
 "folke/neodev.nvim",
+{
+    "mason-org/mason.nvim",
+    opts = {}
+},
 
 -- =========================
 -- Git
 -- =========================
 "sindrets/diffview.nvim",
 "lewis6991/gitsigns.nvim",
-
 -- =========================
 -- UI / Icons / Visual
 -- =========================
@@ -91,8 +94,6 @@ require("lazy").setup({
 -- =========================
 -- LSP + Completion
 -- =========================
-{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-{'neovim/nvim-lspconfig'},
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
@@ -100,7 +101,76 @@ require("lazy").setup({
 -- =========================
 -- Debugging
 -- =========================
-{ 'mfussenegger/nvim-dap' },
+{
+  -- Core DAP plugin
+  "mfussenegger/nvim-dap",
+  event = "VeryLazy",  -- Load lazily for performance[citation:5]
+  dependencies = {
+    -- -- DAP UI for better debugging experience
+    -- "rcarriga/nvim-dap-ui",
+    -- dependencies = { "nvim-neotest/nvim-nio" },
+    
+    -- Mason integration for DAP
+    "jay-babu/mason-nvim-dap.nvim",
+    
+    -- Optional: Virtual text for DAP variables
+    "theHamsta/nvim-dap-virtual-text",
+  },
+  config = function()
+    local dap = require("dap")
+    -- local dapui = require("dapui")
+    
+    -- Setup DAP UI
+    -- dapui.setup()
+    
+    -- Setup virtual text
+    require("nvim-dap-virtual-text").setup()
+    
+    -- Setup Mason DAP integration
+    require("mason-nvim-dap").setup({
+      -- Automatically install these adapters
+      ensure_installed = {
+        "delve",        -- Go
+        "debugpy",      -- Python
+        "codelldb",     -- C/C++/Rust
+        "js-debug-adapter", -- JavaScript/TypeScript
+      },
+      
+      -- Auto-install adapters when needed
+      automatic_installation = true,
+      
+      -- Automatically configure dap for installed adapters
+      automatic_setup = true,  -- This does the magic![citation:8]
+      
+      -- Custom handlers for specific adapters (if needed)
+      handlers = {
+        -- Example: Custom Python debugger config
+        python = function(config)
+          config.adapters = {
+            type = "executable",
+            command = "python",
+            args = { "-m", "debugpy.adapter" }
+          }
+          require("mason-nvim-dap").default_setup(config)
+        end,
+      }
+    })
+    
+    -- Key mappings for debugging
+    vim.keymap.set('n', '<F5>', dap.continue, { desc = "Debug: Start/Continue" })
+    vim.keymap.set('n', '<F10>', dap.step_over, { desc = "Debug: Step Over" })
+    vim.keymap.set('n', '<F11>', dap.step_into, { desc = "Debug: Step Into" })
+    vim.keymap.set('n', '<F12>', dap.step_out, { desc = "Debug: Step Out" })
+    vim.keymap.set('n', '<Leader>b', dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
+    vim.keymap.set('n', '<Leader>dr', dap.repl.open, { desc = "Debug: Open REPL" })
+    -- vim.keymap.set('n', '<Leader>du', dapui.toggle, { desc = "Debug: Toggle UI" })
+    
+    -- Auto-open/close DAP UI when debugging starts/stops
+    -- dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+    -- dap.listeners.before.event_terminated["dapui_config"] = dapui.close
+    -- dap.listeners.before.event_exited["dapui_config"] = dapui.close
+  end,
+},
 { "mxsdev/nvim-dap-vscode-js" },
 
 -- =========================
@@ -202,25 +272,6 @@ vim.keymap.set("n","'","`")
 -- =========================================================
 -- LSP CONFIGURATION
 -- =========================================================
-require('lsp-zero')
-
-local lspconfig = require('lspconfig')
-
--- Language servers
-lspconfig.tailwindcss.setup({})
-lspconfig.ts_ls.setup({})
-lspconfig.jdtls.setup({})
-lspconfig.dartls.setup({})
-lspconfig.gopls.setup({})
-
--- HTML LSP capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.html.setup {
-  capabilities = capabilities
-}
-
 -- =========================================================
 -- LSP AUTOCOMMANDS
 -- =========================================================
@@ -282,69 +333,3 @@ require'marks'.setup {
     annotate = false,
   }
 }
-
--- =========================================================
--- DAP (DEBUGGING) CONFIG
--- =========================================================
-local dap = require("dap")
-
--- Chrome debugger
--- TODO corrigir o dap adapter para o chrome, para que eu consiga debuggar aplicativos em REACT
-dap.adapters.chrome = {
-  type = "executable",
-  command = "node",
-  args = {os.getenv("HOME") .. "/.local/share/nvim/dap_adapters/js-debug/src/dapDebugServer.ts"}
-}
-
-dap.configurations.typescriptreact = {
-  {
-    type = "chrome",
-    request = "attach",
-    runtimeExecutable = "google-chrome-stable",
-    runtimeArgs = { "--remote-debugging-port=9222" },
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = "inspector",
-    port = 9222,
-    webRoot = "${workspaceFolder}"
-  }
-}
-
--- Flutter / Dart debugging
-dap.adapters.dart = {
-  type = 'executable',
-  command = 'dart',
-  args = { 'debug_adapter' },
-  options = { detached = false }
-}
-
-dap.adapters.flutter = {
-  type = 'executable',
-  command = 'flutter',
-  args = { 'debug_adapter' },
-  options = { detached = false }
-}
-
-dap.configurations.dart = {
-  {
-    type = "dart",
-    request = "launch",
-    name = "Launch dart",
-    dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart",
-    flutterSdkPath = "/opt/flutter/bin/flutter",
-    program = "${workspaceFolder}/lib/main.dart",
-    cwd = "${workspaceFolder}",
-  }
-}
-
--- =========================================================
--- DAP KEYMAPS
--- =========================================================
-vim.keymap.set('n','<F5>',function() require('dap').continue() end)
-vim.keymap.set('n','<F10>',function() require('dap').step_over() end)
-vim.keymap.set('n','<F11>',function() require('dap').step_into() end)
-vim.keymap.set('n','<F12>',function() require('dap').step_out() end)
-vim.keymap.set('n','<F9>',function() require('dap').toggle_breakpoint() end)
-
-vim.keymap.set('n','<Leader>B',function() require('dap').set_breakpoint() end)
-vim.keymap.set('n','<Leader>dr',function() require('dap').repl.open() end)
