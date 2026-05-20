@@ -84,8 +84,8 @@
   "ui_font_size": 12.0,
   "buffer_font_size": 9.0,
   "theme": {
-    "mode": "dark",
-    "light": "One Light",
+    "mode": "light",
+    "light": "Dracula Light (Alucard)",
     "dark": "Tokyo Night Storm",
   },
   "languages": {

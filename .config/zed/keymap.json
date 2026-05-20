@@ -197,5 +197,17 @@
     "unbind": {
       "ctrl-p": "file_finder::Toggle"
     }
+  },
+  {
+    "context": "!Terminal",
+    "unbind": {
+      "ctrl-shift-c": "collab_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "KeymapEditor",
+    "unbind": {
+      "ctrl-shift-c": "keymap_editor::CopyContext"
+    }
   }
 ]

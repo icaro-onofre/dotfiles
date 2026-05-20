@@ -81,7 +81,7 @@ setopt no_bare_glob_qual
 
 #Neovim switcher
 function nvims() {
-  items=("default"  "lazynvim")
+  items=("default"  "lazynvim" "nvim-flutter" "nvim-testing-new-config")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -116,7 +116,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 [[ -s "/home/fforelle/.gvm/scripts/gvm" ]] && source "/home/fforelle/.gvm/scripts/gvm"
 
-export CHROME_EXECUTABLE=chromium 
 
 
 # bun completions
@@ -132,7 +131,7 @@ export PATH="/opt/flutter/bin:$PATH"
 
 # escritorio | export PATH="$PATH:/home/icaro/bin/nvim-linux64/bin"
 
-export CHROME_EXECUTABLE="chromium"
+export CHROME_EXECUTABLE="chromium-browser"
 
 #Zoxide setup
 eval "$(zoxide init zsh)"
