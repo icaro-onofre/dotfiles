@@ -1,7 +1,10 @@
+-- :lua print(vim.fn.stdpath('cache') .. '/dap.log') -- PRINT DAP LOGS
 -- =========================================================
 -- BOOTSTRAP LAZY.NVIM
 -- =========================================================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+vim.o.winbar = "%<%f %h%m%r%=%{getcwd()}"
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -24,19 +27,17 @@ require("lazy").setup({
 -- =========================
 -- Core Utilities
 -- =========================
+-- MASON PACKAGE MANAGER
 "folke/which-key.nvim",
 { "folke/neoconf.nvim", cmd = "Neoconf" },
-"folke/neodev.nvim",
-{
-    "mason-org/mason.nvim",
-    opts = {}
-},
+-- "folke/neodev.nvim",
 
 -- =========================
 -- Git
 -- =========================
 "sindrets/diffview.nvim",
 "lewis6991/gitsigns.nvim",
+
 -- =========================
 -- UI / Icons / Visual
 -- =========================
@@ -101,126 +102,11 @@ require("lazy").setup({
 -- =========================
 -- Debugging
 -- =========================
+{ 'mfussenegger/nvim-dap' },
 {
-  "mfussenegger/nvim-dap",
-  event = "VeryLazy",
-  dependencies = {
-    "jay-babu/mason-nvim-dap.nvim",
-    "theHamsta/nvim-dap-virtual-text",
-  },
-  config = function()
-    local dap = require("dap")
-
-    require("nvim-dap-virtual-text").setup()
-
-    require("mason-nvim-dap").setup({
-      ensure_installed = {
-        "delve",
-        "debugpy",
-        "codelldb",
-        "js-debug-adapter",
-      },
-      automatic_installation = true,
-      automatic_setup = true,
-      handlers = {
-        python = function(config)
-          config.adapters = {
-            type = "executable",
-            command = "python",
-            args = { "-m", "debugpy.adapter" }
-          }
-          require("mason-nvim-dap").default_setup(config)
-        end,
-      }
-    })
-
-    -- ─── Chrome / JS-debug adapter ──────────────────────────────────────────
-
-    -- js-debug-adapter is installed by Mason to this path
-    local js_debug_path = vim.fn.stdpath("data")
-      .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
-
-    -- Single adapter entry covers pwa-chrome AND pwa-node
-    for _, type in ipairs({ "pwa-chrome", "pwa-node" }) do
-      dap.adapters[type] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = "node",
-          args = { js_debug_path, "${port}" },
-        },
-      }
-    end
-
-    -- TypeScript launch configurations
-    dap.configurations.typescript = {
-
-      -- Attach to an already-running Chrome instance
-      -- Start Chrome with: google-chrome --remote-debugging-port=9222
-      {
-        type    = "pwa-chrome",
-        request = "attach",
-        name    = "Attach to Chrome (port 9222)",
-        port    = 9222,
-        webRoot = "${workspaceFolder}",
-        sourceMaps = true,
-        -- Tells the adapter where compiled JS lives relative to your TS sources
-        -- Adjust if your outDir differs from the default
-        sourceMapPathOverrides = {
-          ["webpack:///./~/*"]   = "${workspaceFolder}/node_modules/*",
-          ["webpack://?:*/*"]    = "${workspaceFolder}/*",
-          ["webpack:///src/*"]   = "${workspaceFolder}/src/*",
-          ["meteor://💻app/*"]  = "${workspaceFolder}/*",
-        },
-      },
-
-      -- Launch a new Chrome window pointing at your dev server
-      {
-        type    = "pwa-chrome",
-        request = "launch",
-        name    = "Launch Chrome against localhost",
-        url     = "http://localhost:3000",   -- change to your dev server port
-        webRoot = "${workspaceFolder}",
-        sourceMaps = true,
-        sourceMapPathOverrides = {
-          ["webpack:///./~/*"]  = "${workspaceFolder}/node_modules/*",
-          ["webpack://?:*/*"]   = "${workspaceFolder}/*",
-          ["webpack:///src/*"]  = "${workspaceFolder}/src/*",
-          ["meteor://💻app/*"] = "${workspaceFolder}/*",
-        },
-      },
-
-      -- Node / ts-node for server-side TypeScript (bonus)
-      {
-        type    = "pwa-node",
-        request = "launch",
-        name    = "Launch with ts-node",
-        program = "${file}",
-        runtimeExecutable = "ts-node",
-        sourceMaps = true,
-        resolveSourceMapLocations = {
-          "${workspaceFolder}/**",
-          "!**/node_modules/**",
-        },
-      },
-    }
-
-    -- Also apply the same configs to plain JS files
-    dap.configurations.javascript = dap.configurations.typescript
-
-    -- ─── Key mappings ───────────────────────────────────────────────────────
-
-    vim.keymap.set('n', '<F5>',       dap.continue,          { desc = "Debug: Start/Continue" })
-    vim.keymap.set('n', '<F10>',      dap.step_over,         { desc = "Debug: Step Over" })
-    vim.keymap.set('n', '<F11>',      dap.step_into,         { desc = "Debug: Step Into" })
-    vim.keymap.set('n', '<F12>',      dap.step_out,          { desc = "Debug: Step Out" })
-    vim.keymap.set('n', '<Leader>b',  dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
-    vim.keymap.set('n', '<Leader>dr', dap.repl.open,         { desc = "Debug: Open REPL" })
-  end,
+  "microsoft/vscode-js-debug",
+  build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 },
-{ "mxsdev/nvim-dap-vscode-js" },
-
 -- =========================
 -- Flutter Tools
 -- =========================
@@ -243,7 +129,7 @@ vim.opt.tabstop = 4
 vim.opt.swapfile = false
 
 vim.cmd("set nu")
-vim.cmd("colorscheme wildcharm")
+vim.cmd("colorscheme zaibatsu")
 
 -- =========================================================
 -- PLUGIN CONFIGURATIONS
@@ -276,6 +162,14 @@ require('gitsigns').setup {
 -- -------- General --------
 vim.keymap.set('n', '<leader>s', "<Cmd>w<CR>")
 vim.keymap.set('n', '<leader>R', "<Cmd>source %<CR>")
+-- -------- Selection --------
+-- vim.keymap.set('x', 'an', function()
+--   vim.lsp.buf.selection_range('outer')
+-- end, { desc = "vim.lsp.buf.selection_range('outer')" })
+--
+-- vim.keymap.set('x', 'in', function()
+--   vim.lsp.buf.selection_range('inner')
+-- end, { desc = "vim.lsp.buf.selection_range('inner')" })
 
 -- -------- Quickfix --------
 vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>')
@@ -296,9 +190,9 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags)
 vim.keymap.set('n', '<leader>fm', builtin.marks)
 
 -- LSP Telescope
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
+vim.keymap.set('n', '<leader>r', builtin.lsp_references)
 vim.keymap.set('n', '<leader>pd', builtin.diagnostics)
-vim.keymap.set('n', '<leader>fo', builtin.lsp_document_symbols)
+vim.keymap.set('n', '<leader>o', builtin.lsp_document_symbols)
 
 -- -------- Git --------
 vim.keymap.set('n', '<leader>gd', "<Cmd>DiffviewOpen<CR>")
@@ -320,6 +214,18 @@ vim.keymap.set("n","'","`")
 -- =========================================================
 -- LSP CONFIGURATION
 -- =========================================================
+vim.lsp.enable({
+  'tailwindcss',
+  'ts_ls',
+  'jdtls',
+  'dartls',
+  'gopls',
+  'html',
+})
+
+-- HTML LSP capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- =========================================================
 -- LSP AUTOCOMMANDS
 -- =========================================================
@@ -364,6 +270,7 @@ vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
 vim.keymap.set('n', 'go', vim.lsp.buf.type_definition)
+vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help)
 
 -- =========================================================
 -- MARKS.NVIM CONFIG
@@ -381,3 +288,194 @@ require'marks'.setup {
     annotate = false,
   }
 }
+
+-- =========================================================
+-- DAP (DEBUGGING) CONFIG
+-- =========================================================
+local dap = require("dap")
+
+-- BEGIN GO DAP configuratino
+dap.adapters.go = {
+  type = "server",
+  port = "${port}",
+  executable = {
+    command = "dlv",
+    args = { "dap", "-l", "127.0.0.1:${port}" },
+  },
+}
+dap.configurations.go = {
+  -- 1. Debug the current file / package
+  {
+    type = "go",
+    name = "Debug",
+    request = "launch",
+    program = "${file}",
+  },
+  -- 2. Debug the whole package (useful for multi-file packages)
+  {
+    type = "go",
+    name = "Debug package",
+    request = "launch",
+    program = "${fileDirname}",
+  },
+  -- 3. Debug with arguments
+  {
+    type = "go",
+    name = "Debug with args",
+    request = "launch",
+    program = "${fileDirname}",
+    args = function()
+      local args_str = vim.fn.input("Arguments: ")
+      return vim.split(args_str, " ", { trimempty = true })
+    end,
+  },
+  -- 4. Debug test file
+  {
+    type = "go",
+    name = "Debug test",
+    request = "launch",
+    mode = "test",
+    program = "${file}",
+  },
+  -- 5. Debug specific test function
+  {
+    type = "go",
+    name = "Debug test function",
+    request = "launch",
+    mode = "test",
+    program = "${fileDirname}",
+    args = function()
+      local test_name = vim.fn.input("Test name (regexp): ")
+      return { "-test.run", test_name }
+    end,
+  },
+  -- 6. Attach to a running process
+  {
+    type = "go",
+    name = "Attach to process",
+    request = "attach",
+    mode = "local",
+    processId = require("dap.utils").pick_process,
+  },
+  -- 7. Attach to a remote delve server
+  {
+    type = "go",
+    name = "Attach to remote (127.0.0.1:2345)",
+    request = "attach",
+    mode = "remote",
+    host = "127.0.0.1",
+    port = "2345",
+  },
+}
+-- END GO DAP configuration
+  
+-- Chrome debugger
+-- TODO corrigir o dap adapter para o chrome, para que eu consiga debuggar aplicativos em REACT
+dap.adapters.chrome = {
+  type = "executable",
+  command = "node",
+  args = {os.getenv("HOME") .. ".local/share/nvim/lazy/vscode-js-debug/src/dapDebugServer.ts"}
+}
+
+dap.configurations.typescriptreact = {
+  {
+    type = "chrome",
+    request = "attach",
+    runtimeExecutable = "google-chrome-stable",
+    runtimeArgs = { "--remote-debugging-port=9222" },
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = "inspector",
+    port = 9222,
+    webRoot = "${workspaceFolder}"
+  }
+}
+
+-- BEGIN BUN DAP configuration
+dap.adapters.bun = {
+  type    = "executable",
+  command = "bun",
+  args    = { "--inspect-brk" },
+}
+
+dap.adapters.chrome = {
+  type    = "executable",
+  command = "node",
+  args    = {
+    vim.fn.stdpath("data") .. "/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js",
+  },
+}
+
+dap.adapters.msedge = {
+  type    = "executable",
+  command = "node",
+  args    = {
+    vim.fn.stdpath("data") .. "/mason/packages/edge-debug-adapter/out/src/edgeDebug.js",
+  },
+}
+-- END BUN DAP configuratino
+
+-- RUST DAP configuration
+dap.adapters.codelldb = {
+  type = "server",
+  port = "${port}",
+  executable = {
+    command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
+    args = { "--port", "${port}" },
+  },
+}
+
+dap.configurations.rust = {
+  {
+    name = "Launch binary",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      -- Points to your compiled binary
+      return vim.fn.input("Path to binary: ", vim.fn.getcwd() .. "/target/debug/", "file")
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+  },
+}
+-- END RUST DAP configuratino
+
+-- Flutter / Dart debugging
+-- dap.adapters.dart = {
+--   type = 'executable',
+--   command = 'dart',
+--   args = { 'debug_adapter' },
+--   options = { detached = false }
+-- }
+--
+-- dap.adapters.flutter = {
+--   type = 'executable',
+--   command = 'flutter',
+--   args = { 'debug_adapter' },
+--   options = { detached = false }
+-- }
+--
+-- dap.configurations.dart = {
+--   {
+--     type = "dart",
+--     request = "launch",
+--     name = "Launch dart",
+--     dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart",
+--     flutterSdkPath = "/opt/flutter/bin/flutter",
+--     program = "${workspaceFolder}/lib/main.dart",
+--     cwd = "${workspaceFolder}",
+--   }
+-- }
+-- END flutter debugging
+
+-- =========================================================
+-- DAP KEYMAPS
+-- =========================================================
+vim.keymap.set('n','<F5>',function() require('dap').continue() end)
+vim.keymap.set('n','<F10>',function() require('dap').step_over() end)
+vim.keymap.set('n','<F11>',function() require('dap').step_into() end)
+vim.keymap.set('n','<F12>',function() require('dap').step_out() end)
+vim.keymap.set('n','<F9>',function() require('dap').toggle_breakpoint() end)
+
+vim.keymap.set('n','<Leader>B',function() require('dap').set_breakpoint() end)
+vim.keymap.set('n','<Leader>dr',function() require('dap').repl.open() end)
