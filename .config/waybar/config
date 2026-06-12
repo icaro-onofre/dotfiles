@@ -25,9 +25,10 @@
     ],
 
     "clock": {
-        "format": "  {:%a %d %b  %H:%M}",
+        "format": "  {:%d/%m/%Y %H:%M:%S}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "interval": 60
+		"on-click": "wl-copy $(date +'%d/%m/%Y')",
+        "interval": 1
     },
 
     "custom/weather": {

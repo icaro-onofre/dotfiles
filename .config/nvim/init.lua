@@ -92,11 +92,15 @@ require("lazy").setup({
 },
 
 -- =========================
--- LSP + Completion
+-- Completion
 -- =========================
 {'hrsh7th/cmp-nvim-lsp'},
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
+
+-- =========================
+-- Flutter configuration
+-- =========================
 
 -- =========================
 -- Debugging
@@ -158,6 +162,16 @@ require("lazy").setup({
 
       -- Attach to an already-running Chrome instance
       -- Start Chrome with: google-chrome --remote-debugging-port=9222
+	    {
+		type = "pwa-node",
+		request = "launch",
+		name = "Debug Bun (file)",
+		runtimeExecutable = "bun",
+		runtimeArgs = { "--inspect-brk" },
+		program = "${file}",
+		cwd = "${workspaceFolder}",
+		attachSimplePort = 6499, -- Bun's default inspect port
+	  },
       {
         type    = "pwa-chrome",
         request = "attach",
@@ -204,6 +218,7 @@ require("lazy").setup({
           "!**/node_modules/**",
         },
       },
+      -- ── Bun: launch current file ──────────────────────────────────────────
     }
 
     -- Also apply the same configs to plain JS files
@@ -215,20 +230,10 @@ require("lazy").setup({
     vim.keymap.set('n', '<F10>',      dap.step_over,         { desc = "Debug: Step Over" })
     vim.keymap.set('n', '<F11>',      dap.step_into,         { desc = "Debug: Step Into" })
     vim.keymap.set('n', '<F12>',      dap.step_out,          { desc = "Debug: Step Out" })
-    vim.keymap.set('n', '<Leader>b',  dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
+    vim.keymap.set('n', '<F9>',  dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
     vim.keymap.set('n', '<Leader>dr', dap.repl.open,         { desc = "Debug: Open REPL" })
   end,
 },
-{ "mxsdev/nvim-dap-vscode-js" },
-
--- =========================
--- Flutter Tools
--- =========================
-'nvim-flutter/flutter-tools.nvim',
-{
-  'nvim-lua/plenary.nvim',
-  'stevearc/dressing.nvim'
-}
 
 })
 
@@ -275,6 +280,7 @@ require('gitsigns').setup {
 
 -- -------- General --------
 vim.keymap.set('n', '<leader>s', "<Cmd>w<CR>")
+vim.keymap.set('n', '<leader>q', "<Cmd>bd<CR>")
 vim.keymap.set('n', '<leader>R', "<Cmd>source %<CR>")
 
 -- -------- Quickfix --------
@@ -286,6 +292,21 @@ vim.keymap.set('n', '<leader>w', '<Cmd>HopWordMW<CR>')
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
 
 -- -------- Telescope --------
+require('telescope').setup({
+  defaults = {
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        width = 0.99,
+        height = 0.99,
+        preview_width = 0.5,
+      },
+    },
+	border = false,
+  },
+})
+
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<C-p>', builtin.find_files)
@@ -298,7 +319,7 @@ vim.keymap.set('n', '<leader>fm', builtin.marks)
 -- LSP Telescope
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
 vim.keymap.set('n', '<leader>pd', builtin.diagnostics)
-vim.keymap.set('n', '<leader>fo', builtin.lsp_document_symbols)
+vim.keymap.set('n', '<leader>o', builtin.lsp_document_symbols)
 
 -- -------- Git --------
 vim.keymap.set('n', '<leader>gd', "<Cmd>DiffviewOpen<CR>")
@@ -320,50 +341,83 @@ vim.keymap.set("n","'","`")
 -- =========================================================
 -- LSP CONFIGURATION
 -- =========================================================
+vim.lsp.config("gopls", {
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_markers = { "go.work", "go.mod", ".git" },
+  init_options = {
+    usePlaceholders = true,
+    completeUnimported = true,
+  },
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+vim.lsp.enable("gopls")
+  
+vim.lsp.config("dartls", {
+  cmd = { "dart", "language-server", "--protocol=lsp" },
+  filetypes = { "dart" },
+  root_markers = { "pubspec.yaml", ".git" },
+  init_options = {
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    suggestFromUnimportedLibraries = true,
+    closingLabels = true,
+  },
+  settings = {
+    dart = {
+      completeFunctionCalls = true,
+      showTodos = true,
+    },
+  },
+})
+
+vim.lsp.enable("dartls")
+
+vim.lsp.config('typescript-language-server', { -- Ensure installed with npm 
+  cmd = { 'typescript-language-server', '--stdio' },
+  filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+  root_markers = { 'tsconfig.json', 'package.json' },
+})
+
+vim.lsp.enable('typescript-language-server')  
 -- =========================================================
 -- LSP AUTOCOMMANDS
 -- =========================================================
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
+    local buf = args.buf
+    local opts = { buffer = buf }
 
-    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-
-    -- Enable autocompletion
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    end
-
-    -- Format on save
-    if not client:supports_method('textDocument/willSaveWaitUntil')
-      and client:supports_method('textDocument/formatting') then
-
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        buffer = args.buf,
-        callback = function()
-          vim.lsp.buf.format({ timeout_ms = 1000 })
-        end
-      })
-
-    end
-  end,
+	-- vim.keymap.set('n', 'gE', function()
+	--   vim.diagnostic.open_float({ focusable = true })
+	-- end)
+    vim.keymap.set('n', 'K',          	vim.lsp.buf.hover,            opts)
+    vim.keymap.set('n', 'gd',         	vim.lsp.buf.definition,       opts)
+    vim.keymap.set('n', 'gr',         	vim.lsp.buf.references,       opts)
+    vim.keymap.set('n', 'ga', 			vim.lsp.buf.code_action,      opts)
+    vim.keymap.set('n', '<leader>rn', 	vim.lsp.buf.rename,           opts)
+	vim.keymap.set('n', 'gi', 			vim.lsp.buf.implementation)
+    vim.keymap.set('i', '<C-k>',      	vim.lsp.buf.signature_help,   opts)
+	vim.keymap.set('n', 'go', 		  	vim.lsp.buf.type_definition)
+	vim.keymap.set('n', 'gD', 		  	vim.lsp.buf.declaration)
+	vim.keymap.set('n', '[d', 		  	vim.diagnostic.goto_next)
+	vim.keymap.set('n', ']d', 		  	vim.diagnostic.goto_prev)
+	-- vim.keymap.set('n', '<leader>fy', 			vim.lsp.buf.format)
+  end
 })
-
 -- =========================================================
 -- LSP KEYMAPS
 -- =========================================================
-vim.keymap.set('n', '<F2>', vim.lsp.buf.rename)
-vim.keymap.set('n', '<F3>', vim.lsp.buf.format)
-vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action)
 
-vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
 
-vim.keymap.set('n', 'ga', vim.lsp.buf.code_action)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references)
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
-vim.keymap.set('n', 'go', vim.lsp.buf.type_definition)
 
 -- =========================================================
 -- MARKS.NVIM CONFIG
