@@ -53,7 +53,6 @@ alias d="dust"
 #Find
 alias find1="sudo find . -xdev -type f -size +1G"
 #Mongo
-alias mongo="mongosh"
 #Python
 alias svenv="source .venv/bin/activate"
 #xclip
@@ -63,7 +62,6 @@ alias ndot='n ~/.dotfiles/.configure/nvim'
 alias n='nvim'
 alias ndot='n ~/.dotfiles/.configure/nvim'
 alias sc='sc-im'
-alias mongosh_sgvg='mongosh mongodb+srv://cluster0.rs3gboy.mongodb.net --apiVersion 1 --username icaroonofres'
 #aws aliases
 alias aws-codecommit-list-branches="aws codecommit list-branches --repository-name Okonomicus"
 alias aws-regions='aws ec2 describe-regions --output table'
@@ -116,7 +114,6 @@ alias uni_web2='ssh ec2-user@@web2.unifrota.com.br'
 alias ssh_unifrota_banco='ssh ec2-user@rds.unifrota.com.br'
 alias uni_ds_cpu_logs='ssh ec2-user@ds.unifrota.com.br "doas tail -f /var/log/jbossHealth.log"'
 # Okonomicus related aliases
-alias mongosh_okonomicus="mongosh "mongodb+srv://cluster0.udoak6a.mongodb.net/" --apiVersion 1 --username icaro"
 
 alias sssh="eval `ssh-agent`;ssh-add ~/.ssh/icaro"
 
