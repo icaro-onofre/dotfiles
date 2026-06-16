@@ -341,6 +341,27 @@ vim.keymap.set("n","'","`")
 -- =========================================================
 -- LSP CONFIGURATION
 -- =========================================================
+
+-- Lua lsp setup
+vim.lsp.config['emmylua_ls'] = {
+  -- Command and arguments to start the server.
+  cmd = { 'emmylua_ls' },
+  -- Filetypes to automatically attach to.
+  filetypes = { 'lua' },
+  -- Sets the workspace "root" to the directory where any of these files is found.
+  -- Files sharing a root will reuse the LSP client/connection.
+  -- Nested lists indicate equal priority, see |vim.lsp.Config|.
+  root_markers = { { '.emmyrc.json', '.luarc.json' }, '.git' },
+  -- Server-specific settings. https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md
+  settings = {
+    runtime = {
+      version = 'LuaJIT',
+    }
+  }
+}
+vim.lsp.enable('emmylua_ls')
+
+-- Golang lsp setup
 vim.lsp.config("gopls", {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -362,6 +383,7 @@ vim.lsp.config("gopls", {
 })
 vim.lsp.enable("gopls")
   
+-- Dart lsp setup
 vim.lsp.config("dartls", {
   cmd = { "dart", "language-server", "--protocol=lsp" },
   filetypes = { "dart" },
@@ -381,6 +403,7 @@ vim.lsp.config("dartls", {
 
 vim.lsp.enable("dartls")
 
+-- Typescript lsp setup
 vim.lsp.config('typescript-language-server', { -- Ensure installed with npm 
   cmd = { 'typescript-language-server', '--stdio' },
   filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
