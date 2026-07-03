@@ -126,8 +126,7 @@ alias api-logs="ssh -i ~/awskeys/RDSARM.pem admin@dasharm.unifrota.com.br 'journ
 #
 #
 # NIX THINGS
-alias npa="nix profile add"
-alias npans="nix profile add nixpkgs#"
+alias na="nix profile add nixpkgs#"
 alias nixinstall="sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon"
 alias ni='nix-env -iA nixpkgs.$(nix-env -qaP | fzf | awk "{print \$1}" | cut -d. -f2-)'
 alias flutter-depencies-fedora="sudo dnf install -y git curl unzip which xz zip clang cmake make ninja-build pkg-config gtk3-devel mesa-libGL-devel libsecret-devel libcurl-devel"

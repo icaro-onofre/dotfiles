@@ -24,6 +24,33 @@ require("lazy").setup({
 -- =========================
 -- Core Utilities
 -- =========================
+-- Catpuccin theme
+{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  
+-- Open code integration
+-- {
+--   "nickjvandyke/opencode.nvim",
+--   version = "*", -- Latest stable release
+--   config = function()
+--     ---@type opencode.Opts
+--     vim.g.opencode_opts = {
+--       -- Your configuration, if any; goto definition on the type or field for details
+--     }
+--
+--     vim.o.autoread = true -- Required for `vim.g.opencode_opts.events.reload`
+--
+--     -- Recommended/example keymaps
+--     vim.keymap.set({ "n", "x" }, "<F3>", function() require("opencode").ask("@this: ") end, { desc = "Ask OpenCode…" })
+--     vim.keymap.set({ "n", "x" }, "<leader>os", function() require("opencode").select() end,       { desc = "Select OpenCode…" })
+--
+--     -- vim.keymap.set({ "n", "x" }, "go",  function() return require("opencode").operator("@this ") end,        { desc = "Append range to OpenCode", expr = true })
+--     -- vim.keymap.set("n",          "goo", function() return require("opencode").operator("@this ") .. "_" end, { desc = "Append line to OpenCode", expr = true })
+--
+--     -- vim.keymap.set("n", "<S-C-u>", function() require("opencode").command("session.half.page.up") end,   { desc = "Scroll OpenCode up" })
+--     -- vim.keymap.set("n", "<S-C-d>", function() require("opencode").command("session.half.page.down") end, { desc = "Scroll OpenCode down" })
+--   end,
+-- },
+
 "folke/which-key.nvim",
 { "folke/neoconf.nvim", cmd = "Neoconf" },
 "folke/neodev.nvim",
@@ -158,7 +185,8 @@ require("lazy").setup({
     end
 
     -- TypeScript launch configurations
-    dap.configurations.typescript = {
+	for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
+    dap.configurations[language] = {
 
       -- Attach to an already-running Chrome instance
       -- Start Chrome with: google-chrome --remote-debugging-port=9222
@@ -220,6 +248,69 @@ require("lazy").setup({
       },
       -- ── Bun: launch current file ──────────────────────────────────────────
     }
+	end
+
+	dap.adapters.dart = {
+	  type = "executable",
+	  command = "dart",
+	  args = { "debug_adapter" },
+	}
+
+	-- For Flutter projects, use the Flutter SDK's adapter instead:
+	dap.adapters.flutter = {
+	  type = "executable",
+	  command = "flutter", -- must be in your PATH
+	  args = { "debug_adapter" },
+	}
+
+	dap.configurations.dart = {
+	  {
+		type = "dart",
+		request = "launch",
+		name = "Launch Dart Program",
+		program = "${file}",
+		cwd = "${workspaceFolder}",
+	  },
+	  {
+		type = "flutter",
+		request = "launch",
+		name = "Launch Flutter",
+		program = "${workspaceFolder}/lib/main.dart",
+		cwd = "${workspaceFolder}",
+	  },
+	}
+
+	-- Golang debugging
+	dap.adapters.go = {
+	  type = "server",
+	  port = "${port}",
+	  executable = {
+		command = "dlv",
+		args = { "dap", "-l", "127.0.0.1:${port}" },
+	  },
+	}
+
+	dap.configurations.go = {
+	  {
+		type = "go",
+		name = "Debug",
+		request = "launch",
+		program = "${file}",
+	  },
+	  {
+		type = "go",
+		name = "Debug Package",
+		request = "launch",
+		program = "${workspaceFolder}",
+	  },
+	  {
+		type = "go",
+		name = "Attach to Process",
+		request = "attach",
+		mode = "local",
+		processId = require("dap.utils").pick_process,
+	  },
+	}
 
     -- Also apply the same configs to plain JS files
     dap.configurations.javascript = dap.configurations.typescript
@@ -234,6 +325,13 @@ require("lazy").setup({
     vim.keymap.set('n', '<Leader>dr', dap.repl.open,         { desc = "Debug: Open REPL" })
   end,
 },
+{
+  "akinsho/flutter-tools.nvim", -- purpose-built Flutter plugin, handles DAP for you
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "stevearc/dressing.nvim", -- optional, nicer UI for selecting devices
+  },
+}
 
 })
 
@@ -248,7 +346,7 @@ vim.opt.tabstop = 4
 vim.opt.swapfile = false
 
 vim.cmd("set nu")
-vim.cmd("colorscheme wildcharm")
+vim.cmd("colorscheme catppuccin-macchiato ")
 
 -- =========================================================
 -- PLUGIN CONFIGURATIONS
@@ -282,6 +380,13 @@ require('gitsigns').setup {
 vim.keymap.set('n', '<leader>s', "<Cmd>w<CR>")
 vim.keymap.set('n', '<leader>q', "<Cmd>bd<CR>")
 vim.keymap.set('n', '<leader>R', "<Cmd>source %<CR>")
+
+vim.keymap.set("n", "<leader>cp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "Copy full file path" })
+vim.keymap.set("n", "<leader>cf", function()
+  vim.fn.setreg("+", vim.fn.expand("%:t"))
+end, { desc = "Copy file name" })
 
 -- -------- Quickfix --------
 vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>')
@@ -341,25 +446,36 @@ vim.keymap.set("n","'","`")
 -- =========================================================
 -- LSP CONFIGURATION
 -- =========================================================
+-- Java LSP setup
+vim.lsp.config('jdtls', {
+  cmd = {
+    'jdtls',
+    '-data', vim.fn.stdpath('cache') .. '/jdtls/workspace/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t'),
+  },
+  filetypes = { 'java' },
+  root_markers = { 'pom.xml', 'build.gradle', 'build.gradle.kts', '.git' },
+})
+
+vim.lsp.enable('jdtls')
 
 -- Lua lsp setup
-vim.lsp.config['emmylua_ls'] = {
-  -- Command and arguments to start the server.
-  cmd = { 'emmylua_ls' },
-  -- Filetypes to automatically attach to.
-  filetypes = { 'lua' },
-  -- Sets the workspace "root" to the directory where any of these files is found.
-  -- Files sharing a root will reuse the LSP client/connection.
-  -- Nested lists indicate equal priority, see |vim.lsp.Config|.
-  root_markers = { { '.emmyrc.json', '.luarc.json' }, '.git' },
-  -- Server-specific settings. https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md
-  settings = {
-    runtime = {
-      version = 'LuaJIT',
-    }
-  }
-}
-vim.lsp.enable('emmylua_ls')
+-- vim.lsp.config['emmylua_ls'] = {
+--   -- Command and arguments to start the server.
+--   cmd = { 'emmylua_ls' },
+--   -- Filetypes to automatically attach to.
+--   filetypes = { 'lua' },
+--   -- Sets the workspace "root" to the directory where any of these files is found.
+--   -- Files sharing a root will reuse the LSP client/connection.
+--   -- Nested lists indicate equal priority, see |vim.lsp.Config|.
+--   root_markers = { { '.emmyrc.json', '.luarc.json' }, '.git' },
+--   -- Server-specific settings. https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md
+--   settings = {
+--     runtime = {
+--       version = 'LuaJIT',
+--     }
+--   }
+-- }
+-- vim.lsp.enable('emmylua_ls')
 
 -- Golang lsp setup
 vim.lsp.config("gopls", {
@@ -458,3 +574,20 @@ require'marks'.setup {
     annotate = false,
   }
 }
+
+-- =========================================================
+-- FLUTTER tools setup
+-- =========================================================
+require("flutter-tools").setup({
+  debugger = {
+    enabled = true,
+    run_via_dap = true, -- hooks into nvim-dap automatically
+  },
+  widget_guides = { enabled = true },
+  closing_tags = { enabled = true },
+  dev_log = { enabled = true, open_cmd = "tabedit" },
+  dev_tools = {
+    autostart = true, -- auto-launch DevTools server
+    auto_open_browser = false,
+  },
+})
