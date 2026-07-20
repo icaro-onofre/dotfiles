@@ -62,6 +62,26 @@ require("lazy").setup({
 -- =========================
 -- Git
 -- =========================
+{
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+        "LazyGit",
+        "LazyGitConfig",
+        "LazyGitCurrentFile",
+        "LazyGitFilter",
+        "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    -- keys = {
+    --     { "<leader>oo", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    -- }
+},
 "sindrets/diffview.nvim",
 "lewis6991/gitsigns.nvim",
 -- =========================
@@ -312,6 +332,48 @@ require("lazy").setup({
 	  },
 	}
 
+	dap.adapters.python = {
+	  type = 'executable',
+	  command = 'python3', -- or full path e.g. '/home/user/project/.venv/bin/python'
+	  args = { '-m', 'debugpy.adapter' },
+	}
+
+	dap.configurations.python = {
+	  {
+		type = 'python',
+		request = 'launch',
+		name = 'Launch file',
+		program = '${file}',              -- runs the currently open file
+		pythonPath = function()
+		  return '/usr/bin/python3'       -- or detect venv dynamically, see below
+		end,
+	  },
+	  {
+		type = 'python',
+		request = 'launch',
+		name = 'Launch file with arguments',
+		program = '${file}',
+		args = function()
+		  local args_string = vim.fn.input('Arguments: ')
+		  return vim.split(args_string, ' ')
+		end,
+		pythonPath = function()
+		  return '/usr/bin/python3'
+		end,
+	  },
+	  {
+		type = 'python',
+		request = 'attach',
+		name = 'Attach remote',
+		connect = function()
+		  return {
+			host = vim.fn.input('Host [127.0.0.1]: ', '127.0.0.1'),
+			port = tonumber(vim.fn.input('Port [5678]: ', '5678')),
+		  }
+		end,
+	  },
+	}
+
     -- Also apply the same configs to plain JS files
     dap.configurations.javascript = dap.configurations.typescript
 
@@ -344,6 +406,9 @@ vim.opt.termguicolors = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.swapfile = false
+
+vim.keymap.set('n','<leader>G',"<cmd>LazyGit<cr>")
+
 
 vim.cmd("set nu")
 vim.cmd("colorscheme catppuccin-macchiato ")
@@ -381,6 +446,10 @@ vim.keymap.set('n', '<leader>s', "<Cmd>w<CR>")
 vim.keymap.set('n', '<leader>q', "<Cmd>bd<CR>")
 vim.keymap.set('n', '<leader>R', "<Cmd>source %<CR>")
 
+-- -------- Cycling through files --------
+vim.keymap.set("n", "]f", ":next<CR>", { desc = "Próximo arquivo" })
+vim.keymap.set("n", "[f", ":prev<CR>", { desc = "Arquivo anterior" })
+
 vim.keymap.set("n", "<leader>cp", function()
   vim.fn.setreg("+", vim.fn.expand("%:p"))
 end, { desc = "Copy full file path" })
@@ -414,8 +483,13 @@ require('telescope').setup({
 
 local builtin = require('telescope.builtin')
 
+vim.keymap.set('n', '<leader>fc', function()
+  require('telescope.builtin').colorscheme({ enable_preview = true })
+end, { desc = 'Find colorscheme' })
+
 vim.keymap.set('n', '<C-p>', builtin.find_files)
 vim.keymap.set('n', '<leader>fp', builtin.git_files)
+
 vim.keymap.set('n', '<leader>fg', builtin.live_grep)
 vim.keymap.set('n', '<M-b>', builtin.buffers)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags)
@@ -525,6 +599,20 @@ vim.lsp.config('typescript-language-server', { -- Ensure installed with npm
   filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
   root_markers = { 'tsconfig.json', 'package.json' },
 })
+
+-- Python LSP
+vim.lsp.config('pylsp', {
+  filetypes = { 'python' },
+  settings = {
+    pylsp = {
+      plugins = {
+        black = { enabled = true },
+        mypy = { enabled = true, live_mode = true },
+      }
+    }
+  }
+})
+vim.lsp.enable('pylsp')
 
 vim.lsp.enable('typescript-language-server')  
 -- =========================================================

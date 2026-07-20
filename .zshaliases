@@ -54,7 +54,7 @@ alias d="dust"
 alias find1="sudo find . -xdev -type f -size +1G"
 #Mongo
 #Python
-alias svenv="source .venv/bin/activate"
+alias sv="source .venv/bin/activate"
 #xclip
 alias xcc="xclip -sel clip"
 alias ndot='n ~/.dotfiles/.configure/nvim'
@@ -130,3 +130,4 @@ alias na="nix profile add nixpkgs#"
 alias nixinstall="sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon"
 alias ni='nix-env -iA nixpkgs.$(nix-env -qaP | fzf | awk "{print \$1}" | cut -d. -f2-)'
 alias flutter-depencies-fedora="sudo dnf install -y git curl unzip which xz zip clang cmake make ninja-build pkg-config gtk3-devel mesa-libGL-devel libsecret-devel libcurl-devel"
+alias ls='lsd -ahlt'
