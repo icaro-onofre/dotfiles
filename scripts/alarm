@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+# alarm - simple alarm/reminder utility with desktop notifications
+set -euo pipefail
+
+JOBS_DIR="$HOME/.local/share/alarm"
+mkdir -p "$JOBS_DIR"
+
+usage() {
+  cat <<'EOF'
+Usage:
+  alarm <time> [message]     Set an alarm
+  alarm list                 List pending alarms
+  alarm cancel <id>          Cancel an alarm
+
+Time formats:
+  10s, 5m, 2h, 1h30m         Relative time (any combo of h/m/s)
+  14:30                      Today at 14:30 (tomorrow if already passed)
+
+Examples:
+  alarm 25m "Check the oven"
+  alarm 14:30 "Stand-up meeting"
+  alarm list
+  alarm cancel 1732650000123456789
+EOF
+}
+
+parse_relative() {
+  local input="$1" total=0
+  while [[ "$input" =~ ([0-9]+)([hms]) ]]; do
+    local num=${BASH_REMATCH[1]} unit=${BASH_REMATCH[2]}
+    case "$unit" in
+      h) total=$((total + num*3600));;
+      m) total=$((total + num*60));;
+      s) total=$((total + num));;
+    esac
+    input=${input/${BASH_REMATCH[0]}/}
+  done
+  echo "$total"
+}
+
+notify() {
+  local message="$1"
+  command -v notify-send >/dev/null 2>&1 && notify-send -u critical "⏰ Alarm" "$message" 2>/dev/null || true
+  local sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+  if command -v paplay >/dev/null 2>&1 && [[ -f "$sound" ]]; then
+    paplay "$sound" 2>/dev/null || true
+  else
+    printf '\a'
+  fi
+}
+
+set_alarm() {
+  local timespec="$1" message="${2:-Alarm!}" seconds target_epoch now
+  now=$(date +%s)
+
+  if [[ "$timespec" =~ ^[0-9]{1,2}:[0-9]{2}$ ]]; then
+    target_epoch=$(date -d "$timespec" +%s)
+    (( target_epoch <= now )) && target_epoch=$(date -d "tomorrow $timespec" +%s)
+    seconds=$(( target_epoch - now ))
+  else
+    seconds=$(parse_relative "$timespec")
+    if (( seconds <= 0 )); then
+      echo "Invalid time: $timespec" >&2
+      exit 1
+    fi
+    target_epoch=$(( now + seconds ))
+  fi
+
+  local id jobfile
+  id=$(date +%s%N)
+  jobfile="$JOBS_DIR/$id.job"
+
+  ( sleep "$seconds"; notify "$message"; rm -f "$jobfile" ) &
+  disown
+
+  { echo "$!"; echo "$target_epoch"; echo "$message"; } > "$jobfile"
+  echo "Alarm set: $(date -d "@$target_epoch" '+%Y-%m-%d %H:%M:%S') — \"$message\" (id: $id)"
+}
+
+list_alarms() {
+  shopt -s nullglob
+  local files=("$JOBS_DIR"/*.job) any=0
+  for f in "${files[@]}"; do
+    local pid target msg id
+    pid=$(sed -n '1p' "$f"); target=$(sed -n '2p' "$f"); msg=$(sed -n '3p' "$f")
+    id=$(basename "$f" .job)
+    if kill -0 "$pid" 2>/dev/null; then
+      (( any == 0 )) && printf "%-22s %-20s %s\n" "ID" "TIME" "MESSAGE"
+      any=1
+      printf "%-22s %-20s %s\n" "$id" "$(date -d "@$target" '+%Y-%m-%d %H:%M:%S')" "$msg"
+    else
+      rm -f "$f"
+    fi
+  done
+  (( any == 0 )) && echo "No pending alarms."
+}
+
+cancel_alarm() {
+  local id="$1" jobfile="$JOBS_DIR/$1.job"
+  if [[ -f "$jobfile" ]]; then
+    local pid; pid=$(sed -n '1p' "$jobfile")
+    if kill "$pid" 2>/dev/null; then
+      echo "Alarm $id cancelled."
+    else
+      echo "Could not cancel (already fired?)."
+    fi
+    rm -f "$jobfile"
+  else
+    echo "No such alarm id: $id" >&2
+    exit 1
+  fi
+}
+
+case "${1:-}" in
+  ""|-h|--help) usage ;;
+  list) list_alarms ;;
+  cancel) shift; cancel_alarm "${1:?id required}" ;;
+  *) set_alarm "$1" "${2:-Alarm!}" ;;
+esac
