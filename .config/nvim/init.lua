@@ -58,7 +58,11 @@ require("lazy").setup({
     "mason-org/mason.nvim",
     opts = {}
 },
-
+{
+  'nvim-treesitter/nvim-treesitter',
+   branch = 'master', -- Ensure this line is present
+   build = ':TSUpdate',
+},
 -- =========================
 -- Git
 -- =========================
@@ -211,11 +215,33 @@ require("lazy").setup({
   dependencies = {
     "jay-babu/mason-nvim-dap.nvim",
     "theHamsta/nvim-dap-virtual-text",
+    "rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio", -- required by nvim-dap-ui
   },
   config = function()
     local dap = require("dap")
+    local dapui = require("dapui")
 
     require("nvim-dap-virtual-text").setup()
+
+    -- =========================================================
+    -- DAP UI setup (breakpoints, scopes/variables, watches,
+    -- stack frames, REPL and console panels)
+    -- =========================================================
+    dapui.setup()
+
+	dap.set_log_level("TRACE")
+
+    -- Auto open/close the UI when a debug session starts/ends
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated["dapui_config"] = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited["dapui_config"] = function()
+      dapui.close()
+    end
 
     require("mason-nvim-dap").setup({
       ensure_installed = {
@@ -257,22 +283,39 @@ require("lazy").setup({
       }
     end
 
+	dap.adapters.bun = {
+	  type = "server",
+	  host = "localhost",
+	  port = 6499,
+	  executable = {
+		command = "bun",
+		args = { "--inspect-wait=6499" },
+	  },
+	}
+
     -- TypeScript launch configurations
 	for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
     dap.configurations[language] = {
 
       -- Attach to an already-running Chrome instance
       -- Start Chrome with: google-chrome --remote-debugging-port=9222
-	    {
-		type = "pwa-node",
+	   {
+		type = "bun", 
 		request = "launch",
-		name = "Debug Bun (file)",
-		runtimeExecutable = "bun",
-		runtimeArgs = { "--inspect-brk" },
+		name = "Debug Bun (Elysia)",
 		program = "${file}",
 		cwd = "${workspaceFolder}",
-		attachSimplePort = 6499, -- Bun's default inspect port
+		attachSimplePort = 6499, 
+		runtimeArgs = { "--inspect-brk" },
 	  },
+		--    {
+		-- type = "pwa-node",
+		-- request = "launch",
+		-- name = "Debug Bun (file)",
+		-- runtimeExecutable = "bun",
+		-- program = "${file}",
+		-- cwd = "${workspaceFolder}",
+		--  },
       {
         type    = "pwa-chrome",
         request = "attach",
@@ -353,7 +396,9 @@ require("lazy").setup({
 	  },
 	}
 
+	-- =========================================================
 	-- Golang debugging
+	-- =========================================================
 	dap.adapters.go = {
 	  type = "server",
 	  port = "${port}",
@@ -368,13 +413,40 @@ require("lazy").setup({
 		type = "go",
 		name = "Debug",
 		request = "launch",
+		mode = "debug",
 		program = "${file}",
 	  },
 	  {
 		type = "go",
 		name = "Debug Package",
 		request = "launch",
+		mode = "debug",
 		program = "${workspaceFolder}",
+	  },
+	  {
+		type = "go",
+		name = "Debug (Arguments)",
+		request = "launch",
+		mode = "debug",
+		program = "${workspaceFolder}",
+		args = function()
+		  local args_string = vim.fn.input('Arguments: ')
+		  return vim.split(args_string, ' ')
+		end,
+	  },
+	  {
+		type = "go",
+		name = "Debug Test (go.mod)",
+		request = "launch",
+		mode = "test",
+		program = "./${relativeFileDirname}",
+	  },
+	  {
+		type = "go",
+		name = "Debug Test (current file)",
+		request = "launch",
+		mode = "test",
+		program = "${file}",
 	  },
 	  {
 		type = "go",
@@ -438,6 +510,11 @@ require("lazy").setup({
     vim.keymap.set('n', '<F12>',      dap.step_out,          { desc = "Debug: Step Out" })
     vim.keymap.set('n', '<F9>',  dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
     vim.keymap.set('n', '<Leader>dr', dap.repl.open,         { desc = "Debug: Open REPL" })
+    vim.keymap.set('n', '<Leader>du', dapui.toggle,          { desc = "Debug: Toggle UI" })
+    vim.keymap.set('n', '<Leader>db',
+      function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
+      { desc = "Debug: Conditional Breakpoint" })
+    vim.keymap.set('n', '<Leader>dl', dap.run_last,          { desc = "Debug: Run Last" })
   end,
 },
 {
@@ -469,6 +546,24 @@ vim.cmd("colorscheme catppuccin-macchiato ")
 -- =========================================================
 -- PLUGIN CONFIGURATIONS
 -- =========================================================
+--
+-- =========================================================
+-- TREESITTER
+-- =========================================================
+require'nvim-treesitter.configs'.setup {
+  textobjects = {
+    move = {
+      enable = true,
+      set_jumps = true, -- Add jumps to the vim jump list
+      goto_previous_start = {
+        ["[m"] = "@function.outer", -- Jump to top of current/previous function
+      },
+      goto_next_start = {
+        ["]m"] = "@function.outer", -- Jump to top of next function
+      },
+    },
+  },
+}
 
 -- Colorizer
 require('colorizer').setup()
@@ -476,6 +571,21 @@ require('colorizer').setup()
 -- =========================================================
 -- GITSIGNS CONFIG
 -- =========================================================
+require'nvim-treesitter.configs'.setup {
+  textobjects = {
+    move = {
+      enable = true,
+      set_jumps = true, -- Add jumps to the vim jump list
+      goto_previous_start = {
+        ["[m"] = "@function.outer", -- Jump to top of current/previous function
+      },
+      goto_next_start = {
+        ["]m"] = "@function.outer", -- Jump to top of next function
+      },
+    },
+  },
+}
+
 require('gitsigns').setup {
   signs = {
     add          = { text = '│' },
@@ -530,6 +640,7 @@ require('telescope').setup({
       },
     },
 	border = false,
+	path_display = { "smart" },   -- <-- key setting
   },
 })
 
