@@ -16,8 +16,11 @@ alias es="emacsclient -nw -c -a 'emacs'"
 alias e="emacs -nw"
 alias xn='xrandr -o normal'
 alias xr='xrandr -o right'
-# Git
+# Gcloud
 alias g="gcloud"
+alias gcci="gcloud compute instances"
+alias gccc="gcloud compute"
+# Git
 alias gl="git log --oneline"
 alias glt="git log --pretty=format:'%H - %ad - %an - %s' --since='today 00:00'"
 alias gwa="git worktree add"
@@ -132,3 +135,5 @@ alias ni='nix-env -iA nixpkgs.$(nix-env -qaP | fzf | awk "{print \$1}" | cut -d.
 alias flutter-depencies-fedora="sudo dnf install -y git curl unzip which xz zip clang cmake make ninja-build pkg-config gtk3-devel mesa-libGL-devel libsecret-devel libcurl-devel"
 alias ls='lsd -ahlt'
 alias wc='wl-copy'
+# Pet aliases
+alias pe='pet exec'
