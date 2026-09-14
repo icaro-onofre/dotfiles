@@ -1,14 +1,30 @@
+export PATH="/usr/bin:$PATH"
 export EDITOR=nvim
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 alias tmux="TERM=screen-256color-bce tmux"
 autoload -U colors && colors
 
-setopt prompt_subst
+# Enable prompt substitution
+setopt PROMPT_SUBST
+
+# Git branch function
+git_branch() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || \
+  branch=$(git rev-parse --short HEAD 2>/dev/null)
+  if [[ -n "$branch" ]]; then
+    echo " %F{yellow}(${branch})%f"
+  fi
+}
+
+# Prompt: user directory (git-branch) %
+PROMPT='%F{green}%n%f %F{blue}%~%f$(git_branch)
+%# '
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
@@ -70,12 +86,11 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+# [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+# [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
 
 # Glob qualifiers
 setopt no_bare_glob_qual
@@ -99,6 +114,7 @@ bindkey -s ^a "nvims\n"
 
 source ~/.zshaliases
 source ~/.zshaliases_dangerous
+source ~/.zsh_paths
 source ~/.zshexports
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
@@ -107,7 +123,7 @@ gpgconf --launch gpg-agent
 #Keybindings
 
 bindkey '^R' history-incremental-search-backward # Back incremental search
-bindkey -s '^f' 'ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"^M'
+# bindkey -s '^f' 'ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"^M'
 bindkey -s '^h' 'htop^M'
 bindkey -s '^g' 'lazygit^M'
 
@@ -223,3 +239,19 @@ export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
 
 # opencode
 export PATH=/home/icaroonofre/.opencode/bin:$PATH
+
+# OpenClaw Completion
+[ -f "/home/icaroonofre/.openclaw/completions/openclaw.zsh" ] && source "/home/icaroonofre/.openclaw/completions/openclaw.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/icaroonofre/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/icaroonofre/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/icaroonofre/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/icaroonofre/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+# kimi-code
+export PATH="/home/icaroonofre/.kimi-code/bin:$PATH"
+export PATH="/home/icaroonofre/bin/cmdline-tools/bin:$PATH"
+
+
+[[ -s "/home/icaroonofre/.gvm/scripts/gvm" ]] && source "/home/icaroonofre/.gvm/scripts/gvm"

@@ -1,0 +1,139 @@
+
+[[Snippets]]
+  Description = "Mount remote rclone icaro-drive"
+  Output = ""
+  Tag = []
+  command = "rclone mount --daemon icaro-drive: ~/mount/icaro-drive"
+
+[[Snippets]]
+  Description = "Mount my remote saved books"
+  Output = ""
+  Tag = []
+  command = "rclone mount --daemon Livros: ~/Livros"
+
+[[Snippets]]
+  Description = "Qemu create virtual machine"
+  Output = ""
+  Tag = []
+  command = "qemu-system-x86_64  -enable-kvm  -m 4096  -smp cores=4  -cpu host  -drive file=./nixos.iso,media=cdrom  -drive file=./nixos.img,format=qcow2,if=virtio  -netdev user,id=net0,hostfwd=tcp::5555-:5555  -device virtio-net-pci,netdev=net0  -vga virtio  -display gtk  -usb  -device usb-tablet  -boot d "
+
+[[Snippets]]
+  Description = "Qemu criar imagem para máquina virtual"
+  Output = ""
+  Tag = []
+  command = "qemu-img create -f qcow2 <nome-da-image>.img <tamanho em gbs da imagem>G"
+
+[[Snippets]]
+  Description = "Attach to tmux session with fuzzy finding"
+  Output = ""
+  Tag = []
+  command = "tmux attach -t \"$(tmux ls -F '#S' | fzf)\""
+
+[[Snippets]]
+  Description = "Neovim dap logs"
+  Output = ""
+  Tag = []
+  command = "nvim ~/.local/state/nvim/dap.log"
+
+[[Snippets]]
+  Description = "gcloud list storage okonomicus"
+  Output = ""
+  Tag = []
+  command = "gcloud storage ls gs://okonomicus/"
+
+[[Snippets]]
+  Description = "Nixos clone nix tooling"
+  Output = ""
+  Tag = []
+  command = "git clone --depth=1 --branch nixos-24.11 https://github.com/NixOS/nixpkgs.git"
+
+[[Snippets]]
+  Description = "gcloud list billing"
+  Output = ""
+  Tag = []
+  command = "gcloud billing accounts list"
+
+[[Snippets]]
+  Description = "gcloud returns project id"
+  Output = ""
+  Tag = []
+  command = "gcloud projects list | awk -F' +' 'NR==2{print $1}'"
+
+[[Snippets]]
+  Description = "Flutter apk caminho"
+  Output = ""
+  Tag = []
+  command = "cd /home/icaroonofre/work/dev/nextfrota/apps/pdv/build/app/outputs/flutter-apk"
+
+[[Snippets]]
+  Description = "Check if kvm is enabled lsmod"
+  Output = ""
+  Tag = []
+  command = "lsmod | grep kvm; echo \"---\"; ls /sys/module/ | grep kvm"
+
+[[Snippets]]
+  Description = "Qemu run x86 machine with iso and image"
+  Output = ""
+  Tag = []
+  command = "qemu-system-x86_64 -hda <imagem> -m 4096 -cdrom <iso> -boot d"
+
+[[Snippets]]
+  Description = "vnc connect '[::1]:5900'"
+  Output = ""
+  Tag = []
+  command = "vncviewer '[::1]:5900'"
+
+[[Snippets]]
+  Description = "Create iso with dd"
+  Output = ""
+  Tag = []
+  command = "sudo dd if=<path-to-iso> of=<path-to-drive> bs=4M status=progress oflag=sync"
+
+[[Snippets]]
+  Description = "rclone list remotes"
+  Output = ""
+  Tag = []
+  command = "rclone listremotes"
+
+[[Snippets]]
+  Description = "rclone mount BeyondDesire"
+  Output = ""
+  Tag = []
+  command = "rclone mount --daemon BeyondDesire: ~/mount/BeyondDesire/"
+
+[[Snippets]]
+  Description = "Pipewire pulse audio listing sink sources for loopback recording"
+  Output = ""
+  Tag = []
+  command = "pactl list sinks short; pactl list sources short"
+
+[[Snippets]]
+  Description = "Removed merged branches"
+  Output = ""
+  Tag = []
+  command = "git branch --merged | grep -vE '^\\*|main|master|develop' | xargs -r git branch -d"
+
+[[Snippets]]
+  Description = "Systemctl list units"
+  Output = ""
+  Tag = []
+  command = "sudo systemctl list-units"
+
+[[Snippets]]
+  Description = "Runs openclaw gateway"
+  Output = ""
+  Tag = []
+  command = "openclaw gateway"
+
+[[Snippets]]
+  Description = "Updating fedora"
+  Output = ""
+  Tag = []
+  command = "sudo dnf upgrade --refresh"
+
+[[Snippets]]
+  Description = "lspci check network card"
+  Output = ""
+  Tag = []
+  command = "lspci | grep -iE 'net|ethernet|wireless|wi-fi'"
+
