@@ -7,6 +7,6 @@
 config_version: 2
 settings:
   content.notifications.enabled:
-    https://www.enjoei.com.br: true
+    https://calendar.google.com: true
   content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: true
+    https://calendar.google.com?cid=%25s: true
