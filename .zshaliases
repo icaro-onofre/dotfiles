@@ -1,5 +1,5 @@
 alias h='history'
-alias l='lsd -ahlt'
+alias l='lsd -ahltr'
 alias ls='ls --color'
 alias rr='ranger'
 alias dir='dir --color=auto'
