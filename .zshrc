@@ -126,6 +126,7 @@ bindkey '^R' history-incremental-search-backward # Back incremental search
 # bindkey -s '^f' 'ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"^M'
 bindkey -s '^h' 'htop^M'
 bindkey -s '^g' 'lazygit^M'
+bindkey -s '^b' 'pet exec^M'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

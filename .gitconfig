@@ -5,5 +5,6 @@
 	tool = neovim
 [safe]
 	directory = /opt/flutter
+	directory = /etc/nixos
 [branch]
 	sort = committerdate

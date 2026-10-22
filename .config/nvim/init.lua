@@ -144,7 +144,7 @@ require("lazy").setup({
   },
   opts_extend = { "sources.default" }
 },
-"HiPhish/rainbow-delimiters.nvim",
+-- "HiPhish/rainbow-delimiters.nvim",
 "chentoast/marks.nvim",
 "norcalli/nvim-colorizer.lua",
 "nvim-tree/nvim-web-devicons",
@@ -283,87 +283,87 @@ require("lazy").setup({
       }
     end
 
-	dap.adapters.bun = {
-	  type = "server",
-	  host = "localhost",
-	  port = 6499,
-	  executable = {
-		command = "bun",
-		args = { "--inspect-wait=6499" },
-	  },
-	}
+	-- dap.adapters.bun = {
+	--   type = "server",
+	--   host = "localhost",
+	--   port = 6499,
+	--   executable = {
+	-- 	command = "bun",
+	-- 	args = { "--inspect-wait=6499" },
+	--   },
+	-- }
 
     -- TypeScript launch configurations
 	for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
-    dap.configurations[language] = {
-
-      -- Attach to an already-running Chrome instance
-      -- Start Chrome with: google-chrome --remote-debugging-port=9222
-	   {
-		type = "bun", 
-		request = "launch",
-		name = "Debug Bun (Elysia)",
-		program = "${file}",
-		cwd = "${workspaceFolder}",
-		attachSimplePort = 6499, 
-		runtimeArgs = { "--inspect-brk" },
-	  },
-		--    {
-		-- type = "pwa-node",
+		--   dap.configurations[language] = {
+		--
+		--     -- Attach to an already-running Chrome instance
+		--     -- Start Chrome with: google-chrome --remote-debugging-port=9222
+		--   {
+		-- type = "bun", 
 		-- request = "launch",
-		-- name = "Debug Bun (file)",
-		-- runtimeExecutable = "bun",
+		-- name = "Debug Bun (Elysia)",
 		-- program = "${file}",
 		-- cwd = "${workspaceFolder}",
+		-- attachSimplePort = 6499, 
+		-- runtimeArgs = { "--inspect-brk" },
 		--  },
-      {
-        type    = "pwa-chrome",
-        request = "attach",
-        name    = "Attach to Chrome (port 9222)",
-        port    = 9222,
-        webRoot = "${workspaceFolder}",
-        sourceMaps = true,
-        -- Tells the adapter where compiled JS lives relative to your TS sources
-        -- Adjust if your outDir differs from the default
-        sourceMapPathOverrides = {
-          ["webpack:///./~/*"]   = "${workspaceFolder}/node_modules/*",
-          ["webpack://?:*/*"]    = "${workspaceFolder}/*",
-          ["webpack:///src/*"]   = "${workspaceFolder}/src/*",
-          ["meteor://💻app/*"]  = "${workspaceFolder}/*",
-        },
-      },
-
-      -- Launch a new Chrome window pointing at your dev server
-      {
-        type    = "pwa-chrome",
-        request = "launch",
-        name    = "Launch Chrome against localhost",
-        url     = "http://localhost:3000",   -- change to your dev server port
-        webRoot = "${workspaceFolder}",
-        sourceMaps = true,
-        sourceMapPathOverrides = {
-          ["webpack:///./~/*"]  = "${workspaceFolder}/node_modules/*",
-          ["webpack://?:*/*"]   = "${workspaceFolder}/*",
-          ["webpack:///src/*"]  = "${workspaceFolder}/src/*",
-          ["meteor://💻app/*"] = "${workspaceFolder}/*",
-        },
-      },
-
-      -- Node / ts-node for server-side TypeScript (bonus)
-      {
-        type    = "pwa-node",
-        request = "launch",
-        name    = "Launch with ts-node",
-        program = "${file}",
-        runtimeExecutable = "ts-node",
-        sourceMaps = true,
-        resolveSourceMapLocations = {
-          "${workspaceFolder}/**",
-          "!**/node_modules/**",
-        },
-      },
-      -- ── Bun: launch current file ──────────────────────────────────────────
-    }
+		-- --    {
+		-- -- type = "pwa-node",
+		-- -- request = "launch",
+		-- -- name = "Debug Bun (file)",
+		-- -- runtimeExecutable = "bun",
+		-- -- program = "${file}",
+		-- -- cwd = "${workspaceFolder}",
+		-- --  },
+		--     {
+		--       type    = "pwa-chrome",
+		--       request = "attach",
+		--       name    = "Attach to Chrome (port 9222)",
+		--       port    = 9222,
+		--       webRoot = "${workspaceFolder}",
+		--       sourceMaps = true,
+		--       -- Tells the adapter where compiled JS lives relative to your TS sources
+		--       -- Adjust if your outDir differs from the default
+		--       sourceMapPathOverrides = {
+		--         ["webpack:///./~/*"]   = "${workspaceFolder}/node_modules/*",
+		--         ["webpack://?:*/*"]    = "${workspaceFolder}/*",
+		--         ["webpack:///src/*"]   = "${workspaceFolder}/src/*",
+		--         ["meteor://💻app/*"]  = "${workspaceFolder}/*",
+		--       },
+		--     },
+		--
+		--     -- Launch a new Chrome window pointing at your dev server
+		--     {
+		--       type    = "pwa-chrome",
+		--       request = "launch",
+		--       name    = "Launch Chrome against localhost",
+		--       url     = "http://localhost:3000",   -- change to your dev server port
+		--       webRoot = "${workspaceFolder}",
+		--       sourceMaps = true,
+		--       sourceMapPathOverrides = {
+		--         ["webpack:///./~/*"]  = "${workspaceFolder}/node_modules/*",
+		--         ["webpack://?:*/*"]   = "${workspaceFolder}/*",
+		--         ["webpack:///src/*"]  = "${workspaceFolder}/src/*",
+		--         ["meteor://💻app/*"] = "${workspaceFolder}/*",
+		--       },
+		--     },
+		--
+		--     -- Node / ts-node for server-side TypeScript (bonus)
+		--     {
+		--       type    = "pwa-node",
+		--       request = "launch",
+		--       name    = "Launch with ts-node",
+		--       program = "${file}",
+		--       runtimeExecutable = "ts-node",
+		--       sourceMaps = true,
+		--       resolveSourceMapLocations = {
+		--         "${workspaceFolder}/**",
+		--         "!**/node_modules/**",
+		--       },
+		--     },
+		--     -- ── Bun: launch current file ──────────────────────────────────────────
+		--   }
 	end
 
 	dap.adapters.dart = {
@@ -646,6 +646,24 @@ require('telescope').setup({
 
 
 local builtin = require('telescope.builtin')
+
+-- Return the visual selection as one line (requires Neovim 0.10+)
+local function get_visual_selection()
+  local lines = vim.fn.getregion(vim.fn.getpos("v"), vim.fn.getpos("."), { type = vim.fn.mode() })
+  return lines[1] or ""  -- ripgrep matches one line at a time, so keep the first line
+end
+
+-- Escape characters that have special meaning in a ripgrep (Rust) regex
+local function escape_rg_regex(text)
+  return (text:gsub("[%\\%.%+%*%?%(%)|%[%]{}%^%$]", "\\%0"))
+end
+
+-- Live grep with the selection prefilled; you can keep editing the regex
+vim.keymap.set("v", "<leader>fg", function()
+  local text = escape_rg_regex(get_visual_selection())
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+  require("telescope.builtin").live_grep({ default_text = text })
+end, { desc = "Live grep selection" })
 
 vim.keymap.set('n', '<leader>fc', function()
   require('telescope.builtin').colorscheme({ enable_preview = true })
