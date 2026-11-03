@@ -184,3 +184,15 @@
 	Output = ""
 	Tag = []
 	command = "hyprctl keyword monitor '<monitor>, disable'"
+
+[[Snippets]]
+	Descript = "Export keys"
+	Output = ""
+	Tag = []
+	command = "gpg --export --armor <key-id> > <key-name>.gpg"
+
+[[Snippets]]
+	Descript = "Git show diff with difft"
+	Output = ""
+	Tag = []
+	command = "git -c diff.external=difft diff <branch1> <branch2>"
