@@ -142,3 +142,5 @@ alias ls='lsd -ahlt'
 alias wc='wl-copy'
 # Pet aliases
 alias pe='pet exec'
+#flatpak aliases
+alias fal='flatpak app --list'

@@ -168,22 +168,16 @@
   command = "nvim ~/.zshaliases"
 
 [[Snippets]]
-  Description = "hyprctl keyword monitor 'MONITOR,disable'"
-  Output = ""
-  Tag = []
-  command = "hyprctl keyword monitor 'MONITOR,disable'"
-
-[[Snippets]]
   Description = "Lazygit nixos"
   Output = ""
   Tag = []
   command = "cd; /etc/nixos/; sudo lazygit"
 
 [[Snippets]]
-	Descript = "Turn off monitor hyprctl"
+	Descript = "Turn off monitor hyprctl new config"
 	Output = ""
 	Tag = []
-	command = "hyprctl keyword monitor '<monitor>, disable'"
+	command = """hyprctl eval "hl.monitor({ output = '<monitor>', disabled = true })" """
 
 [[Snippets]]
 	Descript = "Export keys"
@@ -196,3 +190,4 @@
 	Output = ""
 	Tag = []
 	command = "git -c diff.external=difft diff <branch1> <branch2>"
+	
