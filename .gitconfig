@@ -2,7 +2,7 @@
 	email = icaro.onofre.s@gmail.com
 	name = Icaro
 [diff]
-	tool = neovim
+	tool = difftastic
 [safe]
 	directory = /opt/flutter
 	directory = /etc/nixos
